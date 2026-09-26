@@ -1,0 +1,364 @@
+{
+ "total_events": 172,
+ "total_days": 254,
+ "core_events": 133,
+ "loading_events": 39,
+ "loading_days": 45,
+ "by_status": {
+  "Pipeline": 19,
+  "Terlaksana": 153
+ },
+ "unique_orgs": 58,
+ "unique_calendar_days": 204,
+ "unique_days_last12m": 153,
+ "occupancy_rate_last12m_pct": 41.8,
+ "dow_core": {
+  "Senin": 16,
+  "Selasa": 27,
+  "Rabu": 22,
+  "Kamis": 22,
+  "Jumat": 14,
+  "Sabtu": 19,
+  "Minggu": 13
+ },
+ "weekend_share_core_pct": 24.1,
+ "monthly": {
+  "2025-09": {
+   "events": 2,
+   "days": 2,
+   "core": 2
+  },
+  "2025-10": {
+   "events": 20,
+   "days": 21,
+   "core": 15
+  },
+  "2025-11": {
+   "events": 20,
+   "days": 28,
+   "core": 19
+  },
+  "2025-12": {
+   "events": 16,
+   "days": 17,
+   "core": 13
+  },
+  "2026-01": {
+   "events": 17,
+   "days": 19,
+   "core": 13
+  },
+  "2026-02": {
+   "events": 11,
+   "days": 11,
+   "core": 8
+  },
+  "2026-03": {
+   "events": 2,
+   "days": 2,
+   "core": 1
+  },
+  "2026-04": {
+   "events": 11,
+   "days": 17,
+   "core": 7
+  },
+  "2026-05": {
+   "events": 10,
+   "days": 12,
+   "core": 7
+  },
+  "2026-06": {
+   "events": 7,
+   "days": 9,
+   "core": 5
+  },
+  "2026-07": {
+   "events": 16,
+   "days": 20,
+   "core": 13
+  },
+  "2026-08": {
+   "events": 13,
+   "days": 13,
+   "core": 10
+  },
+  "2026-09": {
+   "events": 9,
+   "days": 11,
+   "core": 7
+  },
+  "2026-10": {
+   "events": 6,
+   "days": 7,
+   "core": 5
+  },
+  "2026-11": {
+   "events": 9,
+   "days": 60,
+   "core": 6
+  },
+  "2026-12": {
+   "events": 3,
+   "days": 5,
+   "core": 2
+  }
+ },
+ "macro_sector_core": {
+  "Kemenkeu (internal)": {
+   "events": 45,
+   "days": 59
+  },
+  "K/L, BUMN & lembaga": {
+   "events": 30,
+   "days": 31
+  },
+  "Komunitas, pendidikan & seni": {
+   "events": 29,
+   "days": 58
+  },
+  "Komersial & kreatif": {
+   "events": 20,
+   "days": 51
+  },
+  "Lainnya / tidak teridentifikasi": {
+   "events": 9,
+   "days": 10
+  }
+ },
+ "category_core": {
+  "Official Meeting, Ceremony & Gala": {
+   "events": 32,
+   "days": 36
+  },
+  "Heritage Walking Tour & Visit": {
+   "events": 25,
+   "days": 25
+  },
+  "Corporate & Institutional Event": {
+   "events": 22,
+   "days": 22
+  },
+  "Forum, Seminar & Workshop": {
+   "events": 18,
+   "days": 30
+  },
+  "Photoshoot & Fashion Show": {
+   "events": 13,
+   "days": 13
+  },
+  "Concert & Music Performance": {
+   "events": 9,
+   "days": 9
+  },
+  "Exhibition, Bazaar & Festival": {
+   "events": 8,
+   "days": 56
+  },
+  "Film & Media Production": {
+   "events": 5,
+   "days": 16
+  },
+  "Maintenance & Facility Closure": {
+   "events": 1,
+   "days": 2
+  }
+ },
+ "orgs_core_identified": 57,
+ "repeat_orgs": 19,
+ "repeat_share_events_pct": 69.4,
+ "top_repeat": {
+  "Direktorat Jenderal Kekayaan Negara (DJKN)": 13,
+  "Kementerian Koordinator Bidang Perekonomian": 11,
+  "Eat, Chat, Walk (ECW)": 10,
+  "Gitanada School of Music": 8,
+  "Lembaga Manajemen Aset Negara (LMAN)": 7,
+  "Pimpinan Kementerian Keuangan RI": 7,
+  "Otoritas Jasa Keuangan (OJK)": 5,
+  "Direktorat Jenderal Perbendaharaan (DJPb)": 3,
+  "Direktorat Jenderal Pengelolaan Pembiayaan dan Risiko (DJPPR)": 2,
+  "Dinas Pariwisata dan Ekonomi Kreatif DKI Jakarta": 2
+ },
+ "building_floor_core": {
+  "Gedung AA Maramis | Unspecified": 59,
+  "Gedung C | Lantai 2": 30,
+  "Gedung A | Lantai 2": 11,
+  "Gedung Utama (Historical Halls) | Unspecified": 11,
+  "Gedung C | Unspecified": 8,
+  "Gedung A | Unspecified": 5,
+  "Gedung C | Lantai 1": 2,
+  "Gedung C | Lantai 1 & 2": 2,
+  "Seluruh Kompleks Gedung AA Maramis | Semua Lantai": 2,
+  "Gedung A | Lantai 1": 1,
+  "Gedung A | Lantai 3": 1,
+  "Gedung A & Gedung C | Lantai 2": 1
+ },
+ "room_code_mentions": {
+  "Ruang Majapahit": 7,
+  "C2.3": 4,
+  "C2.12": 3,
+  "C2.13": 3,
+  "Ruang Bone": 3,
+  "Ruang VIP (Gd C)": 1,
+  "C2.4": 1,
+  "C2.11": 1,
+  "C2.2": 1,
+  "Ruang Kutai": 1,
+  "A2.3": 1,
+  "Ruang Sriwijaya": 1
+ },
+ "named_room_mentions": {
+  "Majapahit": 7,
+  "Kutai": 1,
+  "Bone": 3,
+  "Sriwijaya": 1
+ },
+ "share_unspecified_venue_pct": 62.4,
+ "inventory": {
+  "rooms_total_listed": 49,
+  "rooms_per_ruangan": 34,
+  "capacity_sum_per_ruangan": 2960,
+  "tarif_min": 3441000,
+  "tarif_max": 30303000,
+  "tarif_median": 6160500,
+  "sum_daily_rate_all_rooms": 285048000,
+  "rate_per_pax_median": 99900,
+  "named_rooms": [
+   [
+    "C2.2",
+    "Mataram"
+   ],
+   [
+    "C2.3",
+    "Sriwijaya"
+   ],
+   [
+    "C2.4",
+    "Bone"
+   ],
+   [
+    "C2.11",
+    "Ternate"
+   ],
+   [
+    "C2.12",
+    "Majapahit"
+   ],
+   [
+    "C2.13",
+    "Kutai"
+   ]
+  ],
+  "unnamed_rooms": 43,
+  "by_floor": [
+   {
+    "gedung": "Gedung A",
+    "lantai": 2,
+    "n": 8,
+    "kap": 350,
+    "tarif": 37962000
+   },
+   {
+    "gedung": "Gedung A",
+    "lantai": 3,
+    "n": 8,
+    "kap": 380,
+    "tarif": 39960000
+   },
+   {
+    "gedung": "Gedung C",
+    "lantai": 2,
+    "n": 9,
+    "kap": 990,
+    "tarif": 95460000
+   },
+   {
+    "gedung": "Gedung C",
+    "lantai": 3,
+    "n": 9,
+    "kap": 1240,
+    "tarif": 111666000
+   }
+  ]
+ },
+ "q4_compare": {
+  "2025": {
+   "events": 56,
+   "days": 66
+  },
+  "2026": {
+   "events": 18,
+   "days": 72
+  }
+ },
+ "heritage_walks": {
+  "n": 25,
+  "weekend_pct": 64.0,
+  "orgs": {
+   "Eat, Chat, Walk (ECW)": 10,
+   "Direktorat Jenderal Pengelolaan Pembiayaan dan Risiko (DJPPR)": 2,
+   "Politeknik Keuangan Negara STAN (PKN STAN)": 2,
+   "Mitra Eksternal / Penyelenggara Umum": 1,
+   "AKARA Heritage Tour": 1,
+   "Komunitas Sahabat Gizi": 1,
+   "Ministry of Economy and Finance Cambodia": 1,
+   "Komunitas Jejak Historia": 1,
+   "Universitas Katolik Parahyangan (Unpar)": 1,
+   "PT Aura Vista Global": 1,
+   "Wisata Kreatif Jakarta": 1,
+   "Direktorat Jenderal Perbendaharaan (DJPb)": 1,
+   "Biro Komunikasi dan Layanan Informasi (KLI Kemenkeu)": 1,
+   "Girls Go Walk": 1
+  }
+ },
+ "long_events": [
+  [
+   "AGSI A2 (tbc)",
+   "2026-11-01",
+   30,
+   "Asosiasi Galeri Seni Indonesia (AGSI)"
+  ],
+  [
+   "Produksi film Hatta",
+   "2026-11-30",
+   10,
+   "Produksi Film Bung Hatta"
+  ],
+  [
+   "JICC",
+   "2026-11-08",
+   8,
+   "Jakarta International Coffee Conference (JICC)"
+  ],
+  [
+   "Anniversary Frank n Co (Gd. C)",
+   "2026-04-23",
+   4,
+   "Frank & Co. (PT Central Mega Kencana)"
+  ],
+  [
+   "Bazar indonesia by geraldine (all C2)",
+   "2026-11-04",
+   4,
+   "Bazar Indonesia by Geraldine"
+  ],
+  [
+   "Pameran dan Lelang Lukisan - Dit. Lelang DJKN",
+   "2026-06-25",
+   3,
+   "Direktorat Jenderal Kekayaan Negara (DJKN)"
+  ],
+  [
+   "IHT Sekretariat DJKN (Gd. A)",
+   "2026-05-19",
+   3,
+   "Direktorat Jenderal Kekayaan Negara (DJKN)"
+  ],
+  [
+   "Semasa",
+   "2026-12-11",
+   3,
+   "Semasa di Kota"
+  ]
+ ]
+}

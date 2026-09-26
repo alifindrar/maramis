@@ -1,0 +1,50 @@
+kode,nama,gedung,lantai,luas_m2,kapasitas,tarif_idr,skema,hal
+C1.2,-,Gedung C,1,84,50,125000000,Paket Seluruh Lantai 1,7
+C1.3,-,Gedung C,1,80,50,125000000,Paket Seluruh Lantai 1,7
+C1.4,-,Gedung C,1,287,200,125000000,Paket Seluruh Lantai 1,7
+C1.5,-,Gedung C,1,78,50,125000000,Paket Seluruh Lantai 1,7
+C1.6,-,Gedung C,1,83,50,125000000,Paket Seluruh Lantai 1,7
+C1.8,-,Gedung C,1,56,30,125000000,Paket Seluruh Lantai 1,8
+C1.9,-,Gedung C,1,195,130,125000000,Paket Seluruh Lantai 1,8
+C1.10,-,Gedung C,1,56,30,125000000,Paket Seluruh Lantai 1,8
+C1.12,-,Gedung C,1,125,80,125000000,Paket Seluruh Lantai 1,8
+C1.13,-,Gedung C,1,38,20,125000000,Paket Seluruh Lantai 1,8
+C1.14,-,Gedung C,1,87,60,125000000,Paket Seluruh Lantai 1,9
+C1.15,-,Gedung C,1,85,50,125000000,Paket Seluruh Lantai 1,9
+C1.16,-,Gedung C,1,87,60,125000000,Paket Seluruh Lantai 1,9
+C1.17,-,Gedung C,1,37,20,125000000,Paket Seluruh Lantai 1,9
+C1.18 & C1.19,-,Gedung C,1,42+83 (125),20+50 (70),125000000,Paket Seluruh Lantai 1,9
+A2.1,-,Gedung A,2,55,30,3552000,Per Ruangan,10
+A2.2,-,Gedung A,2,83,50,5328000,Per Ruangan,10
+A2.3,-,Gedung A,2,55,30,3552000,Per Ruangan,10
+A2.4,-,Gedung A,2,68,40,4440000,Per Ruangan,10
+A2.6,-,Gedung A,2,57,30,3663000,Per Ruangan,11
+A2.7,-,Gedung A,2,75,50,4884000,Per Ruangan,11
+A2.9,-,Gedung A,2,85,50,5439000,Per Ruangan,11
+A2.10,-,Gedung A,2,111,70,7104000,Per Ruangan,11
+C2.2,Mataram,Gedung C,2,164,110,10545000,Per Ruangan,12
+C2.3,Sriwijaya,Gedung C,2,287,200,18426000,Per Ruangan,12
+C2.4,Bone,Gedung C,2,161,110,10323000,Per Ruangan,12
+C2.7,-,Gedung C,2,56,30,3663000,Per Ruangan,12
+C2.8,-,Gedung C,2,195,130,12543000,Per Ruangan,12
+C2.9,-,Gedung C,2,56,30,3663000,Per Ruangan,13
+C2.11,Ternate,Gedung C,2,125,80,7992000,Per Ruangan,13
+C2.12,Majapahit,Gedung C,2,318,220,20313000,Per Ruangan,13
+C2.13,Kutai,Gedung C,2,125,80,7992000,Per Ruangan,13
+A3.1,-,Gedung A,3,55,30,3441000,Per Ruangan,14
+A3.2,-,Gedung A,3,83,50,5106000,Per Ruangan,14
+A3.3,-,Gedung A,3,84,50,5217000,Per Ruangan,14
+A3.4,-,Gedung A,3,57,30,3552000,Per Ruangan,14
+A3.5,-,Gedung A,3,114,70,6993000,Per Ruangan,15
+A3.6,-,Gedung A,3,57,30,3552000,Per Ruangan,15
+A3.8,-,Gedung A,3,84.5,50,5217000,Per Ruangan,15
+A3.9,-,Gedung A,3,111,70,6882000,Per Ruangan,15
+C3.1,-,Gedung C,3,74,50,4551000,Per Ruangan,16
+C3.2,-,Gedung C,3,164,110,10101000,Per Ruangan,16
+C3.3,-,Gedung C,3,287,200,17538000,Per Ruangan,16
+C3.5,-,Gedung C,3,161,110,9879000,Per Ruangan,16
+C3.6,-,Gedung C,3,74,50,4551000,Per Ruangan,16
+C3.8,-,Gedung C,3,496,340,30303000,Per Ruangan,17
+C3.11,-,Gedung C,3,125,80,7659000,Per Ruangan,17
+C3.12,-,Gedung C,3,318,220,19425000,Per Ruangan,17
+C3.13,-,Gedung C,3,125,80,7659000,Per Ruangan,17

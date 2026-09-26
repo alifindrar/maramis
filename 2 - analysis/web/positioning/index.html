@@ -1,0 +1,1740 @@
+<title>Merek Gedung Maramis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --ungu: #473538;
+    --bata: #9c3738;
+    --kayu: #8a400f;
+    --bambu: #d8aa68;
+    --kapur: #e2d6be;
+    --bg: #faf7f1;
+    --surface: #ffffff;
+    --surface-2: #f3ede2;
+    --ink: #2e2426;
+    --ink-2: #5e5153;
+    --muted: #7d7072;
+    --line: #e4dccf;
+    --accent: #9c3738;
+    --accent-soft: #f3e3df;
+    --warm: #b07a2e;
+    --warm-soft: #f5ead7;
+    --band: #9c3738;
+    --band-ink: #fbf4ea;
+    --band-ink-2: #ecd3c9;
+    --band-line: rgba(251, 244, 234, .28);
+    --serif: "Libre Baskerville", Georgia, "Times New Roman", serif;
+    --sans: "Public Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      color-scheme: dark;
+      --bg: #1c1516;
+      --surface: #251c1d;
+      --surface-2: #2e2324;
+      --ink: #efe6da;
+      --ink-2: #cbbfb4;
+      --muted: #a39589;
+      --line: #3d3031;
+      --accent: #e07f79;
+      --accent-soft: #3a2425;
+      --warm: #e0b577;
+      --warm-soft: #3a2f21;
+      --band: #6e2627;
+      --band-ink: #f6ece0;
+      --band-ink-2: #dcbdb2;
+      --band-line: rgba(246, 236, 224, .22);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --bg: #1c1516;
+    --surface: #251c1d;
+    --surface-2: #2e2324;
+    --ink: #efe6da;
+    --ink-2: #cbbfb4;
+    --muted: #a39589;
+    --line: #3d3031;
+    --accent: #e07f79;
+    --accent-soft: #3a2425;
+    --warm: #e0b577;
+    --warm-soft: #3a2f21;
+    --band: #6e2627;
+    --band-ink: #f6ece0;
+    --band-ink-2: #dcbdb2;
+    --band-line: rgba(246, 236, 224, .22);
+  }
+
+  * {
+    box-sizing: border-box
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 16px;
+    line-height: 1.6;
+    padding-inline: clamp(16px, 4vw, 40px);
+    padding-block: 0 56px
+  }
+
+  a {
+    color: var(--accent)
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--serif);
+    font-weight: 400;
+    text-wrap: balance;
+    margin: 0;
+    line-height: 1.2
+  }
+
+  p {
+    margin: 0
+  }
+
+  .wrap {
+    max-width: 1120px;
+    margin-inline: auto
+  }
+
+  .label {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted)
+  }
+
+  .label.acc {
+    color: var(--accent)
+  }
+
+  /* Top bar */
+  .top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 22px;
+    border-bottom: 1px solid var(--line)
+  }
+
+  .wordmark {
+    font-family: var(--serif);
+    font-size: 14px;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none
+  }
+
+  .top nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 20px;
+    font-size: 14px
+  }
+
+  .top nav a {
+    color: var(--ink-2);
+    text-decoration: none
+  }
+
+  .top nav a:hover {
+    color: var(--accent)
+  }
+
+  /* Sections */
+  section {
+    padding-block: clamp(56px, 8vw, 96px);
+    border-bottom: 1px solid var(--line);
+    scroll-margin-top: 12px
+  }
+
+  .head {
+    display: grid;
+    gap: 14px;
+    max-width: 700px;
+    margin-bottom: clamp(28px, 4vw, 44px)
+  }
+
+  .head h2 {
+    font-size: clamp(28px, 3.6vw, 42px)
+  }
+
+  .head p {
+    color: var(--ink-2);
+    font-size: 17px;
+    max-width: 60ch
+  }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+    gap: clamp(28px, 6vw, 80px);
+    align-items: center;
+    padding-block: clamp(40px, 7vw, 88px);
+    border-bottom: 1px solid var(--line)
+  }
+
+  .hero h1 {
+    font-size: clamp(44px, 7.4vw, 92px);
+    line-height: 1.02;
+    letter-spacing: -.01em;
+    margin-top: 22px
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--accent)
+  }
+
+  .hero .sub {
+    font-family: var(--serif);
+    font-size: clamp(19px, 2.2vw, 24px);
+    color: var(--ink);
+    margin-top: 22px;
+    max-width: 28ch
+  }
+
+  .hero .lede {
+    margin-top: 16px;
+    color: var(--ink-2);
+    font-size: 17px;
+    max-width: 48ch
+  }
+
+  .arch {
+    margin: 0;
+    border-radius: 999px 999px 6px 6px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+    max-width: 100%;
+    background: var(--surface-2);
+    border: 1px solid var(--line)
+  }
+
+  .arch img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block
+  }
+
+  .hero figcaption {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 10px;
+    text-align: center
+  }
+
+  /* Gap */
+  .gap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr);
+    gap: clamp(24px, 5vw, 64px)
+  }
+
+  .moments {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid
+  }
+
+  .moments li {
+    display: grid;
+    grid-template-columns: 64px 1fr;
+    gap: 12px;
+    padding-block: 14px;
+    border-top: 1px solid var(--line)
+  }
+
+  .moments li:last-child {
+    border-bottom: 1px solid var(--line)
+  }
+
+  .moments .yr {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--muted);
+    padding-top: 2px
+  }
+
+  .gaps {
+    display: grid;
+    gap: 14px
+  }
+
+  .gapitem {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    align-items: baseline;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 20px 22px
+  }
+
+  .gapitem b {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(34px, 4vw, 46px);
+    line-height: 1;
+    color: var(--accent);
+    font-variant-numeric: tabular-nums
+  }
+
+  .gapitem h4 {
+    font-family: var(--sans);
+    font-weight: 600;
+    font-size: 16px
+  }
+
+  .gapitem p {
+    color: var(--ink-2);
+    font-size: 14.5px;
+    margin-top: 4px
+  }
+
+  /* Positioning band */
+  .band {
+    background: var(--band);
+    color: var(--band-ink);
+    border-radius: 999px 999px 8px 8px;
+    padding: clamp(64px, 10vw, 120px) clamp(22px, 6vw, 80px) clamp(36px, 5vw, 60px);
+    margin-block: clamp(56px, 8vw, 96px);
+    text-align: center
+  }
+
+  .band .label {
+    color: var(--band-ink-2)
+  }
+
+  .band blockquote {
+    margin: 22px auto 0;
+    font-family: var(--serif);
+    font-size: clamp(26px, 4.2vw, 50px);
+    line-height: 1.2;
+    max-width: 18em;
+    text-wrap: balance
+  }
+
+  .band blockquote em {
+    font-style: italic
+  }
+
+  .band .essence {
+    margin-top: 22px;
+    font-size: 15px;
+    color: var(--band-ink-2)
+  }
+
+  .parts {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: clamp(36px, 5vw, 56px);
+    border-top: 1px solid var(--band-line);
+    text-align: left
+  }
+
+  .parts div {
+    padding: 20px 18px 0 0;
+    display: grid;
+    gap: 6px;
+    align-content: start
+  }
+
+  .parts div+div {
+    padding-left: 18px;
+    border-left: 1px solid var(--band-line)
+  }
+
+  .parts .label {
+    font-size: 11px
+  }
+
+  .parts p {
+    font-size: 14.5px;
+    line-height: 1.55;
+    color: var(--band-ink)
+  }
+
+  /* Differentiators */
+  .vs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px
+  }
+
+  .vs div {
+    border-top: 3px solid var(--ink);
+    padding-top: 16px;
+    display: grid;
+    gap: 8px;
+    align-content: start
+  }
+
+  .vs .label {
+    color: var(--muted)
+  }
+
+  .vs h3 {
+    font-size: 20px
+  }
+
+  .vs p {
+    color: var(--ink-2);
+    font-size: 15px
+  }
+
+  /* Personality */
+  .traits {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    background: var(--surface);
+    overflow: hidden
+  }
+
+  .traits div {
+    padding: 26px 20px;
+    display: grid;
+    gap: 4px;
+    align-content: start
+  }
+
+  .traits div+div {
+    border-left: 1px solid var(--line)
+  }
+
+  .traits b {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 26px
+  }
+
+  .traits s {
+    color: var(--muted);
+    font-size: 15px;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 1.5px
+  }
+
+  .traits p {
+    color: var(--ink-2);
+    font-size: 14px;
+    margin-top: 10px
+  }
+
+  /* Architecture */
+  .tree {
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+    text-align: center
+  }
+
+  .tree .master {
+    font-family: var(--serif);
+    font-size: clamp(22px, 3.4vw, 34px);
+    letter-spacing: .24em;
+    text-transform: uppercase
+  }
+
+  .tree .endorse {
+    font-size: 13.5px;
+    color: var(--muted)
+  }
+
+  .tree .q {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-2);
+    margin-top: 26px
+  }
+
+  .stem {
+    width: 1px;
+    height: 28px;
+    background: var(--line)
+  }
+
+  .lines {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    width: 100%;
+    margin-top: 8px;
+    text-align: left
+  }
+
+  .line {
+    border-radius: 999px 999px 6px 6px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    padding: 56px 28px 26px;
+    display: grid;
+    gap: 10px;
+    align-content: start
+  }
+
+  .line .verb {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px
+  }
+
+  .line h3 {
+    font-size: clamp(24px, 2.8vw, 30px)
+  }
+
+  .line.r h3,
+  .line.r .verb {
+    color: var(--accent)
+  }
+
+  .line.j h3,
+  .line.j .verb {
+    color: var(--warm)
+  }
+
+  .line .who {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted)
+  }
+
+  .line ul {
+    margin: 6px 0 0;
+    padding-left: 1.1em;
+    display: grid;
+    gap: 5px;
+    color: var(--ink-2);
+    font-size: 15px
+  }
+
+  .line.r li::marker {
+    color: var(--accent)
+  }
+
+  .line.j li::marker {
+    color: var(--warm)
+  }
+
+  .rule {
+    font-size: 14px;
+    color: var(--muted);
+    margin-top: 18px;
+    text-align: center;
+    max-width: 62ch;
+    margin-inline: auto
+  }
+
+  /* Pillars */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px
+  }
+
+  .pillar {
+    display: grid;
+    gap: 10px;
+    align-content: start
+  }
+
+  .pillar .cap {
+    aspect-ratio: 3/2;
+    max-width: 100%;
+    border-radius: 999px 999px 0 0;
+    border: 1px solid var(--line);
+    border-bottom: 0;
+    display: grid;
+    place-items: end center;
+    padding-bottom: 16px;
+    background: var(--surface-2)
+  }
+
+  .pillar .cap span {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(18px, 1.9vw, 21px);
+    text-align: center;
+    padding-inline: 18px;
+    color: var(--ink)
+  }
+
+  .pillar h4 {
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 14px;
+    border-top: 3px solid var(--accent)
+  }
+
+  .pillar p {
+    color: var(--ink-2);
+    font-size: 15px
+  }
+
+  .pillar .fmt {
+    font-size: 13.5px;
+    color: var(--muted)
+  }
+
+  .thread {
+    margin-top: 22px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 18px;
+    align-items: baseline;
+    padding: 18px 22px;
+    border: 1px dashed var(--line);
+    border-radius: 6px
+  }
+
+  .thread b {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 19px
+  }
+
+  .thread p {
+    color: var(--ink-2);
+    font-size: 15px
+  }
+
+  /* Messages */
+  .aud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+  }
+
+  .aud button {
+    font: inherit;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    color: var(--ink-2);
+    cursor: pointer
+  }
+
+  .aud button:hover {
+    border-color: var(--accent);
+    color: var(--ink)
+  }
+
+  .aud button[aria-selected="true"] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg)
+  }
+
+  .msg {
+    margin-top: 26px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+    gap: clamp(20px, 4vw, 48px);
+    align-items: start;
+    min-height: 170px
+  }
+
+  .msg blockquote {
+    margin: 0;
+    font-family: var(--serif);
+    font-size: clamp(22px, 2.9vw, 32px);
+    line-height: 1.35;
+    text-wrap: balance
+  }
+
+  .msg blockquote::before {
+    content: "\201C";
+    color: var(--accent)
+  }
+
+  .msg blockquote::after {
+    content: "\201D";
+    color: var(--accent)
+  }
+
+  .msg aside {
+    border-left: 1px solid var(--line);
+    padding-left: 20px;
+    display: grid;
+    gap: 8px
+  }
+
+  .msg aside p {
+    color: var(--ink-2);
+    font-size: 14.5px
+  }
+
+  /* Tone */
+  .tone {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--line)
+  }
+
+  .tone .row {
+    display: grid;
+    grid-template-columns: 200px minmax(0, 1fr) minmax(0, 1fr);
+    gap: 20px;
+    padding-block: 16px;
+    border-bottom: 1px solid var(--line);
+    align-items: baseline
+  }
+
+  .tone .row.hd {
+    padding-block: 10px
+  }
+
+  .tone b {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 17px
+  }
+
+  .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px
+  }
+
+  .chips span {
+    font-size: 14px;
+    padding: 3px 10px;
+    border-radius: 4px
+  }
+
+  .say span {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    color: var(--ink)
+  }
+
+  .avoid span {
+    color: var(--muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--accent)
+  }
+
+  /* Access */
+  .access {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(24px, 5vw, 64px);
+    align-items: center
+  }
+
+  .wrong {
+    display: grid;
+    gap: 12px
+  }
+
+  .wrong div {
+    padding: 16px 18px;
+    border-radius: 6px;
+    background: var(--surface);
+    border: 1px solid var(--line)
+  }
+
+  .wrong q {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: 17px;
+    quotes: "\201C" "\201D"
+  }
+
+  .wrong span {
+    display: block;
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-top: 4px
+  }
+
+  .right {
+    display: grid;
+    gap: 16px
+  }
+
+  .right .big {
+    font-family: var(--serif);
+    font-size: clamp(30px, 4vw, 44px);
+    line-height: 1.15;
+    color: var(--accent)
+  }
+
+  .right p {
+    color: var(--ink-2)
+  }
+
+  .paths {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+  }
+
+  .paths span {
+    font-size: 13.5px;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: var(--warm-soft);
+    color: var(--ink)
+  }
+
+  /* Channels */
+  .hub {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px
+  }
+
+  .core {
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 6px 28px;
+    align-items: center;
+    background: var(--ink);
+    color: var(--bg);
+    border-radius: 6px;
+    padding: 24px 26px
+  }
+
+  .core .h {
+    font-family: var(--mono);
+    font-size: clamp(20px, 2.6vw, 28px)
+  }
+
+  .core p {
+    font-size: 15px;
+    opacity: .82
+  }
+
+  .ch {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 20px;
+    display: grid;
+    gap: 8px;
+    align-content: start
+  }
+
+  .ch .l {
+    font-family: var(--serif);
+    font-size: 44px;
+    line-height: 1;
+    color: var(--accent)
+  }
+
+  .ch h4 {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 600
+  }
+
+  .ch .role {
+    font-size: 13px;
+    color: var(--muted)
+  }
+
+  .ch ul {
+    margin: 4px 0 0;
+    padding-left: 1.1em;
+    display: grid;
+    gap: 5px;
+    font-size: 14px;
+    color: var(--ink-2)
+  }
+
+  /* Identity */
+  .ident {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center
+  }
+
+  .ident figure {
+    margin: 0;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid var(--line)
+  }
+
+  .ident img {
+    display: block;
+    width: 100%;
+    height: auto
+  }
+
+  .sw {
+    display: grid;
+    gap: 8px
+  }
+
+  .sw div {
+    display: grid;
+    grid-template-columns: 44px 1fr auto;
+    gap: 14px;
+    align-items: center
+  }
+
+  .sw i {
+    width: 44px;
+    height: 52px;
+    border-radius: 999px 999px 3px 3px;
+    border: 1px solid var(--line)
+  }
+
+  .sw b {
+    font-weight: 600;
+    font-size: 14.5px;
+    display: block
+  }
+
+  .sw span {
+    font-size: 13px;
+    color: var(--ink-2)
+  }
+
+  .sw code {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--muted)
+  }
+
+  .namecheck {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-size: 14.5px;
+    color: var(--ink-2)
+  }
+
+  .namecheck strong {
+    font-family: var(--serif);
+    font-weight: 400;
+    letter-spacing: .14em;
+    color: var(--ink)
+  }
+
+  /* Roadmap */
+  .phases {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    border-top: 3px solid var(--ink)
+  }
+
+  .phase {
+    padding: 20px 22px 0 0;
+    display: grid;
+    gap: 8px;
+    align-content: start
+  }
+
+  .phase+.phase {
+    padding-left: 22px;
+    border-left: 1px solid var(--line)
+  }
+
+  .phase .n {
+    font-family: var(--mono);
+    font-size: 13px;
+    color: var(--accent)
+  }
+
+  .phase h3 {
+    font-size: 22px
+  }
+
+  .phase .when {
+    font-size: 13px;
+    color: var(--muted)
+  }
+
+  .phase ul {
+    margin: 6px 0 0;
+    padding-left: 1.1em;
+    display: grid;
+    gap: 5px;
+    font-size: 14.5px;
+    color: var(--ink-2)
+  }
+
+  .cal {
+    margin-top: 36px;
+    overflow-x: auto
+  }
+
+  .cal ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(150px, 1fr));
+    gap: 0;
+    min-width: 760px;
+    position: relative
+  }
+
+  .cal ol::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 7px;
+    height: 1px;
+    background: var(--line)
+  }
+
+  .cal li {
+    position: relative;
+    padding: 26px 14px 0 0;
+    display: grid;
+    gap: 4px
+  }
+
+  .cal li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--bg);
+    border: 2px solid var(--accent)
+  }
+
+  .cal li.hero-m::before {
+    background: var(--accent)
+  }
+
+  .cal time {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--muted)
+  }
+
+  .cal b {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 17px
+  }
+
+  .cal span {
+    font-size: 13.5px;
+    color: var(--ink-2)
+  }
+
+  /* Targets */
+  .targets {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line)
+  }
+
+  .t {
+    padding: 24px 16px 24px 0;
+    display: grid;
+    gap: 6px;
+    align-content: start
+  }
+
+  .t+.t {
+    padding-left: 16px;
+    border-left: 1px solid var(--line)
+  }
+
+  .t .from {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--muted)
+  }
+
+  .t b {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: clamp(28px, 3.2vw, 38px);
+    line-height: 1.05;
+    color: var(--ink);
+    font-variant-numeric: tabular-nums
+  }
+
+  .t span {
+    font-size: 14px;
+    color: var(--ink-2)
+  }
+
+  footer {
+    padding-top: 28px;
+    font-size: 13px;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    justify-content: space-between
+  }
+
+  section:last-of-type {
+    border-bottom: 0
+  }
+
+  @media (max-width:900px) {
+    .parts {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .parts div:nth-child(3) {
+      padding-left: 0;
+      border-left: 0
+    }
+
+    .traits {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .traits div:nth-child(3) {
+      border-left: 0
+    }
+
+    .traits div:nth-child(n+3) {
+      border-top: 1px solid var(--line)
+    }
+
+    .hub {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .targets {
+      grid-template-columns: repeat(3, minmax(0, 1fr))
+    }
+
+    .targets .t:nth-child(4) {
+      padding-left: 0;
+      border-left: 0
+    }
+
+    .targets .t:nth-child(n+4) {
+      border-top: 1px solid var(--line)
+    }
+
+    .tone .row {
+      grid-template-columns: 1fr 1fr
+    }
+
+    .tone .row b {
+      grid-column: 1/-1
+    }
+
+    .tone .row.hd b {
+      display: none
+    }
+  }
+
+  @media (max-width:760px) {
+
+    .hero,
+    .gap,
+    .access,
+    .ident,
+    .msg {
+      grid-template-columns: 1fr
+    }
+
+    .arch {
+      max-width: 340px;
+      margin-inline: auto;
+      width: 100%
+    }
+
+    .vs,
+    .pillars,
+    .lines,
+    .phases {
+      grid-template-columns: 1fr
+    }
+
+    .phase+.phase {
+      padding-left: 0;
+      border-left: 0;
+      border-top: 1px solid var(--line);
+      margin-top: 18px
+    }
+
+    .gapitem {
+      grid-template-columns: 1fr;
+      gap: 8px
+    }
+
+    .msg aside {
+      border-left: 0;
+      padding-left: 0;
+      border-top: 1px solid var(--line);
+      padding-top: 14px
+    }
+
+    .core {
+      grid-template-columns: 1fr
+    }
+
+    .band {
+      border-radius: 180px 180px 8px 8px
+    }
+  }
+
+  @media (max-width:480px) {
+
+    .parts,
+    .traits,
+    .hub {
+      grid-template-columns: 1fr
+    }
+
+    .parts div+div {
+      padding-left: 0;
+      border-left: 0;
+      border-top: 1px solid var(--band-line);
+      padding-top: 14px;
+      margin-top: 14px
+    }
+
+    .parts div {
+      padding-top: 14px
+    }
+
+    .traits div+div {
+      border-left: 0;
+      border-top: 1px solid var(--line)
+    }
+
+    .targets {
+      grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .targets .t:nth-child(n) {
+      padding-left: 16px;
+      border-left: 1px solid var(--line);
+      border-top: 0
+    }
+
+    .targets .t:nth-child(odd) {
+      padding-left: 0;
+      border-left: 0
+    }
+
+    .targets .t:nth-child(n+3) {
+      border-top: 1px solid var(--line)
+    }
+
+    .tone .row {
+      grid-template-columns: 1fr
+    }
+
+    .top nav {
+      display: none
+    }
+  }
+
+  @media (prefers-reduced-motion:no-preference) {
+    html {
+      scroll-behavior: smooth
+    }
+
+    .msg blockquote {
+      animation: rise .35s ease both
+    }
+
+    @keyframes rise {
+      from {
+        opacity: .25;
+        transform: translateY(6px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+  }
+</style>
+
+<div class="wrap">
+
+  <header class="top">
+    <a class="wordmark" href="#top">Gedung A.A. Maramis</a>
+    <nav aria-label="Bagian halaman">
+      <a href="#positioning">Positioning</a>
+      <a href="#merek">Arsitektur merek</a>
+      <a href="#pesan">Pesan</a>
+      <a href="#kanal">Kanal</a>
+      <a href="#jalan">Peta jalan</a>
+    </nav>
+  </header>
+
+  <div class="hero" id="top">
+    <div>
+      <span class="label acc">Strategi merek &amp; komunikasi · Okt 2026 – Des 2027</span>
+      <h1>Warisan<br>yang <em>Bekerja</em></h1>
+      <p class="sub">Rumah pertama keuangan negara di jantung Weltevreden.</p>
+      <p class="lede">Gedung ini sudah punya panggung, tamu negara, dan penghargaan dunia. Yang belum ada adalah satu
+        merek dan satu suara yang mengikat semuanya.</p>
+    </div>
+    <figure style="margin:0">
+      <div class="arch"><img src="img/fasad.png"
+          alt="Fasad putih Gedung A.A. Maramis yang simetris menghadap halaman rumput Lapangan Banteng, dengan bendera Merah Putih di tengah">
+      </div>
+      <figcaption>Fasad barat menghadap Lapangan Banteng</figcaption>
+    </figure>
+  </div>
+
+  <section id="masalah">
+    <div class="head">
+      <span class="label acc">Titik berangkat</span>
+      <h2>Memanfaatkan momentum dengan Strategi Komunikasi.</h2>
+    </div>
+    <div class="gap">
+      <div>
+        <span class="label">Sudah dimiliki</span>
+        <ul class="moments" style="margin-top:12px">
+          <li><span class="yr">2025</span><span>FIABCI World Prix d'Excellence, Silver kategori Heritage</span></li>
+          <li><span class="yr">2025</span><span>Kunjungan HM Queen Máxima dari Belanda</span></li>
+          <li><span class="yr">2026</span><span>Menyatu dengan Taman Lapangan Banteng</span></li>
+          <li><span class="yr">2026</span><span>Upacara HUT RI dan Hari Oeang</span></li>
+          <li><span class="yr">Film</span><span><i>Rose Pandanwangi</i>, ko-produksi empat negara</span></li>
+        </ul>
+      </div>
+      <div class="gaps">
+        <span class="label">Isu dan hambatan</span>
+        <div class="gapitem"><b>6</b>
+          <div>
+            <h4>varian nama di materi resmi</h4>
+            <p>Dari "A.A Maramis Heritage" sampai "Istana Daendels". Publik tidak tahu harus menyebutnya apa.</p>
+          </div>
+        </div>
+        <div class="gapitem"><b>±150</b>
+          <div>
+            <h4>pengikut @gedung_maramis</h4>
+            <p>Kanal resmi ada, tetapi liputan media dan kreator jauh lebih besar dan jarang menautkannya.</p>
+          </div>
+        </div>
+        <div class="gapitem"><b>2</b>
+          <div>
+            <h4>versi info akses yang bertentangan</h4>
+            <p>"Tidak dibuka untuk umum" versus "gratis, Senin–Jumat". Belum ada sumber resmi yang meluruskan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="band" id="positioning">
+    <span class="label">Positioning</span>
+    <blockquote>Rumah pertama keuangan negara <em>di jantung Weltevreden.</em></blockquote>
+    <p class="essence">Esensi merek: <i>Warisan yang Bekerja</i></p>
+    <div class="parts">
+      <div><span class="label">Audiens</span>
+        <p>Lembaga negara, korporasi, pelaku kreatif, dan publik yang mencari ruang dengan makna.</p>
+      </div>
+      <div><span class="label">Identifikasi</span>
+        <p>Satu-satunya istana berlanggam imperial abad ke-19 di Indonesia yang masih bekerja.</p>
+      </div>
+      <div><span class="label">Peran</span>
+        <p>Ruang negara, ruang karya, dan ruang publik dalam satu gedung.</p>
+      </div>
+      <div><span class="label">Alasan</span>
+        <p>Setiap kegiatan di dalamnya ikut melestarikan dan mengoptimalkan aset negara ini.</p>
+      </div>
+    </div>
+  </div>
+
+  <section style="padding-top:0">
+    <div class="head">
+      <span class="label acc">Pembeda</span>
+      <h2>Mengapa Maramis?</h2>
+    </div>
+    <div class="vs">
+      <div><span class="label">vs. Pos Bloc, M Bloc</span>
+        <h3>Bukan tempat publik</h3>
+        <p>Maramis adalah ruang bermakna kenegaraan. Kunjungan dan acaranya memiliki nilai.</p>
+      </div>
+      <div><span class="label">vs. ballroom hotel</span>
+        <h3>Bangunan bersejarah dengan estetika</h3>
+        <p>Tamu akan mengingat tempatnya, bukan hanya acaranya.</p>
+      </div>
+      <div><span class="label">vs. museum</span>
+        <h3>Masih bekerja, bukan dipajang</h3>
+        <p>Gedung ini tetap dipakai negara, dan pemakaian itulah yang merawatnya.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label acc">Kepribadian</span>
+      <h2>Empat sifat, masing-masing dengan batasnya</h2>
+    </div>
+    <div class="traits">
+      <div><b>Anggun</b><s>mewah</s>
+        <p>Megah dan bersahaja. Kata "luxury" dari kajian HBU hanya untuk materi B2B, diganti "premium".</p>
+      </div>
+      <div><b>Terpercaya</b><s>kaku</s>
+        <p>Angka dan tanggal bersumber. Sesuai nilai LMAN: Kredibel, Optimal, Kontributif.</p>
+      </div>
+      <div><b>Terbuka</b><s>eksklusif</s>
+        <p>Jujur soal batasan akses, dan selalu menunjukkan jalan masuk yang sah.</p>
+      </div>
+      <div><b>Bernarasi</b><s>deskriptif</s>
+        <p>Sejarah disampaikan lewat ruang, benda, dan cerita.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="merek">
+    <div class="head">
+      <span class="label acc">Arsitektur merek</span>
+      <h2>Satu nama, dua lini</h2>
+      <p>Merek gedung berdiri kuat dan diendors institusi. Lini produk dibuat lebih sederhana untuk calon mitra.</p>
+    </div>
+    <div class="tree">
+      <div class="master">Gedung A.A. Maramis</div>
+      <div class="endorse">Dikelola oleh Lembaga Manajemen Aset Negara - Kemenkeu</div>
+      <p class="q">Apakah calon mitra membutuhkan ruangan untuk disewa atau pengalaman menjelajah gedung?</p>
+      <div class="stem" aria-hidden="true"></div>
+      <div class="lines">
+        <div class="line r">
+          <span class="who">B2B · berbayar</span>
+          <h3>Maramis Ruang</h3>
+          <span class="verb">Memakai ruang bersejarah</span>
+          <ul>
+            <li>Venue, MICE, rapat, gala</li>
+            <li>Acara dan festival mitra</li>
+            <li>Izin foto dan film komersial</li>
+            <li>Pemakaian kenegaraan</li>
+          </ul>
+        </div>
+        <div class="line j">
+          <span class="who">Publik · edukasi</span>
+          <h3>Maramis Jelajah</h3>
+          <span class="verb">Mengalami warisan</span>
+          <ul>
+            <li>Tur akhir pekan terdaftar</li>
+            <li>Hari Terbuka dan pameran</li>
+            <li>Program sekolah dan kampus</li>
+            <li>Jelajah digital di Instagram dan TikTok</li>
+          </ul>
+        </div>
+      </div>
+      <p class="rule">Lini selalu tampil di bawah nama gedung, misalnya "Maramis Jelajah – Gedung A.A. Maramis". "Istana
+        Daendels" hanya dipakai sebagai konteks sejarah, tidak sebagai nama jual.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label acc">Pilar cerita</span>
+      <h2>Tiga cerita yang harus selalu diulang</h2>
+    </div>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="cap"><span>Dirawat dengan Bekerja</span></div>
+        <h4>Pelestarian</h4>
+        <p>Pendapatan dari optimalisasi kembali untuk pemeliharaan. Setiap acara tunduk pada kaidah cagar budaya.</p>
+        <p class="fmt">Seri "Catatan Pemugaran", laporan pelestarian tahunan</p>
+      </div>
+      <div class="pillar">
+        <div class="cap"><span>Rumah bagi Karya Indonesia</span></div>
+        <h4>Dampak</h4>
+        <p>Panggung bagi ekonomi kreatif, UMKM, film, dan musik Indonesia, serta mitra kota di Lapangan Banteng.</p>
+        <p class="fmt">Seri "Karya di Maramis", angka dampak tahunan</p>
+      </div>
+      <div class="pillar">
+        <div class="cap"><span>Ruang yang Bercerita</span></div>
+        <h4>Pengalaman</h4>
+        <p>Setiap ruang punya cerita. Acara di sini bukan sekadar sewa tempat.</p>
+        <p class="fmt">Katalog ruang bernarasi, tur virtual 360°, "Maramis Moments"</p>
+      </div>
+    </div>
+    <div class="thread">
+      <b>Rumah Pertama Keuangan Negara</b>
+      <p>Benang merah lintas pilar: sejarah gedung dihubungkan dengan APBN, pajak, dan kekayaan negara. Cerita ini tidak
+        dimiliki venue lain.</p>
+    </div>
+  </section>
+
+  <section id="pesan">
+    <div class="head">
+      <span class="label acc">Pesan kunci</span>
+      <h2>Strategi komunikasi kepada stakeholders</h2>
+    </div>
+    <div class="aud" role="tablist" aria-label="Pilih audiens" id="aud"></div>
+    <div class="msg" role="tabpanel" id="msgpanel" aria-live="polite">
+      <blockquote id="msgq"></blockquote>
+      <aside><span class="label">Buktinya</span>
+        <p id="msgp"></p>
+      </aside>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label acc">Nada suara</span>
+      <h2>Pemilihan diksi komunikasi</h2>
+    </div>
+    <div class="tone">
+      <div class="row hd"><b></b><span class="label">Katakan</span><span class="label">Hindari</span></div>
+      <div class="row"><b>Anggun, bukan mewah</b>
+        <div class="chips say"><span>ruang yang bercerita</span><span>megah dan bersahaja</span><span>premium
+            (B2B)</span></div>
+        <div class="chips avoid"><span>eksklusif</span><span>VIP</span><span>sultan</span><span>luxury</span></div>
+      </div>
+      <div class="row"><b>Hindari romantisasi peninggalan kolonial</b>
+        <div class="chips say"><span>dibangun di masa kolonial, sekarang merupakan aset negara</span></div>
+        <div class="chips avoid"><span>Istana Daendels sebagai nama jual</span><span>tempo doeloe</span></div>
+      </div>
+      <div class="row"><b>Akurat dan terbuka</b>
+        <div class="chips say"><span>kunjungan melalui pendaftaran</span><span>berada di kompleks perkantoran</span>
+        </div>
+        <div class="chips avoid"><span>terbuka untuk umum</span><span>bebas masuk</span><span>kafe dan museum segera
+            hadir</span></div>
+      </div>
+      <div class="row"><b>Hangat dan mengundang</b>
+        <div class="chips say"><span>kalimat aktif</span><span>Anda / kamu sesuai kanal</span></div>
+        <div class="chips avoid"><span>dalam rangka</span><span>sehubungan dengan</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="access">
+      <div class="wrong">
+        <span class="label acc">Pesan akses</span>
+        <div><q>Gratis, Senin–Jumat 09.00–15.00</q><span>Keliru. Gedung ada di kompleks perkantoran terbatas Kemenkeu,
+            Kemenko Perekonomian, dan OJK.</span></div>
+        <div><q>Tidak dibuka untuk umum</q><span>Benar, tetapi tidak lengkap. Tidak menjelaskan cara masuk yang
+            sah.</span></div>
+      </div>
+      <div class="right">
+        <p class="big">Kunjungan melalui pendaftaran.</p>
+        <p>Satu kalimat ini dipakai di bio, Google Maps, situs, dan skrip petugas gerbang. Setiap kali disebut, sertakan
+          jalan masuknya.</p>
+        <div class="paths"><span>Jelajah Akhir Pekan</span><span>Hari Terbuka</span><span>Menghadiri
+            acara</span><span>Survei lokasi</span><span>Jelajah Digital</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="kanal">
+    <div class="head">
+      <span class="label acc">Kanal</span>
+      <h2>Analisis kanal penyebaran informasi</h2>
+      <p>Media sosial resmi hanya Instagram dan TikTok. Karena akses fisik terbatas, keduanya adalah pintu utama publik
+        mengenal gedung.</p>
+    </div>
+    <div class="hub">
+      <div class="core"><span class="h">@gedung_maramis</span>
+        <p>Instagram dan TikTok, didukung situs resmi, Google Business Profile, dan WhatsApp Business sebagai satu pintu
+          pemesanan dan pendaftaran.</p>
+      </div>
+      <div class="ch"><span class="l">O</span>
+        <h4>Owned</h4><span class="role">Fondasi</span>
+        <ul>
+          <li>Bio dan highlight per lini</li>
+          <li>Situs dengan katalog 49 ruang</li>
+          <li>Koreksi info di Google Maps</li>
+        </ul>
+      </div>
+      <div class="ch"><span class="l">E</span>
+        <h4>Earned</h4><span class="role">Pengungkit utama</span>
+        <ul>
+          <li>Media kit per momen nasional</li>
+          <li>Klausul kredit dan tag di kontrak sewa</li>
+          <li>Koreksi faktual ke portal</li>
+        </ul>
+      </div>
+      <div class="ch"><span class="l">S</span>
+        <h4>Shared</h4><span class="role">Pengganda</span>
+        <ul>
+          <li>6–10 kreator terkurasi per tahun</li>
+          <li>Titik foto resmi, #WarisanyangBekerja</li>
+          <li>Advokasi pegawai Kemenkeu</li>
+        </ul>
+      </div>
+      <div class="ch"><span class="l">P</span>
+        <h4>Paid</h4><span class="role">Selektif</span>
+        <ul>
+          <li>Search: "venue heritage Jakarta"</li>
+          <li>Promosi tur, usia 18–35</li>
+          <li>Maks. empat advertorial per tahun</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="ident">
+      <figure><img src="img/banner.png"
+          alt="Tiga banner gantung Gedung AA Maramis berwarna putih kapur, merah bata, dan kuning bambu di antara pilar putih selasar lengkung">
+      </figure>
+      <div>
+        <div class="head" style="margin-bottom:22px">
+          <span class="label acc">Identitas visual</span>
+          <h2>Lengkung dan lima warna tanah</h2>
+        </div>
+        <div class="sw">
+          <div><i style="background:#9c3738"></i>
+            <div><b>Merah Bata</b><span>Warna utama · Maramis Ruang</span></div><code>#9c3738</code>
+          </div>
+          <div><i style="background:#d8aa68"></i>
+            <div><b>Kuning Bambu</b><span>Maramis Jelajah</span></div><code>#d8aa68</code>
+          </div>
+          <div><i style="background:#e2d6be"></i>
+            <div><b>Putih Kapur</b><span>Latar</span></div><code>#e2d6be</code>
+          </div>
+          <div><i style="background:#473538"></i>
+            <div><b>Ungu Tanah</b><span>Teks</span></div><code>#473538</code>
+          </div>
+          <div><i style="background:#8a400f"></i>
+            <div><b>Cokelat Kayu</b><span>Aksen</span></div><code>#8a400f</code>
+          </div>
+        </div>
+        <p class="namecheck">Logotype yang direkomendasikan: <strong>GEDUNG A.A. MARAMIS</strong>. Menghapus "A.A."
+          memutus penghormatan kepada Mr. A.A. Maramis.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="jalan">
+    <div class="head">
+      <span class="label acc">Peta jalan</span>
+      <h2>Tiga fase menuju HUT Jakarta ke-500</h2>
+    </div>
+    <div class="phases">
+      <div class="phase"><span class="n">Fase 1</span>
+        <h3>Penyelarasan</h3><span class="when">Okt 2026 – Jan 2027</span>
+        <ul>
+          <li>Bereskan nama, bio, dan highlight Instagram</li>
+          <li>Buka TikTok @gedung_maramis</li>
+          <li>SOP kunjungan berizin bersama pengamanan kompleks</li>
+          <li>Empat tur percontohan</li>
+        </ul>
+      </div>
+      <div class="phase"><span class="n">Fase 2</span>
+        <h3>Peluncuran ulang</h3><span class="when">Feb – Jul 2027</span>
+        <ul>
+          <li>Soft relaunch "Warisan yang Bekerja"</li>
+          <li>Umumkan dua lini dan nama ruang baru</li>
+          <li>Kampanye utama di Jakarta 500</li>
+        </ul>
+      </div>
+      <div class="phase"><span class="n">Fase 3</span>
+        <h3>Berkelanjutan</h3><span class="when">Agu 2027 dan seterusnya</span>
+        <ul>
+          <li>Siklus konten dan advokasi rutin</li>
+          <li>Narasi "Tiba dengan MRT"</li>
+          <li>Evaluasi tahunan, target 2028</li>
+        </ul>
+      </div>
+    </div>
+    <div class="cal" role="region" aria-label="Momen 2027" tabindex="0">
+      <ol>
+        <li><time>Feb 2027</time><b>Soft relaunch</b><span>Situs penuh, film profil, dua lini</span></li>
+        <li class="hero-m"><time>22 Jun 2027</time><b>Jakarta 500</b><span>Pameran "Weltevreden 1809–2027"</span></li>
+        <li><time>31 Jul 2027</time><b>Laporan pertama</b><span>"Warisan yang Bekerja" untuk publik</span></li>
+        <li><time>30 Okt 2027</time><b>Hari Oeang ke-81</b><span>Pekan literasi fiskal</span></li>
+        <li><time>Akhir 2027</time><b>MRT Fase 2A</b><span>Bundaran HI–Monas, "Tiba dengan MRT"</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <span class="label acc">Target akhir 2027</span>
+      <h2>Usulan capaian kinerja sebagai tolok ukur keberhasilan</h2>
+    </div>
+    <div class="targets">
+      <div class="t"><span class="from">dari 41,8%</span><b>≥55%</b><span>hari terisi</span></div>
+      <div class="t"><span class="from">dari 15%</span><b>≥25%</b><span>porsi kegiatan komersial dan kreatif</span>
+      </div>
+      <div class="t"><span class="from">dari 0</span><b>≥24</b><span>kegiatan per tahun di Lantai 3</span></div>
+      <div class="t"><span class="from">dari 0</span><b>≥48</b><span>sesi tur milik pengelola per tahun</span></div>
+      <div class="t"><span class="from">dari ±150</span><b>5.000</b><span>pengikut Instagram, plus 3.000 di
+          TikTok</span></div>
+    </div>
+    <footer>
+      <span>Diringkas dari Kajian Strategi Komunikasi &amp; Branding Gedung A.A. Maramis, v2.1</span>
+      <span>LMAN – Kementerian Keuangan RI · Draf untuk review pimpinan · 26 September 2026</span>
+    </footer>
+  </section>
+
+</div>
+
+<script>
+  const M = [
+    { a: "Pimpinan Kemenkeu", q: "Gedung A.A. Maramis membuktikan bahwa aset cagar budaya negara dapat produktif, akuntabel, dan membanggakan.", p: "Target hari terisi 41,8% → 55%; kelayakan HBU (IRR 14,24%); FIABCI 2025; tamu negara." },
+    { a: "Regulator budaya", q: "Setiap pemanfaatan tunduk pada kaidah pelestarian dan dilaporkan terbuka. Pendapatan kembali untuk merawat.", p: "Piagam Etiket Acara, laporan pelestarian, kit signage non-invasif, batas kapasitas 70%." },
+    { a: "Pemprov DKI", q: "Maramis dan Lapangan Banteng adalah satu jantung Weltevreden, bersama menuju Jakarta 500.", p: "Aksis Monas–Lapangan Banteng–Maramis; integrasi taman 2026; JICC; Lebaran Betawi." },
+    { a: "Klien korporat & EO", q: "Acara Anda akan diingat karena tempatnya punya cerita dua abad. Teknisnya kami pastikan lancar.", p: "Katalog ruang, referensi OJK, Frank & Co, JICC, serta Love Bonito" },
+    { a: "Brand & film", q: "Latar ikonik yang tak dapat direplikasi, dengan izin resmi yang jelas.", p: "Izin foto dan film (UU 11/2010 Pasal 92); Rose Pandanwangi; fashion show." },
+    { a: "Komunitas heritage", q: "Gedung ini dapat dikunjungi lewat program berizin yang terjadwal. Anda mitra kami dalam menceritakannya dengan benar.", p: "Program Mitra Jelajah, kit narasi resmi, slot rutin, prosedur izin yang dipublikasikan." },
+    { a: "Generasi muda", q: "Bukan cuma estetik. Di sinilah Republik pertama kali mengatur keuangannya. Daftar, jelajahi, ceritakan.", p: "Tur akhir pekan terdaftar, Hari Terbuka, konten @gedung_maramis di Instagram dan TikTok." },
+    { a: "ASN Kemenkeu", q: "Ini rumah pertama kita. Banggakan, gunakan dengan tertib, ceritakan.", p: "Konten employee advocacy via Satu Kemenkeu" }
+  ];
+  const bar = document.getElementById('aud'), q = document.getElementById('msgq'), p = document.getElementById('msgp');
+  function show(i) {
+    [...bar.children].forEach((b, j) => { b.setAttribute('aria-selected', j === i); b.tabIndex = j === i ? 0 : -1 });
+    q.textContent = M[i].q; p.textContent = M[i].p;
+    q.style.animation = 'none'; void q.offsetWidth; q.style.animation = '';
+  }
+  M.forEach((m, i) => {
+    const b = document.createElement('button');
+    b.type = 'button'; b.role = 'tab'; b.id = 'aud-' + i; b.textContent = m.a;
+    b.setAttribute('aria-controls', 'msgpanel');
+    b.addEventListener('click', () => show(i));
+    b.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        const n = (i + (e.key === 'ArrowRight' ? 1 : -1) + M.length) % M.length;
+        bar.children[n].focus(); show(n);
+      }
+    });
+    bar.appendChild(b);
+  });
+  show(0);
+</script>

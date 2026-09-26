@@ -1,0 +1,935 @@
+<title>Warisan yang Bekerja</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --ungu:#473538; --bata:#9c3738; --kayu:#8a400f; --bambu:#d8aa68; --kapur:#e2d6be;
+  --bg:#faf7f1; --surface:#ffffff; --surface-2:#f3ede2; --ink:#2e2426; --ink-2:#5e5153; --muted:#7d7072;
+  --line:#e4dccf; --accent:var(--bata); --accent-ink:#ffffff; --accent-soft:#f3e3df;
+  --warm:var(--bambu); --warm-soft:#f5ead7; --chart-grid:#ebe4d8;
+  --good:#3f6b4a; --warn:#9a6a12; --crit:#9c3738;
+  --serif:"Libre Baskerville",Georgia,"Times New Roman",serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme:dark;
+    --bg:#1c1516; --surface:#251c1d; --surface-2:#2e2324; --ink:#efe6da; --ink-2:#cbbfb4; --muted:#a39589;
+    --line:#3d3031; --accent:#d9706b; --accent-ink:#1c1516; --accent-soft:#3a2425;
+    --warm:#e0b577; --warm-soft:#3a2f21; --chart-grid:#352a2b;
+    --good:#7fb38a; --warn:#e0b060; --crit:#e07a74;
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#1c1516; --surface:#251c1d; --surface-2:#2e2324; --ink:#efe6da; --ink-2:#cbbfb4; --muted:#a39589;
+  --line:#3d3031; --accent:#d9706b; --accent-ink:#1c1516; --accent-soft:#3a2425;
+  --warm:#e0b577; --warm-soft:#3a2f21; --chart-grid:#352a2b;
+  --good:#7fb38a; --warn:#e0b060; --crit:#e07a74;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;padding-inline:clamp(16px,4vw,40px);padding-block:0 64px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;text-wrap:balance;margin:0;line-height:1.25}
+p{margin:0}
+.wrap{max-width:1180px;margin-inline:auto}
+.num{font-variant-numeric:tabular-nums}
+.label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:end;padding-block:clamp(32px,6vw,72px) clamp(28px,4vw,48px);border-bottom:1px solid var(--line)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:28px}
+.hero h1{font-size:clamp(34px,5.4vw,60px);letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
+.hero h1 span{display:block;font-size:.42em;letter-spacing:.32em;color:var(--muted);margin-bottom:.5em}
+.hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--accent);margin-top:18px}
+.hero .lede{margin-top:18px;max-width:58ch;color:var(--ink-2);font-size:17px}
+.arch{margin:0;border-radius:999px 999px 6px 6px;overflow:hidden;aspect-ratio:4/4.6;max-width:100%;background:var(--surface-2);border:1px solid var(--line)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
+.hero figcaption{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-bottom:1px solid var(--line)}
+.fact{padding:22px 20px 22px 0}
+.fact+.fact{padding-left:20px;border-left:1px solid var(--line)}
+.fact b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.2vw,36px);color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.1}
+.fact span{font-size:13.5px;color:var(--ink-2);display:block;margin-top:6px}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:40px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;font-size:14px}
+nav.toc ol{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:2px}
+nav.toc a{display:grid;grid-template-columns:26px 1fr;padding:5px 8px;border-radius:4px;text-decoration:none;color:var(--ink-2)}
+nav.toc a span{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+nav.toc a:hover,nav.toc a.on{background:var(--surface-2);color:var(--ink)}
+nav.toc a.on span{color:var(--accent)}
+main{min-width:0}
+section.ch{padding-block:8px 48px;border-bottom:1px solid var(--line);margin-bottom:40px;scroll-margin-top:20px}
+section.ch:last-child{border-bottom:0}
+.chhead{display:flex;gap:16px;align-items:baseline;margin-bottom:22px}
+.chhead .n{font-family:var(--mono);font-size:13px;color:var(--accent);flex:none;padding-top:6px}
+.chhead h2{font-size:clamp(24px,2.8vw,32px)}
+h3{font-size:19px;margin:34px 0 12px}
+h3:first-of-type{margin-top:8px}
+.prose{max-width:68ch;display:grid;gap:14px;color:var(--ink)}
+.prose p,.prose li{color:var(--ink)}
+ul.clean{margin:0;padding-left:1.1em;display:grid;gap:8px;max-width:72ch}
+ul.clean li::marker{color:var(--accent)}
+.note{font-size:13.5px;color:var(--muted);max-width:72ch;margin-top:12px}
+.flag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--warm-soft);color:var(--warn);vertical-align:middle}
+.callout{border-left:3px solid var(--accent);padding:4px 0 4px 18px;max-width:72ch;color:var(--ink-2)}
+blockquote.statement{margin:6px 0 0;font-family:var(--serif);font-size:clamp(19px,2.2vw,23px);line-height:1.55;max-width:40em;color:var(--ink)}
+blockquote.statement em{color:var(--accent);font-style:italic}
+
+/* Tables */
+.tbl{overflow-x:auto;margin-top:6px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td strong{font-weight:600}
+
+/* Grids */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px;display:grid;gap:10px;align-content:start}
+.panel h4{font-size:16px}
+.panel .label{margin-bottom:-4px}
+.panel ul{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:14.5px}
+.swot .s h4{color:var(--good)} .swot .w h4{color:var(--warn)} .swot .o h4{color:var(--accent)} .swot .t h4{color:var(--crit)}
+
+/* Lapis makna — genuine sequence */
+.layers{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:6px;background:var(--surface);overflow:hidden}
+.layers div{padding:18px;display:grid;gap:8px;align-content:start}
+.layers div+div{border-left:1px solid var(--line)}
+.layers .label{color:var(--accent)}
+.layers p{font-size:14.5px;color:var(--ink-2)}
+
+/* Charts */
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 18px 12px;margin-top:6px}
+.chart h4{font-family:var(--sans);font-size:15px;font-weight:600}
+.chart .sub{font-size:13px;color:var(--muted);margin-top:2px}
+.chart svg{display:block;width:100%;height:auto;margin-top:10px;overflow:visible}
+.chart svg text{fill:var(--ink-2);font-family:var(--sans);font-size:11px}
+.chart svg text.v{fill:var(--ink);font-size:11px;font-weight:600}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--ink-2);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12.5px;padding:6px 10px;border-radius:4px;z-index:10;white-space:nowrap}
+.bar{cursor:default}
+.bar:hover{opacity:.82}
+
+/* Power-interest */
+.pim{display:grid;grid-template-columns:28px minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto auto auto;gap:10px}
+.pim .ax{font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.pim .ay{writing-mode:vertical-rl;transform:rotate(180deg);text-align:center;grid-row:1/3;align-self:center}
+.pim .ax-b{grid-column:2/4;text-align:center}
+.pim .q{border-radius:6px;padding:16px 18px;border:1px solid var(--line);background:var(--surface);display:grid;gap:8px;align-content:start}
+.pim .q.hot{background:var(--accent-soft);border-color:transparent}
+.pim .q h4{font-family:var(--sans);font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+.pim .q ul{margin:0;padding-left:1.1em;font-size:14px;display:grid;gap:4px}
+
+/* Brand */
+.arch-tree{display:grid;gap:14px;justify-items:center;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:26px 18px}
+.arch-tree .master{font-family:var(--serif);font-size:clamp(20px,3vw,28px);letter-spacing:.2em;text-transform:uppercase;text-align:center}
+.arch-tree .endorse{font-size:13px;color:var(--muted);text-align:center}
+.arch-tree .lines{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:100%;max-width:760px}
+.arch-tree .lines div{border-top:3px solid var(--accent);padding-top:10px;text-align:center}
+.arch-tree .lines b{display:block;font-family:var(--serif);font-weight:400;font-size:16px}
+.arch-tree .lines span{font-size:13px;color:var(--ink-2)}
+.pillars{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pillar{border-radius:999px 999px 6px 6px;border:1px solid var(--line);background:var(--surface);padding:48px 22px 22px;display:grid;gap:10px;align-content:start;text-align:center}
+.pillar .label{color:var(--accent)}
+.pillar h4{font-size:18px}
+.pillar p{font-size:14.5px;color:var(--ink-2);text-align:left}
+.swatches{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.sw{border-radius:999px 999px 4px 4px;aspect-ratio:3/4;display:flex;flex-direction:column;justify-content:flex-end;padding:12px 10px;font-size:12px;line-height:1.35;border:1px solid var(--line)}
+.sw b{font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:11px}
+.sw code{font-family:var(--mono);font-size:11.5px}
+.imgpair{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:16px;align-items:start}
+.imgpair figure{margin:0;background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden}
+.imgpair img{display:block;width:100%;height:auto}
+.imgpair figcaption{font-size:12px;color:#6b5f60;padding:8px 12px;background:#fff}
+
+/* PESO */
+.peso{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.peso .panel .big{font-family:var(--serif);font-size:34px;color:var(--accent);line-height:1}
+
+/* Gantt */
+.gantt{overflow-x:auto;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+.g{display:grid;grid-template-columns:minmax(210px,1.6fr) repeat(15,minmax(34px,1fr));min-width:820px;font-size:13px}
+.g>div{padding:7px 6px;border-bottom:1px solid var(--line)}
+.g .h{font-size:11px;font-weight:600;color:var(--muted);text-align:center;background:var(--surface-2);letter-spacing:.04em}
+.g .h.yr{border-left:2px solid var(--line)}
+.g .t{padding-left:14px;color:var(--ink)}
+.g .c{position:relative}
+.g .c.on::after{content:"";position:absolute;inset:9px 1px;background:var(--accent);border-radius:2px}
+.g .c.pk::after{content:"";position:absolute;inset:9px 1px;background:var(--warm);border-radius:2px}
+.g .phase{grid-column:1/-1;font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--bg);padding:8px 14px}
+
+/* Holding statements */
+.hs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.hs .panel p{font-family:var(--serif);font-size:15px;line-height:1.6;color:var(--ink)}
+.lvl{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+.lvl i{width:8px;height:8px;border-radius:50%;display:inline-block}
+
+.sources{columns:2;column-gap:32px;font-size:13.5px;color:var(--ink-2)}
+.sources li{break-inside:avoid;margin-bottom:6px}
+footer{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{position:static}
+  nav.toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .peso{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .layers{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .layers div:nth-child(3){border-left:0}
+  .layers div:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr}
+  .arch{max-width:360px;margin-inline:auto;width:100%}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(3){padding-left:0;border-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line)}
+  .grid2,.grid3,.pillars,.hs,.imgpair{grid-template-columns:1fr}
+  .arch-tree .lines{grid-template-columns:1fr}
+  .swatches{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .sources{columns:1}
+  .pim{grid-template-columns:1fr}
+  .pim .ay,.pim .ax-b{display:none}
+}
+@media (max-width:480px){
+  .peso{grid-template-columns:1fr}
+  .layers{grid-template-columns:1fr}
+  .layers div+div{border-left:0;border-top:1px solid var(--line)}
+  nav.toc ol{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<div class="wrap">
+<header class="hero">
+  <div>
+    <div class="meta">
+      <span class="label">Kajian Strategi Komunikasi &amp; Branding</span>
+      <span class="label">Draf v1.0 · 26 September 2026</span>
+      <span class="label">Senior Analyst, LMAN</span>
+    </div>
+    <h1><span>Gedung</span>A.A. Maramis</h1>
+    <p class="thesis">Warisan yang Bekerja</p>
+    <p class="lede">Rumah pertama keuangan negara di jantung Weltevreden sudah punya momentum: penghargaan FIABCI 2025, tamu kenegaraan, film internasional, dan integrasi dengan Lapangan Banteng. Yang belum ada adalah merek yang mengikat semuanya. Kajian ini merumuskan positioning, arsitektur merek, saluran, manajemen isu, lini masa, anggaran, dan KPI untuk Okt 2026 – Des 2027.</p>
+  </div>
+  <figure style="margin:0">
+    <div class="arch"><img src="img/fasad.png" alt="Fasad barat Gedung A.A. Maramis yang putih dan simetris menghadap halaman rumput Lapangan Banteng, dengan bendera Merah Putih di tengah"></div>
+    <figcaption>Fasad barat menghadap Lapangan Banteng · Panduan Grafis Kunci (LAMP 1)</figcaption>
+  </figure>
+</header>
+
+<div class="facts" aria-label="Angka kunci">
+  <div class="fact"><b>41,8%</b><span>hari terisi dalam 12 bulan terakhir (153 dari 366 hari)</span></div>
+  <div class="fact"><b>57%</b><span>kegiatan berasal dari Kemenkeu, K/L, BUMN &amp; lembaga</span></div>
+  <div class="fact"><b>0</b><span>kegiatan tercatat di Gedung C Lantai 3, termasuk aula C3.8 (340 orang)</span></div>
+  <div class="fact"><b>5</b><span>varian nama gedung di dokumen resmi dan media</span></div>
+</div>
+
+<div class="layout">
+<nav class="toc" aria-label="Daftar isi">
+  <span class="label">Daftar isi</span>
+  <ol>
+    <li><a href="#ringkasan"><span>01</span>Ringkasan eksekutif</a></li>
+    <li><a href="#konteks"><span>02</span>Latar belakang</a></li>
+    <li><a href="#situasi"><span>03</span>Analisis situasi</a></li>
+    <li><a href="#tujuan"><span>04</span>Tujuan komunikasi</a></li>
+    <li><a href="#stakeholder"><span>05</span>Pemangku kepentingan</a></li>
+    <li><a href="#merek"><span>06</span>Positioning &amp; merek</a></li>
+    <li><a href="#saluran"><span>07</span>Saluran &amp; aktivasi</a></li>
+    <li><a href="#isu"><span>08</span>Manajemen isu</a></li>
+    <li><a href="#linimasa"><span>09</span>Lini masa</a></li>
+    <li><a href="#anggaran"><span>10</span>Anggaran &amp; SDM</a></li>
+    <li><a href="#kpi"><span>11</span>KPI &amp; evaluasi</a></li>
+    <li><a href="#lampiran"><span>12</span>Lampiran</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- 1 -->
+<section class="ch" id="ringkasan">
+  <div class="chhead"><span class="n">01</span><h2>Ringkasan eksekutif</h2></div>
+  <div class="prose">
+    <p>Gedung A.A. Maramis (Istana Daendels, <i>Het Witte Huis</i>, 1809–1828) adalah Bangunan Cagar Budaya Peringkat Nasional, kantor pertama Kementerian Keuangan RI, dan gedung kantor berlanggam imperial pengaruh Prancis terbesar abad ke-19 di Indonesia. Setelah pemugaran 2019–2022, gedung ini diserahkelolakan kepada LMAN pada 31 Juli 2023 dengan mandat <i>Highest and Best Use</i>.</p>
+  </div>
+
+  <h3>Tiga masalah yang ditemukan</h3>
+  <div class="grid3">
+    <div class="panel"><span class="label">Merek</span><h4>Belum ada kanal dan nama baku</h4><p style="font-size:14.5px;color:var(--ink-2)">Tidak ada akun, situs, atau pemesanan daring khusus gedung. Lima nama beredar: <i>Gedung A.A. Maramis</i>, <i>A.A Maramis Heritage</i>, <i>GEDUNG AA MARAMIS</i>, <i>GEDUNG MARAMIS</i>, dan <i>Istana Daendels</i>.</p></div>
+    <div class="panel"><span class="label">Akses</span><h4>Pesan akses saling bertentangan</h4><p style="font-size:14.5px;color:var(--ink-2)">Media dan kreator menulis "tidak dibuka untuk umum", sementara portal lain menulis "gratis, Senin–Jumat 09.00–15.00".</p></div>
+    <div class="panel"><span class="label">Produk</span><h4>Lantai 3 nyaris tak terjual</h4><p style="font-size:14.5px;color:var(--ink-2)">17 ruang berkapasitas 1.620 orang di Lantai 3 Gedung A dan C hampir tidak tercatat dipakai. Yang laku justru ruang bernama Kerajaan Nusantara.</p></div>
+  </div>
+
+  <h3>Arah strategis</h3>
+  <blockquote class="statement">Gedung A.A. Maramis adalah <em>rumah pertama keuangan negara di jantung Weltevreden</em>: warisan nasional yang dirawat dengan bekerja, tempat negara, kreativitas, dan publik bertemu.</blockquote>
+  <ul class="clean" style="margin-top:18px">
+    <li><strong>Satu merek, satu nama, satu kanal.</strong> "Gedung A.A. Maramis" sebagai <i>masterbrand</i> dengan endorsement "Dikelola oleh LMAN – Kementerian Keuangan", plus satu pintu pemesanan.</li>
+    <li><strong>Tiga lini produk:</strong> Maramis Ruang (venue), Maramis Jelajah (tur &amp; edukasi), Maramis Agenda (program budaya).</li>
+    <li><strong>Akses publik terjadwal dan dipublikasikan</strong>, meniru Paleis op de Dam dan The Fullerton Heritage.</li>
+    <li><strong>Nomenklatur ruang berbasis sejarah</strong> untuk menghidupkan Lantai 3 dan ruang tanpa nama.</li>
+    <li><strong>Kalender momen 2027:</strong> Jakarta 500 tahun (22 Juni), MRT Fase 2A Bundaran HI–Monas (akhir 2027), Hari Oeang ke-81 (30 Oktober).</li>
+  </ul>
+
+  <h3>Target hingga akhir 2027</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Indikator</th><th class="r">Kondisi awal</th><th class="r">Target 2027</th></tr></thead>
+    <tbody>
+      <tr><td>Hari terisi</td><td class="r">41,8%</td><td class="r">≥55%</td></tr>
+      <tr><td>Porsi kegiatan komersial &amp; kreatif</td><td class="r">15%</td><td class="r">≥25%</td></tr>
+      <tr><td>Kegiatan di Lantai 3 (A &amp; C)</td><td class="r">±1</td><td class="r">≥24 per tahun</td></tr>
+      <tr><td>Sesi tur milik pengelola</td><td class="r">0</td><td class="r">≥48 per tahun</td></tr>
+      <tr><td>Kanal resmi</td><td class="r">Belum ada</td><td class="r">Aktif, basis audiens terukur</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="konteks">
+  <div class="chhead"><span class="n">02</span><h2>Latar belakang &amp; konteks objek</h2></div>
+
+  <h3>Profil</h3>
+  <div class="tbl"><table><tbody>
+    <tr><td style="width:190px"><strong>Nama historis</strong></td><td>Istana Daendels, <i>Paleis Weltevreden</i>, <i>Het Groote Huis</i>, <i>Het Witte Huis</i> (Gedung Putih)</td></tr>
+    <tr><td><strong>Alamat</strong></td><td>Jl. Lapangan Banteng Timur No. 2–4, Pasar Baru, Sawah Besar, Jakarta Pusat 10710</td></tr>
+    <tr><td><strong>Blok</strong></td><td>Gedung A (fasad utama), B (sayap barat), C (blok utama dalam), D (sayap timur), E (pendukung)</td></tr>
+    <tr><td><strong>Inventaris sewa</strong></td><td>49 unit: 15 ruang Lantai 1 Gedung C (paket Rp125 juta/hari) dan 34 ruang satuan (Rp3,44–30,30 juta/hari)</td></tr>
+    <tr><td><strong>Pengelola</strong></td><td>BMN Kementerian Keuangan, dikelola LMAN (BLU) sejak 31 Juli 2023</td></tr>
+    <tr><td><strong>Penghargaan</strong></td><td>FIABCI World Prix d'Excellence 2025, Silver (Heritage)</td></tr>
+  </tbody></table></div>
+
+  <h3>Empat lapis makna</h3>
+  <div class="layers">
+    <div><span class="label">Kota</span><p>Gedung dan Lapangan Banteng (<i>Paradeplaats</i>/<i>Waterlooplein</i>) menandai perpindahan pusat Batavia dari muara Ciliwung ke Weltevreden.</p></div>
+    <div><span class="label">Arsitektur</span><p>Rancangan Lt. Kol. J.C. Schultze dan J. Jongkind, diselesaikan era Du Bus de Gisignies (1826–1828). Langgam imperial Prancis terbesar di Indonesia.</p></div>
+    <div><span class="label">Kelembagaan</span><p>Rumah <i>Generale Directie van Financiën</i>, <i>Algemeene Rekenkamer</i>, dan <i>'s Lands Drukkerij</i>; lalu kantor pertama Kemenkeu RI.</p></div>
+    <div><span class="label">Kebangsaan</span><p>Lapangan di mukanya dinamai "Banteng" oleh Sukarno. Bangunan kolonial telah "diindonesiakan" menjadi rumah keuangan republik.</p></div>
+  </div>
+
+  <h3>Landasan regulasi yang membentuk komunikasi</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Ketentuan</th><th>Isi</th><th>Implikasi</th></tr></thead>
+    <tbody>
+      <tr><td>UU 11/2010 Ps. 79(5)</td><td>Hasil penelitian wajib dipublikasikan kepada masyarakat</td><td>Dasar hukum pilar konten edukasi</td></tr>
+      <tr><td>UU 11/2010 Ps. 83</td><td>Adaptasi wajib mempertahankan ciri asli dan fasad</td><td>Batas desain <i>signage</i> dan dekorasi acara</td></tr>
+      <tr><td>UU 11/2010 Ps. 85</td><td>Pemanfaatan untuk pendidikan, kebudayaan, pariwisata, dan lainnya</td><td>Legitimasi seluruh lini produk</td></tr>
+      <tr><td>UU 11/2010 Ps. 86 &amp; 88</td><td>Kajian sebelum pemanfaatan berisiko; pemulihan atas biaya pemanfaat</td><td>Klausul kontrak dan Piagam Etiket Acara</td></tr>
+      <tr><td>UU 11/2010 Ps. 92</td><td>Dokumentasi komersial wajib seizin pengelola</td><td>Izin foto/film berbayar sebagai pendapatan dan kontrol merek</td></tr>
+      <tr><td>UU 11/2010 Ps. 93</td><td>Penggandaan cagar budaya nasional perlu izin</td><td>Merchandise berbasis motif, bukan replika</td></tr>
+      <tr><td>PMK 144/PMK.06/2020</td><td>Sewa guna aset kelolaan LMAN berbasis nilai wajar oleh Penilai</td><td>Dasar menjelaskan tarif secara transparan</td></tr>
+      <tr><td>Inpres 9/2015; Perpres 96/2025</td><td>Narasi tunggal dan Badan Komunikasi Pemerintah</td><td>Koordinasi dengan Biro KLI dan Bakom</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Penetapan cagar budaya: PM.13/PW.007/MKP/05. Buku Kemenkeu (2022) menyebutnya SK Mendikbud, sementara JDIH mencatat Permen Menbudpar 2005. <span class="flag">Perlu verifikasi</span></p>
+
+  <h3>Tiga fungsi, satu gedung</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Fungsi</th><th>Prioritas</th><th>Bentuk</th><th>Peran komunikasi</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Ruang Negara</strong></td><td>1 · hak prioritas protokol</td><td>Seremoni, jamuan kenegaraan, rapat pimpinan, tamu negara</td><td>Prestise dan <i>earned media</i> nasional/internasional</td></tr>
+      <tr><td><strong>Ruang Karya</strong></td><td>2 · pendapatan</td><td>MICE, gala, peluncuran produk, fashion show, film, pameran, festival</td><td>Membiayai pelestarian; menjangkau segmen gaya hidup</td></tr>
+      <tr><td><strong>Ruang Publik</strong></td><td>3 · legitimasi, terjadwal</td><td>Tur reguler, Hari Terbuka, edukasi, program komunitas</td><td>Menjawab Pasal 79 dan mencegah kritik eksklusivitas</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="situasi">
+  <div class="chhead"><span class="n">03</span><h2>Analisis situasi &amp; lingkungan strategis</h2></div>
+
+  <h3>Pemanfaatan gedung dalam angka</h3>
+  <div class="grid2">
+    <div class="chart" style="grid-column:1/-1">
+      <h4>Kegiatan inti per bulan</h4>
+      <p class="sub">Tanpa sesi loading · Sep 2025 – Des 2026 · 133 kegiatan</p>
+      <svg id="c-month" viewBox="0 0 760 230" role="img" aria-label="Grafik batang kegiatan inti per bulan dari September 2025 sampai Desember 2026"></svg>
+      <div class="legend"><span><i style="background:var(--accent)"></i>Terlaksana s.d. 26 Sep 2026</span><span><i style="background:var(--warm)"></i>Pipeline terjadwal</span></div>
+    </div>
+    <div class="chart">
+      <h4>Siapa yang memakai gedung</h4>
+      <p class="sub">Kegiatan inti per kelompok penyelenggara (n=133)</p>
+      <svg id="c-sector" viewBox="0 0 360 200" role="img" aria-label="Grafik batang kegiatan per kelompok penyelenggara"></svg>
+    </div>
+    <div class="chart">
+      <h4>Kapasitas vs pemakaian per lantai</h4>
+      <p class="sub">Kegiatan inti dengan lantai teridentifikasi</p>
+      <svg id="c-floor" viewBox="0 0 360 200" role="img" aria-label="Grafik kapasitas dan jumlah kegiatan per lantai"></svg>
+    </div>
+  </div>
+  <ul class="clean" style="margin-top:18px">
+    <li>Puncak Okt–Nov 2025 datang tepat setelah <i>Open House</i> (30 Sep 2025): momen publikasi mendorong permintaan.</li>
+    <li>Maret 2026 hampir kosong (1 kegiatan), kemungkinan efek Ramadan. Musim sepi perlu program khusus.</li>
+    <li>Pipeline Q4-2026 hanya 18 entri dibanding 56 pada Q4-2025. Ini tanda cakrawala pemesanan yang pendek, bukan penurunan permintaan.</li>
+    <li>64% walking tour berlangsung di akhir pekan, sehingga segmen publik mengisi slot yang kosong dari agenda kedinasan. Eat Chat Walk menyumbang 40% tur.</li>
+  </ul>
+  <p class="note">Sumber: 172 entri kalender Teamup; 62% kegiatan tidak mencantumkan lantai. Rincian di data_analysis.md.</p>
+
+  <h3>SWOT</h3>
+  <div class="grid2 swot">
+    <div class="panel s"><h4>Kekuatan</h4><ul>
+      <li>Keunikan tak tergantikan: imperial Prancis terbesar, kantor pertama Kemenkeu, lebih dari 200 tahun</li>
+      <li>Klien berulang: 19 penyelenggara menyumbang 69,4% kegiatan</li>
+      <li>Bukti prestise: FIABCI 2025, Queen Máxima, jamuan HUT RI, <i>Rose Pandanwangi</i></li>
+      <li>Ruang bernama (Majapahit, Sriwijaya, Bone, Kutai) terbukti laku</li>
+      <li>KV sudah tersedia: logotype, motif lengkung, palet lima warna</li>
+      <li>Terintegrasi dengan Lapangan Banteng; akan dilayani MRT Fase 2A</li>
+    </ul></div>
+    <div class="panel w"><h4>Kelemahan</h4><ul>
+      <li>Tidak ada kanal, situs, dan pemesanan daring</li>
+      <li>43 dari 49 unit hanya berkode; pencatatan kalender tidak baku</li>
+      <li>Batasan fisik: larangan memaku/menempel, tangga curam, akses difabel belum dikomunikasikan</li>
+      <li>45 hari loading (17,7% hari-kegiatan)</li>
+      <li>Akses publik belum menjadi produk; 40% tur dari satu operator</li>
+      <li>Kalender tidak mencatat peserta, nilai transaksi, atau sumber prospek</li>
+    </ul></div>
+    <div class="panel o"><h4>Peluang</h4><ul>
+      <li>Jakarta 500 tahun (22 Juni 2027) dan status Kota Global (UU 2/2024)</li>
+      <li>MRT Fase 2A; MoU LMAN–MRT ditandatangani di gedung ini (17 Des 2025)</li>
+      <li>Pengunjung museum usia 18–24 kini kelompok terbesar di Museum Nasional</li>
+      <li>MICE pulih 2026, proyeksi tumbuh hingga 15%; wisman 15,39 juta (2025)</li>
+      <li>Ceruk <i>fiscal heritage</i> belum dimiliki siapa pun</li>
+      <li>Employee Advocacy Kemenkeu dan program <i>Fiscal Heritage Explorer</i></li>
+    </ul></div>
+    <div class="panel t"><h4>Ancaman</h4><ul>
+      <li>Tuduhan komersialisasi warisan bangsa</li>
+      <li>Kerusakan fisik akibat acara (Pasal 88)</li>
+      <li>Sensitivitas narasi kolonial: Daendels dan kerja paksa Jalan Raya Pos</li>
+      <li>Narasi lama "gedung berhantu"</li>
+      <li>Efisiensi anggaran pemerintah (Inpres 1/2025) pada segmen 57%</li>
+      <li>Kompetisi: GKJ, Museum Nasional, Arsip Nasional, Tugu Kunstkring, Pos Bloc, ballroom hotel</li>
+    </ul></div>
+  </div>
+
+  <h3>Sentimen publik &amp; pemantauan media</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Tema</th><th>Arah</th><th>Bukti</th><th>Implikasi</th></tr></thead>
+    <tbody>
+      <tr><td>Kemegahan &amp; estetika</td><td><span class="lvl" style="color:var(--good)"><i style="background:var(--good)"></i>Sangat positif</span></td><td>"Estetik dan Instagramable" (Kumparan, 2023); "megah", "expensive vibes" (Kompas, 2026)</td><td>Aset utama konten visual</td></tr>
+      <tr><td>Prestise kenegaraan</td><td><span class="lvl" style="color:var(--good)"><i style="background:var(--good)"></i>Positif</span></td><td>Kunjungan Presiden (2022), FIABCI 2025, Queen Máxima, HUT RI 2026</td><td>Konten di balik layar, tata kelola terbuka</td></tr>
+      <tr><td>Ruang publik kota</td><td><span class="lvl" style="color:var(--good)"><i style="background:var(--good)"></i>Tumbuh</span></td><td>Integrasi Lapangan Banteng, JICC, Pesta Kreasi Kota, Lebaran Betawi</td><td>Narasi dimotori Pemprov DKI; LMAN perlu ikut memilikinya</td></tr>
+      <tr><td>Akses terbatas</td><td><span class="lvl" style="color:var(--warn)"><i style="background:var(--warn)"></i>Friksi</span></td><td>"Tidak dibuka untuk umum" (Kompas 2024 &amp; 2026; TikTok); perlu izin kelompok</td><td>Isu prioritas: produk akses dan satu sumber informasi</td></tr>
+      <tr><td>Informasi akses kontradiktif</td><td><span class="lvl" style="color:var(--warn)"><i style="background:var(--warn)"></i>Negatif laten</span></td><td>GNFI &amp; Kumparan: "gratis, Senin–Jumat" vs pengalaman lapangan</td><td>Koreksi via situs, Google, <i>media brief</i></td></tr>
+      <tr><td>Warisan mistik</td><td><span class="lvl" style="color:var(--muted)"><i style="background:var(--muted)"></i>Memudar</span></td><td>"Berhantu" (2018); "Dulu Mistik, Kini Estetik" (2023)</td><td>Bingkai ulang seperti Lawang Sewu</td></tr>
+      <tr><td>Komersialisasi / kolonialisme</td><td><span class="lvl" style="color:var(--muted)"><i style="background:var(--muted)"></i>Belum muncul</span></td><td>Tidak ditemukan kritik terbuka</td><td>Risiko laten; siapkan <i>holding statement</i></td></tr>
+    </tbody>
+  </table></div>
+  <p class="callout" style="margin-top:16px">Liputan didominasi <i>earned media</i> dari momen kenegaraan dan acara pihak ketiga. LMAN jarang disebut sebagai pengelola. Metrik pengikut dan ulasan Google Maps belum dapat diakses, sehingga baseline <i>social listening</i> formal dijadwalkan pada Fase 1.</p>
+
+  <h3>Benchmarking</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Kasus</th><th>Model</th><th>Hasil</th><th>Pelajaran bagi Maramis</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Pos Bloc / M Bloc</strong><br>Jakarta</td><td>Aset BUMN, operator <i>placemaker</i> swasta, bagi hasil tenant</td><td class="num">±2 juta kunjungan/tahun (M Bloc)</td><td>Mitra menghidupkan ruang dengan cepat, tetapi cerita gedung harus dijaga pemilik</td></tr>
+      <tr><td><strong>Kota Tua</strong><br>Jakarta</td><td>Konsorsium, JV, lalu satgas</td><td class="num">2,41 juta pengunjung (2025)</td><td>Tata kelola kabur memperlambat: satu kustodian, satu merek, satu pintu</td></tr>
+      <tr><td><strong>Lawang Sewu</strong><br>Semarang</td><td>Anak usaha KAI</td><td class="num">620.550 pengunjung (2025)</td><td>Citra "angker" berhasil diubah lewat tur bertingkat dan TikTok aktif</td></tr>
+      <tr><td><strong>Museum Bank Indonesia</strong><br>Jakarta</td><td>Museum institusi</td><td class="num">±100 ribu/tahun</td><td>Maramis memiliki cerita fiskal; bangun "Jalur Keuangan Negara"</td></tr>
+      <tr><td><strong>National Gallery</strong><br>Singapura</td><td>Lembaga nasional di dua monumen</td><td class="num">2,28 juta pengunjung; sewa S$5,27 juta</td><td>Sewa venue signifikan tanpa mengaburkan misi; tawarkan <i>add-on</i> tur</td></tr>
+      <tr><td><strong>The Fullerton Heritage</strong><br>Singapura</td><td>Swasta, monumen nasional ke-71</td><td>Merek presinct tujuh aset</td><td>Tur gratis terjadwal dan galeri kecil membangun legitimasi</td></tr>
+      <tr><td><strong>Paleis op de Dam</strong><br>Amsterdam</td><td>Aset negara (padanan LMAN)</td><td class="num">Buka 230+ hari/tahun</td><td>Fungsi negara prioritas; kalender buka publik diterbitkan enam bulan ke depan</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="tujuan">
+  <div class="chhead"><span class="n">04</span><h2>Tujuan komunikasi</h2></div>
+  <p class="note" style="margin:0 0 16px">Horizon Okt 2026 – Des 2027. Target adalah usulan dan dikalibrasi setelah baseline formal di Fase 1.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Ranah</th><th>Tujuan</th><th class="r">Baseline</th><th class="r">Target 2027</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Kognitif</strong></td><td>Konsistensi nama "Gedung A.A. Maramis" di kanal resmi</td><td class="r">5 varian</td><td class="r">≥90% konsisten</td></tr>
+      <tr><td></td><td>Kesadaran bahwa gedung ini kantor pertama Kemenkeu dan cagar budaya nasional</td><td class="r">Belum diukur</td><td class="r">≥40% responden</td></tr>
+      <tr><td></td><td>Informasi akses yang salah di 10 portal teratas</td><td class="r">Ada</td><td class="r">0</td></tr>
+      <tr><td></td><td>Artikel yang menyebut kanal atau pengelola resmi</td><td class="r">Rendah</td><td class="r">≥50%</td></tr>
+      <tr><td><strong>Afektif</strong></td><td>Sentimen positif + netral</td><td class="r">–</td><td class="r">≥85%</td></tr>
+      <tr><td></td><td>Kepuasan tur</td><td class="r">–</td><td class="r">≥4,5/5</td></tr>
+      <tr><td></td><td>Komunitas atau kampus menjadi mitra resmi</td><td class="r">0</td><td class="r">≥5</td></tr>
+      <tr><td></td><td>Unggahan advokasi pegawai Kemenkeu</td><td class="r">–</td><td class="r">≥1.000/tahun</td></tr>
+      <tr><td><strong>Konatif</strong></td><td>Hari terisi</td><td class="r">41,8%</td><td class="r">≥55%</td></tr>
+      <tr><td></td><td>Porsi kegiatan komersial &amp; kreatif</td><td class="r">15%</td><td class="r">≥25%</td></tr>
+      <tr><td></td><td>Kegiatan di Lantai 3</td><td class="r">±1</td><td class="r">≥24/tahun</td></tr>
+      <tr><td></td><td>Sesi / peserta Maramis Jelajah</td><td class="r">0</td><td class="r">≥48 / ≥2.500</td></tr>
+      <tr><td></td><td>Kegiatan di bulan tersepi</td><td class="r">1</td><td class="r">≥6</td></tr>
+      <tr><td></td><td>Prospek via kanal resmi / konversi</td><td class="r">Tak tercatat</td><td class="r">≥30/bulan / ≥25%</td></tr>
+      <tr><td></td><td>Insiden kerusakan material</td><td class="r">Tak tercatat</td><td class="r">0</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="stakeholder">
+  <div class="chhead"><span class="n">05</span><h2>Pemangku kepentingan</h2></div>
+  <div class="pim" role="group" aria-label="Matriks pengaruh dan kepentingan">
+    <span class="ax ay">Pengaruh →</span>
+    <div class="q"><h4>Jaga kepuasan</h4><ul>
+      <li>Kementerian Kebudayaan &amp; TACB Nasional</li><li>Bakom RI / Komdigi</li><li>BPK &amp; Inspektorat</li><li>Media nasional tier-1</li></ul></div>
+    <div class="q hot"><h4>Kelola erat</h4><ul>
+      <li>Menkeu &amp; Pimpinan Kemenkeu</li><li>DJKN (pembina LMAN, klien terbesar)</li><li>Biro Umum &amp; Biro KLI Kemenkeu</li><li>Pemprov DKI: Gubernur, Disparekraf, Disbud/TSP</li><li>PT MRT Jakarta</li><li>Klien jangkar: Kemenko Perekonomian, OJK, BI, LPEI</li></ul></div>
+    <div class="q"><h4>Pantau</h4><ul>
+      <li>Warga sekitar &amp; pedagang Pasar Baru</li><li>Wisatawan umum</li><li>Venue pesaing</li></ul></div>
+    <div class="q"><h4>Informasikan &amp; libatkan</h4><ul>
+      <li>Komunitas tur: ECW, JGG, WKJ, Jejak Historia, AKARA, Girls Go Walk</li><li>Akademisi &amp; arsitek: PDA, IAI, kampus</li><li>EO, brand gaya hidup, rumah produksi</li><li>Kreator konten, pelajar &amp; generasi muda</li></ul></div>
+    <span></span>
+    <span class="ax ax-b">Kepentingan terhadap gedung →</span>
+  </div>
+
+  <h3>Kebutuhan informasi per segmen</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Segmen</th><th>Kebutuhan utama</th><th>Format</th><th>Frekuensi</th></tr></thead>
+    <tbody>
+      <tr><td>Pimpinan Kemenkeu &amp; DJKN</td><td>Kinerja pemanfaatan, pendapatan, isu reputasi</td><td>Dasbor satu halaman</td><td>Bulanan, triwulanan</td></tr>
+      <tr><td>Kemenbud / TACB / Disbud</td><td>Kegiatan berisiko, adaptasi, <i>signage</i>, kondisi fisik</td><td>Laporan pelestarian, pengajuan izin</td><td>Per kegiatan, semesteran</td></tr>
+      <tr><td>Pemprov DKI</td><td>Kalender acara publik, Lapangan Banteng, Jakarta 500</td><td>Rapat koordinasi, kalender bersama</td><td>Bulanan</td></tr>
+      <tr><td>Klien &amp; EO</td><td>Katalog, tarif, ketersediaan, aturan teknis, vendor</td><td>Situs, e-brosur, <i>technical rider</i>, <i>site visit</i></td><td>Sesuai permintaan</td></tr>
+      <tr><td>Komunitas heritage</td><td>Jadwal slot, narasi resmi, aturan kunjungan</td><td>Kit mitra, grup koordinasi</td><td>Bulanan</td></tr>
+      <tr><td>Publik umum</td><td>Cara berkunjung, jadwal tur, acara, sejarah</td><td>Situs, media sosial, Google Business Profile</td><td>Mingguan</td></tr>
+      <tr><td>Media</td><td>Fakta resmi, foto, narasumber, izin liputan</td><td>Ruang pers daring, <i>press kit</i></td><td>Per momen</td></tr>
+      <tr><td>ASN Kemenkeu</td><td>Konten siap-bagi, agenda, cara menggunakan gedung</td><td>Konten advokasi, intranet</td><td>Dua mingguan</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="merek">
+  <div class="chhead"><span class="n">06</span><h2>Positioning, arsitektur merek &amp; pesan</h2></div>
+
+  <h3>Positioning statement</h3>
+  <blockquote class="statement">Bagi lembaga negara, korporasi, pelaku kreatif, dan publik yang mencari ruang dengan makna, Gedung A.A. Maramis adalah <em>rumah pertama keuangan negara di jantung Weltevreden</em>: satu-satunya istana berlanggam imperial abad ke-19 di Indonesia yang kini menjadi ruang negara, ruang karya, dan ruang publik, karena setiap kegiatan di dalamnya ikut merawat warisan yang telah bekerja untuk republik sejak hari pertamanya.</blockquote>
+  <p class="note">Kepribadian merek: anggun (bukan mewah), terpercaya (Kredibel, Optimal, Kontributif), terbuka (bukan eksklusif), bercerita (bukan menggurui).</p>
+
+  <h3>Arsitektur merek</h3>
+  <div class="arch-tree">
+    <div class="master">Gedung A.A. Maramis</div>
+    <div class="endorse">Dikelola oleh LMAN – Kementerian Keuangan RI</div>
+    <div class="lines">
+      <div><b>Maramis Ruang</b><span>Venue, MICE, izin foto &amp; film</span></div>
+      <div><b>Maramis Jelajah</b><span>Tur, edukasi, Hari Terbuka</span></div>
+      <div><b>Maramis Agenda</b><span>Program budaya, pameran, festival</span></div>
+    </div>
+  </div>
+  <div class="tbl" style="margin-top:16px"><table>
+    <thead><tr><th>Aspek</th><th>Standar yang diusulkan</th></tr></thead>
+    <tbody>
+      <tr><td>Nama dalam teks</td><td><strong>Gedung A.A. Maramis</strong>, dengan titik sesuai nama Mr. A.A. Maramis. "A.A Maramis Heritage" dihentikan. "Istana Daendels" hanya sebagai konteks sejarah.</td></tr>
+      <tr><td>Logotype</td><td>KV memuat dua versi: "GEDUNG MARAMIS" (logotype) dan "GEDUNG AA MARAMIS" (sampul). <strong>Rekomendasi: GEDUNG A.A. MARAMIS</strong>, agar penghormatan kepada tokohnya tetap utuh. <span class="flag">Perlu keputusan</span></td></tr>
+      <tr><td><i>Handle</i> digital</td><td>@gedungaamaramis; domain gedungaamaramis.id atau subdomain lman.kemenkeu.go.id</td></tr>
+      <tr><td>Tagar</td><td>#GedungAAMaramis · #WarisanyangBekerja · #RumahPertamaKeuanganNegara</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Nomenklatur ruang</h3>
+  <p class="prose" style="margin-bottom:12px">Ruang bernama lebih mudah dijual dan diingat. Usulan tiga tema dari sejarah gedung; kode tetap dipakai untuk operasional dengan format <span style="font-family:var(--mono);font-size:14px">Nama (Kode) – Gedung/Lantai</span>.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Area</th><th>Tema</th><th>Contoh (usulan, perlu kajian &amp; persetujuan)</th></tr></thead>
+    <tbody>
+      <tr><td>Gedung C Lt 2</td><td>Kerajaan Nusantara (sudah ada)</td><td>Tetap; beri nama C2.7, C2.8, C2.9 (misalnya Samudra Pasai, Demak, Gowa)</td></tr>
+      <tr><td>Gedung C Lt 3</td><td>Tokoh Keuangan Republik</td><td>C3.8 (496 m², 340 orang): <strong>Balairung Republik</strong>; ruang lain: Sjafruddin Prawiranegara, Soerachman, Djuanda</td></tr>
+      <tr><td>Gedung A Lt 2 &amp; 3</td><td>Lembaga bersejarah di gedung ini</td><td>Ruang Rekenkamer, Ruang Percetakan Negara, Ruang Sekretariat Negara, Ruang Direksi Keuangan</td></tr>
+      <tr><td>Gedung C Lt 1</td><td>Aula (paket)</td><td>Aula Weltevreden; C1.4 sebagai Serambi Utama</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Tiga pilar cerita</h3>
+  <div class="pillars">
+    <div class="pillar"><span class="label">Pelestarian</span><h4>Dirawat dengan Bekerja</h4><p>Pendapatan pemanfaatan kembali untuk pemeliharaan. Bukti: pemugaran 2019–2022 setelah dua dekade upaya, FIABCI 2025, tata tertib mitra. Format: seri <i>Catatan Pemugaran</i> dan laporan pelestarian tahunan.</p></div>
+    <div class="pillar"><span class="label">Dampak</span><h4>Rumah bagi Karya Indonesia</h4><p>Panggung ekonomi kreatif, UMKM, film, seni, musik, dan mitra ruang publik kota. Bukti: JICC (49 tenant), Pesta Kreasi Kota (33 UMKM), <i>Rose Pandanwangi</i>, lelang DJKN.</p></div>
+    <div class="pillar"><span class="label">Pengalaman</span><h4>Ruang yang Bercerita</h4><p>Setiap ruang punya cerita; acara di sini adalah pengalaman bermakna. Bukti: ruang Kerajaan Nusantara, koridor lengkung, Lapangan Banteng. Format: katalog bernarasi, tur 360°, <i>Maramis Moments</i>.</p></div>
+  </div>
+  <p class="callout" style="margin-top:16px"><strong>Pilar lintas: Rumah Pertama Keuangan Negara.</strong> Narasi literasi fiskal yang menghubungkan sejarah gedung dengan APBN, pajak, dan kekayaan negara. Khas, tidak dimiliki venue lain, dan selaras dengan Employee Advocacy Kemenkeu.</p>
+
+  <h3>Pesan kunci per audiens</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Audiens</th><th>Pesan kunci</th></tr></thead>
+    <tbody>
+      <tr><td>Pimpinan Kemenkeu &amp; DJKN</td><td>"Gedung A.A. Maramis membuktikan bahwa aset cagar budaya negara dapat produktif, akuntabel, dan membanggakan."</td></tr>
+      <tr><td>Regulator kebudayaan</td><td>"Setiap pemanfaatan tunduk pada kaidah pelestarian dan dilaporkan terbuka; pendapatan kembali untuk merawat."</td></tr>
+      <tr><td>Pemprov DKI</td><td>"Maramis dan Lapangan Banteng adalah satu jantung Weltevreden; bersama menuju Jakarta 500 dan Kota Global."</td></tr>
+      <tr><td>Komunitas heritage</td><td>"Pintu gedung ini terbuka secara terjadwal; Anda mitra kami dalam menceritakannya dengan benar."</td></tr>
+      <tr><td>Klien korporat &amp; EO</td><td>"Acara Anda akan diingat karena tempatnya punya cerita dua abad, dan kami memastikan teknisnya lancar."</td></tr>
+      <tr><td>Brand gaya hidup &amp; film</td><td>"Latar ikonik yang tak dapat direplikasi, dengan izin resmi yang jelas."</td></tr>
+      <tr><td>Generasi muda</td><td>"Bukan cuma estetik: di sinilah Republik pertama kali mengatur keuangannya. Datang, jelajahi, ceritakan."</td></tr>
+      <tr><td>Media</td><td>"Gedung A.A. Maramis kini dikelola sebagai ruang negara, ruang karya, dan ruang publik: ini fakta, jadwal, dan narasumber resminya."</td></tr>
+      <tr><td>ASN Kemenkeu</td><td>"Ini rumah pertama kita. Banggakan, gunakan dengan tertib, ceritakan."</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Nada dan suara</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Prinsip</th><th>Lakukan</th><th>Hindari</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Anggun, bukan mewah</strong></td><td>"Ruang yang bercerita", "megah dan bersahaja"</td><td>"Eksklusif", "VIP", "sultan", "mewah"</td></tr>
+      <tr><td><strong>Bangga, bukan romantis kolonial</strong></td><td>"Dibangun di masa kolonial, kini rumah keuangan republik"</td><td>Memuja Daendels; "Istana Daendels" sebagai nama jual</td></tr>
+      <tr><td><strong>Akurat &amp; terbuka</strong></td><td>Angka bersumber; akui batasan (akses terjadwal)</td><td>Klaim "terbuka setiap hari" bila tidak benar</td></tr>
+      <tr><td><strong>Hangat &amp; mengundang</strong></td><td>Kalimat aktif; sapaan sesuai kanal</td><td>"Dalam rangka", "sehubungan dengan" di kanal publik</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Identitas visual dari Panduan Grafis Kunci</h3>
+  <div class="swatches" aria-label="Palet warna">
+    <div class="sw" style="background:#473538;color:#efe6da"><b>Ungu Tanah</b><code>#473538</code></div>
+    <div class="sw" style="background:#9c3738;color:#fff"><b>Merah Bata</b><code>#9c3738</code></div>
+    <div class="sw" style="background:#8a400f;color:#fff"><b>Cokelat Kayu</b><code>#8a400f</code></div>
+    <div class="sw" style="background:#d8aa68;color:#2e2426"><b>Kuning Bambu</b><code>#d8aa68</code></div>
+    <div class="sw" style="background:#e2d6be;color:#2e2426"><b>Putih Kapur</b><code>#e2d6be</code></div>
+  </div>
+  <div class="imgpair" style="margin-top:16px">
+    <figure><img src="img/logotype.png" alt="Logotype GEDUNG MARAMIS dengan logomark gambar garis fasad, versi abu-abu di atas putih dan versi putih di atas merah bata"><figcaption>Logotype &amp; logomark (KV hal. 3)</figcaption></figure>
+    <figure><img src="img/banner.png" alt="Mockup tiga banner gantung berwarna putih kapur, merah bata, dan kuning bambu di antara pilar selasar"><figcaption>Banner gantung non-invasif (KV hal. 9)</figcaption></figure>
+  </div>
+  <p class="note">Yang perlu dilengkapi dalam brand book: tipografi teks, arahan fotografi dan bank foto, templat media sosial, <i>signage</i> berdiri bebas yang <i>reversible</i> (Pasal 83), templat co-branding mitra, seragam petugas, dan merchandise berbasis motif (Pasal 93).</p>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="saluran">
+  <div class="chhead"><span class="n">07</span><h2>Saluran &amp; aktivasi</h2></div>
+  <div class="peso">
+    <div class="panel"><span class="big">O</span><h4>Owned · fondasi</h4><ul>
+      <li>Mikrosite: katalog 49 ruang, kalender tur, formulir, ruang pers</li>
+      <li>Google Business Profile (biaya nol, koreksi akses)</li>
+      <li>Instagram 3–4×/minggu; TikTok 2–3×/minggu</li>
+      <li>WhatsApp Business, LinkedIn (B2B)</li>
+      <li>Papan interpretasi berdiri bebas, Ruang Sejarah Keuangan Negara</li></ul></div>
+    <div class="panel"><span class="big">E</span><h4>Earned · pengungkit</h4><ul>
+      <li>Kalender momen pers: Hari Oeang, HUT RI, HUT Jakarta</li>
+      <li><i>Media visit</i> dua kali setahun</li>
+      <li>Klausul kredit "di Gedung A.A. Maramis, dikelola LMAN" di kontrak sewa</li>
+      <li>Koreksi faktual ke portal yang keliru</li>
+      <li>Pengajuan penghargaan UNESCO Asia-Pacific, IAI</li></ul></div>
+    <div class="panel"><span class="big">S</span><h4>Shared · pengganda</h4><ul>
+      <li>Titik foto resmi bertagar</li>
+      <li>6–10 kolaborasi kreator terkurasi per tahun</li>
+      <li>Kampanye UGC #WarisanyangBekerja</li>
+      <li>Paket Employee Advocacy dua mingguan</li>
+      <li>Konten co-branded: ECW, JGG, Pemprov DKI, MRT, Museum BI</li></ul></div>
+    <div class="panel"><span class="big">P</span><h4>Paid · selektif</h4><ul>
+      <li>Iklan B2B: "venue heritage Jakarta", "lokasi syuting heritage"</li>
+      <li>Maksimal empat advertorial per tahun</li>
+      <li>Listing direktori venue &amp; MICE</li>
+      <li>Promosi Hari Terbuka (Jakarta, usia 18–35)</li></ul></div>
+  </div>
+
+  <h3>Maramis Jelajah</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Produk</th><th>Format</th><th>Jadwal</th><th>Harga (usulan)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Jelajah Akhir Pekan</strong></td><td>Tur dipandu 90 menit, 25 orang</td><td>Setiap Sabtu, pagi &amp; sore</td><td>Tiket simbolis atau gratis dengan registrasi</td></tr>
+      <tr><td><strong>Hari Terbuka Maramis</strong></td><td>Akses lebih luas dan pameran mini</td><td>Sabtu terakhir tiap bulan dan momen nasional</td><td>Gratis dengan registrasi</td></tr>
+      <tr><td><strong>Jelajah Senja</strong></td><td>Tur senja dengan tata cahaya fasad</td><td>Bulanan</td><td>Premium</td></tr>
+      <tr><td><strong>Fiscal Heritage Explorer</strong></td><td>Tur dan modul literasi keuangan negara untuk sekolah &amp; kampus</td><td>Hari kerja, reservasi</td><td>Gratis untuk sekolah negeri</td></tr>
+      <tr><td><strong>Mitra Jelajah</strong></td><td>Slot rutin operator tur dengan kit narasi resmi</td><td>Kalender bulanan</td><td>Skema kemitraan</td></tr>
+      <tr><td><strong>Jalur Keuangan Negara</strong></td><td>Museum BI – Museum Mandiri – Gedung A.A. Maramis</td><td>Triwulanan</td><td>Kolaborasi</td></tr>
+      <tr><td><strong>Tur Tamu Acara</strong></td><td>Tur 30 menit bagi tamu penyewa</td><td>Sesuai acara</td><td>Termasuk paket premium</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Kalender jangkar Maramis Agenda</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Bulan</th><th>Kegiatan jangkar</th></tr></thead>
+    <tbody>
+      <tr><td>Mar – Apr</td><td>Ramadan &amp; Lebaran: "Buka Bersama di Rumah Republik"; kerja sama Lebaran Betawi</td></tr>
+      <tr><td>Jun</td><td>Jakarta 500: pameran "Weltevreden 1809–2027"</td></tr>
+      <tr><td>Jul</td><td>Ulang tahun serah kelola dan Laporan "Warisan yang Bekerja"</td></tr>
+      <tr><td>Agu</td><td>HUT RI</td></tr>
+      <tr><td>Okt</td><td>Hari Oeang dan pekan literasi fiskal</td></tr>
+      <tr><td>Nov</td><td>Musim festival: JICC, AGSI, MoveFest, bazar</td></tr>
+      <tr><td>Des</td><td>Semasa di Kota dan pasar akhir tahun</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Paket Lantai 3: "Balairung Republik" untuk konferensi 200–340 orang, paket <i>workshop</i> (A3), dan paket lokasi foto/film berbasis jam (PMK 144/2020 memungkinkan faktor penyesuai per jam).</p>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="isu">
+  <div class="chhead"><span class="n">08</span><h2>Manajemen isu &amp; risiko reputasi</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Isu</th><th>Kemungkinan</th><th>Dampak</th><th>Mitigasi preventif</th></tr></thead>
+    <tbody>
+      <tr><td><strong>"Warisan dikomersialkan"</strong></td><td>Sedang</td><td>Tinggi</td><td>Publikasikan hierarki fungsi dan kalender akses; laporan penggunaan pendapatan; kurasi mitra</td></tr>
+      <tr><td><strong>Kerusakan fisik saat acara</strong></td><td>Sedang</td><td>Sangat tinggi</td><td>Piagam Etiket Acara, deposit, pengawas konservasi saat loading, dokumentasi pra/pasca</td></tr>
+      <tr><td><strong>"Tertutup untuk publik"</strong></td><td>Tinggi</td><td>Sedang</td><td>Produk Maramis Jelajah, satu sumber informasi, skrip <i>front desk</i></td></tr>
+      <tr><td><strong>Romantisasi kolonial</strong></td><td>Rendah–sedang</td><td>Tinggi</td><td>Pedoman narasi, tinjauan sejarawan, larangan tema acara merendahkan</td></tr>
+      <tr><td><strong>Konten/acara tidak pantas</strong></td><td>Rendah</td><td>Tinggi</td><td>Tata tertib mitra, izin dokumentasi komersial, kewenangan menghentikan kegiatan</td></tr>
+      <tr><td><strong>Transparansi biaya pemugaran</strong></td><td>Sedang</td><td>Sedang</td><td>Satu angka resmi di <i>fact sheet</i> (media memuat Rp198, 213, dan 300 miliar)</td></tr>
+      <tr><td><strong>Konflik jadwal protokoler</strong></td><td>Sedang</td><td>Sedang</td><td>Kebijakan prioritas tertulis di kontrak dan kompensasi</td></tr>
+      <tr><td><strong>Keselamatan pengunjung</strong></td><td>Sedang</td><td>Tinggi</td><td>Batas kapasitas, jalur evakuasi, informasi aksesibilitas yang jujur</td></tr>
+      <tr><td><strong>Narasi "angker"</strong></td><td>Sedang</td><td>Rendah</td><td>Tidak dilawan frontal; alihkan ke tur senja berbasis sejarah</td></tr>
+      <tr><td><strong>Tarif dianggap tidak adil</strong></td><td>Rendah</td><td>Sedang</td><td>Publikasikan dasar tarif (nilai wajar, PMK 144/2020) dan kebijakan pemakaian internal</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Protokol eskalasi</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Level</th><th>Contoh</th><th>Penanggung jawab</th><th>Respons</th></tr></thead>
+    <tbody>
+      <tr><td><span class="lvl"><i style="background:var(--good)"></i>1 · Rutin</span></td><td>Ulasan "tidak bisa masuk"</td><td>Admin kanal &amp; tim layanan</td><td class="num">≤24 jam</td></tr>
+      <tr><td><span class="lvl"><i style="background:var(--warn)"></i>2 · Isu</span></td><td>Artikel kritik tarif; unggahan kreator &gt;50 ribu tayangan</td><td>Kepala unit pengelola &amp; Humas LMAN</td><td class="num">≤6 jam</td></tr>
+      <tr><td><span class="lvl"><i style="background:var(--crit)"></i>3 · Krisis</span></td><td>Kerusakan elemen asli; kecelakaan pengunjung</td><td>Direktur Utama LMAN, dengan DJKN &amp; Biro KLI</td><td class="num">≤2 jam holding · ≤24 jam lengkap</td></tr>
+      <tr><td><span class="lvl"><i style="background:var(--ungu);outline:1px solid var(--ink)"></i>4 · Institusional</span></td><td>Tuduhan penyalahgunaan aset negara</td><td>Biro KLI Kemenkeu &amp; Bakom (narasi tunggal)</td><td>Sesuai arahan pimpinan</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Holding statements</h3>
+  <div class="hs">
+    <div class="panel"><span class="label">Komersialisasi</span><p>"Gedung A.A. Maramis adalah cagar budaya nasional milik negara yang dikelola LMAN. Pemanfaatannya mengikuti UU Cagar Budaya dan peraturan pengelolaan aset negara. Fungsi kenegaraan dan akses publik tetap menjadi prioritas. Pendapatan dari pemanfaatan ruang dipakai untuk mendukung pemeliharaan dan pelestarian gedung."</p></div>
+    <div class="panel"><span class="label">Dugaan kerusakan</span><p>"Kami telah menerima laporan terkait kondisi [elemen] pada [tanggal]. Kegiatan terkait telah [dihentikan/diawasi], dan tim pemeliharaan bersama ahli pelestarian sedang memeriksa. Setiap kerusakan wajib dipulihkan oleh pihak yang bertanggung jawab. Kami akan menyampaikan hasilnya secara terbuka."</p></div>
+    <div class="panel"><span class="label">Akses publik</span><p>"Gedung A.A. Maramis dapat dikunjungi publik melalui tur terjadwal dan Hari Terbuka, karena gedung ini juga dipakai untuk kegiatan kenegaraan dan acara. Jadwal dan pendaftaran resmi tersedia di [kanal resmi]. Kami mohon maaf atas informasi yang kurang jelas sebelumnya."</p></div>
+    <div class="panel"><span class="label">Narasi kolonial</span><p>"Gedung ini dibangun pada masa kolonial, dan sejarah itu kami ceritakan apa adanya, termasuk sisi kelamnya. Sejak kemerdekaan, gedung ini menjadi kantor pertama Kementerian Keuangan Republik Indonesia dan dinamai untuk menghormati Mr. A.A. Maramis. Itulah makna yang kami rawat."</p></div>
+  </div>
+
+  <h3>Juru bicara</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Peran</th><th>Juru bicara</th><th>Lingkup</th></tr></thead>
+    <tbody>
+      <tr><td>Utama</td><td>Direktur Utama LMAN</td><td>Kebijakan pemanfaatan, kinerja, krisis level 3</td></tr>
+      <tr><td>Operasional</td><td>Kepala unit pengelola Gedung A.A. Maramis</td><td>Jadwal, produk, layanan, isu level 1–2</td></tr>
+      <tr><td>Pelestarian</td><td>Ahli cagar budaya atau arsitek pemugaran (mitra)</td><td>Pertanyaan teknis konservasi dan sejarah</td></tr>
+      <tr><td>Institusi</td><td>Kepala Biro KLI Kemenkeu</td><td>Isu level 4 dan isu menyangkut pimpinan</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Tiga pesan jangkar di setiap pernyataan: dirawat, terbuka terjadwal, bekerja untuk negeri.</p>
+</section>
+
+<!-- 9 -->
+<section class="ch" id="linimasa">
+  <div class="chhead"><span class="n">09</span><h2>Lini masa: Okt 2026 – Des 2027</h2></div>
+  <div class="prose" style="margin-bottom:16px"><p>Gedung sudah beroperasi, sehingga fase disusun sebagai penyelarasan, peluncuran ulang merek, dan pengelolaan berkelanjutan. Rekomendasi: <strong>soft relaunch Februari 2027</strong> agar produk matang, lalu <strong>kampanye utama Juni 2027</strong> bersama Jakarta 500.</p></div>
+  <div class="gantt" role="region" aria-label="Diagram Gantt rencana kerja" tabindex="0"><div class="g" id="gantt"></div></div>
+  <div class="legend"><span><i style="background:var(--accent)"></i>Aktivitas berjalan</span><span><i style="background:var(--warm)"></i>Momen puncak</span></div>
+</section>
+
+<!-- 10 -->
+<section class="ch" id="anggaran">
+  <div class="chhead"><span class="n">10</span><h2>Anggaran &amp; sumber daya</h2></div>
+  <p class="callout" style="margin-bottom:16px"><span class="flag">Asumsi</span> Sumber data tidak memuat anggaran komunikasi atau pendapatan sewa. Angka berikut estimasi indikatif harga pasar jasa kreatif Jakarta 2026, wajib divalidasi melalui survei harga dan RBA BLU LMAN.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Pos</th><th>Rincian</th><th class="r">Estimasi (Rp juta)</th></tr></thead>
+    <tbody>
+      <tr><td>Identitas &amp; brand book</td><td>Brand book lengkap, templat, desain kit <i>signage</i></td><td class="r">250 – 400</td></tr>
+      <tr><td><i>Signage</i> &amp; interpretasi</td><td>Papan berdiri bebas, kartu nama ruang, QR, banner gantung</td><td class="r">350 – 600</td></tr>
+      <tr><td>Kanal digital</td><td>Mikrosite, katalog, tur virtual 360°, pemeliharaan</td><td class="r">300 – 500</td></tr>
+      <tr><td>Produksi konten</td><td>Film profil, bank foto, konten rutin 15 bulan</td><td class="r">400 – 700</td></tr>
+      <tr><td>Media &amp; PR</td><td><i>Media visit</i>, <i>press kit</i>, <i>social listening</i>, <i>media training</i></td><td class="r">200 – 350</td></tr>
+      <tr><td>Paid media</td><td>Iklan B2B, listing, advertorial selektif</td><td class="r">300 – 550</td></tr>
+      <tr><td>Aktivasi publik</td><td>Maramis Jelajah, Hari Terbuka, Forum Sahabat Maramis, pameran Jakarta 500</td><td class="r">400 – 750</td></tr>
+      <tr><td>Riset &amp; evaluasi</td><td>Survei baseline dan endline</td><td class="r">100 – 175</td></tr>
+      <tr><td>Kontinjensi</td><td>±10%</td><td class="r">230 – 400</td></tr>
+      <tr><td><strong>Total indikatif</strong></td><td></td><td class="r"><strong>±2.530 – 4.425</strong></td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Tim yang dibutuhkan</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Peran</th><th>Status</th><th>Keterangan</th></tr></thead>
+    <tbody>
+      <tr><td>Brand &amp; Communication Lead</td><td>Internal LMAN, 1 FTE</td><td>Pemilik merek; koordinasi Biro KLI &amp; DJKN</td></tr>
+      <tr><td>Content &amp; Community Officer</td><td>Internal/kontrak, 1–2 FTE</td><td>Media sosial, Mitra Jelajah, UGC</td></tr>
+      <tr><td>Sales &amp; Partnership Officer</td><td>Internal, 1–2 FTE</td><td>Prospek B2B, paket, CRM</td></tr>
+      <tr><td>Pemandu heritage</td><td>Pool 6–10 orang bersertifikat</td><td>Pelatihan narasi resmi; kolaborasi JGG/ECW</td></tr>
+      <tr><td>Konsultan PR / agensi digital</td><td>Pengadaan</td><td>Peluncuran ulang, media, iklan</td></tr>
+      <tr><td>Konsultan pelestarian</td><td>Mitra/kontrak</td><td>Tinjauan <i>signage</i>, pengawasan acara berisiko</td></tr>
+      <tr><td>Sejarawan / kurator</td><td>Mitra</td><td>Validasi narasi, nomenklatur, pameran</td></tr>
+      <tr><td>Analis data</td><td>Internal, paruh waktu</td><td>Dasbor KPI, kualitas data Teamup</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Efisiensi: manfaatkan KV, buku sejarah 2022, dan Booklet; sinergi dengan Biro KLI, DJKN, PKN STAN; kolaborasi non-anggaran dengan Pemprov DKI, MRT Jakarta, Museum BI &amp; Mandiri, operator tur, dan Kedutaan Belanda. Pendapatan penyeimbang: izin foto/film, tur senja premium, merchandise motif, <i>add-on</i> tur.</p>
+</section>
+
+<!-- 11 -->
+<section class="ch" id="kpi">
+  <div class="chhead"><span class="n">11</span><h2>KPI &amp; evaluasi</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Kategori</th><th>KPI</th><th class="r">Baseline</th><th class="r">Target 2027</th></tr></thead>
+    <tbody>
+      <tr><td>Utilisasi</td><td>Hari unik terisi per tahun</td><td class="r">153 (41,8%)</td><td class="r">≥200 (≥55%)</td></tr>
+      <tr><td>Utilisasi</td><td>Kegiatan inti per tahun</td><td class="r">119</td><td class="r">≥150</td></tr>
+      <tr><td>Bauran</td><td>Porsi komersial &amp; kreatif</td><td class="r">15%</td><td class="r">≥25%</td></tr>
+      <tr><td>Produk</td><td>Kegiatan di Lantai 3</td><td class="r">±1</td><td class="r">≥24</td></tr>
+      <tr><td>Publik</td><td>Sesi / peserta Maramis Jelajah</td><td class="r">0 / 0</td><td class="r">≥48 / ≥2.500</td></tr>
+      <tr><td>Publik</td><td>Hari Terbuka / pengunjung</td><td class="r">1</td><td class="r">≥12 / ≥6.000</td></tr>
+      <tr><td>Penjualan</td><td>Prospek per bulan / konversi</td><td class="r">Tak tercatat</td><td class="r">≥30 / ≥25%</td></tr>
+      <tr><td>Penjualan</td><td>Klien baru non-pemerintah</td><td class="r">–</td><td class="r">≥20 per tahun</td></tr>
+      <tr><td>Media</td><td>Pemberitaan per tahun</td><td class="r">Belum diukur</td><td class="r">≥120</td></tr>
+      <tr><td>Digital</td><td>Pengikut IG + TikTok</td><td class="r">0</td><td class="r">≥25.000</td></tr>
+      <tr><td>Digital</td><td><i>Engagement rate</i> Instagram</td><td class="r">–</td><td class="r">≥3%</td></tr>
+      <tr><td>Internal</td><td>Unggahan Employee Advocacy</td><td class="r">–</td><td class="r">≥1.000</td></tr>
+      <tr><td>Konservasi</td><td>Insiden kerusakan material</td><td class="r">Tak tercatat</td><td class="r">0</td></tr>
+      <tr><td>Konservasi</td><td>Mitra menandatangani Piagam Etiket</td><td class="r">–</td><td class="r">100%</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Pelaporan</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Frekuensi</th><th>Laporan</th><th>Penerima</th></tr></thead>
+    <tbody>
+      <tr><td>Mingguan</td><td><i>Pulse</i> operasional: prospek, pemesanan, isu</td><td>Tim pengelola</td></tr>
+      <tr><td>Bulanan</td><td>Dasbor KPI satu halaman</td><td>Direksi LMAN</td></tr>
+      <tr><td>Triwulanan</td><td>Kinerja komunikasi &amp; pemanfaatan</td><td>Direksi LMAN, DJKN</td></tr>
+      <tr><td>Semesteran</td><td>Laporan pelestarian &amp; audit merek</td><td>TACB/Disbud, internal</td></tr>
+      <tr><td>Tahunan</td><td><strong>Laporan "Warisan yang Bekerja"</strong> untuk publik</td><td>Pimpinan Kemenkeu, publik, media</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Tindakan segera: perbarui format entri Teamup dengan kolom wajib nama dan kode ruang baku, lantai, jumlah peserta, jenis penggunaan dan nilai transaksi, sumber prospek, segmen, status loading, serta catatan kondisi pra dan pasca acara.</p>
+</section>
+
+<!-- 12 -->
+<section class="ch" id="lampiran">
+  <div class="chhead"><span class="n">12</span><h2>Lampiran</h2></div>
+  <h3>Yang perlu diverifikasi sebelum final</h3>
+  <ul class="clean">
+    <li>Penerbit SK PM.13/PW.007/MKP/05 (Menbudpar atau Mendikbud)</li>
+    <li>Angka resmi biaya pemugaran (Rp198, 213, atau 300 miliar)</li>
+    <li>Penomoran pasal PP 1/2022 dan status perubahan PMK 152/2016</li>
+    <li>Ketentuan reklame di kawasan cagar budaya (Pergub DKI 148/2017)</li>
+    <li>Data pendapatan sewa riil dan porsi penggunaan internal, untuk kalibrasi anggaran dan KPI</li>
+    <li>Data kunjungan wisatawan Jakarta 2025 (BPS DKI)</li>
+    <li>Kebijakan akses publik yang berlaku saat ini, sebagai dasar <i>fact sheet</i></li>
+    <li>Ketersediaan <i>handle</i> dan domain digital</li>
+  </ul>
+
+  <h3>Sumber utama</h3>
+  <ul class="sources">
+    <li>Booklet Gedung A.A. Maramis, Updated Sept 2026 (LMAN)</li>
+    <li><i>Gedung A.A. Maramis: Istana Putih di Weltevreden</i> (Kemenkeu, 2022)</li>
+    <li>Panduan Grafis Kunci Gedung AA Maramis (LAMP 1)</li>
+    <li>Kalender Teamup "A.A. Maramis Events", 172 entri (diakses 26 Sep 2026)</li>
+    <li><a href="https://setkab.go.id/melihat-gedung-bersejarah-a-a-maramis-yang-ditinjau-presiden-jokowi/">Setkab (2022): kunjungan Presiden</a></li>
+    <li><a href="https://www.djkn.kemenkeu.go.id/berita/baca/32969/Optimalkan-BMN-Cagar-Budaya-DJKN-Serah-Kelolakan-Gedung-Daendels-Berusia-200-Tahun-kepada-LMAN.html">DJKN (2023): serah kelola kepada LMAN</a></li>
+    <li><a href="https://money.kompas.com/read/2023/08/31/064000526/gedung-maramis-dulu-mistik-kini-estetik?page=all">Kompas (2023): "Dulu Mistik, Kini Estetik"</a></li>
+    <li><a href="https://kumparan.com/kumparanbisnis/sri-mulyani-sulap-gedung-tua-daendels-jadi-estetik-dan-instagramable-1zahhqXrco5">Kumparan (2023): "Estetik dan Instagramable"</a></li>
+    <li><a href="https://www.antaranews.com/berita/4958501/dki-akan-integrasikan-lapangan-banteng-dengan-gedung-aa-maramis">Antara (2025): integrasi Lapangan Banteng</a></li>
+    <li><a href="https://www.antaranews.com/berita/5520413/pertimbangan-pramono-pilih-lapangan-banteng-sebagai-tuan-rumah-lebaran-betawi">Antara (2026): Lapangan Banteng tersambung</a></li>
+    <li><a href="https://www.liputan6.com/bisnis/read/6222578/belajar-dari-ratu-maxima-bos-ojk-ingin-terapkan-konsep-kesehatan-keuangan-di-indonesia">Liputan6 (2025): Queen Máxima dan OJK</a></li>
+    <li><a href="https://www.antaranews.com/berita/5385270/pemerintah-jadikan-film-rose-pandanwangi-jembatan-diplomasi-budaya">Antara (2026): film Rose Pandanwangi</a></li>
+    <li><a href="https://travel.kompas.com/read/2026/02/16/060000727/cerita-megahnya-gedung-a.a.-maramis-scbd-jakarta-versi-zaman-dulu">Kompas Travel (2026): pengalaman walking tour</a></li>
+    <li><a href="https://money.kompas.com/read/2026/08/17/093650626/purbaya-tampil-dengan-busana-adat-jawa-di-upacara-kemerdekaan">Kompas (2026): upacara HUT RI</a></li>
+    <li><a href="https://peraturan.bpk.go.id/Details/38552/uu-no-11-tahun-2010">UU 11/2010 tentang Cagar Budaya</a></li>
+    <li><a href="https://peraturan.bpk.go.id/Details/147636/pmk-no-144pmk062020">PMK 144/PMK.06/2020</a></li>
+    <li><a href="https://jdih.kemenkeu.go.id/dok/pmk-35-tahun-2024">PMK 35/2024 tentang LMAN</a></li>
+    <li><a href="https://www.bps.go.id/en/pressrelease/2026/02/02/2541/">BPS (2026): kunjungan wisman 2025</a></li>
+    <li><a href="https://finance.detik.com/infrastruktur/d-8516800/">Detik (2026): progres MRT Fase 2A</a></li>
+    <li><a href="https://www.paleisamsterdam.nl/bezoek/">Paleis op de Dam: kunjungan</a></li>
+    <li><a href="https://www.fullertonhotels.com/fullerton-hotel-singapore/around-you/fullerton-heritage-tours">The Fullerton Heritage Tours</a></li>
+    <li><a href="https://www.nationalgallery.sg/sg/en/about/venue-rental.html">National Gallery Singapore: venue rental</a></li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <span>Kajian Strategi Komunikasi &amp; Branding Gedung A.A. Maramis · Draf v1.0 untuk review pimpinan</span>
+  <span>Disusun oleh Senior Analyst, Lembaga Manajemen Aset Negara · 26 September 2026</span>
+</footer>
+</div>
+
+<div class="tip" id="tip" hidden></div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  const tip=document.getElementById("tip");
+  function el(n,a,p){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+  function txt(p,x,y,s,cls,anchor){const t=el("text",{x,y,"text-anchor":anchor||"middle"},p);if(cls)t.setAttribute("class",cls);t.textContent=s;return t}
+  function hover(node,label){
+    node.classList.add("bar");
+    node.addEventListener("pointermove",e=>{tip.textContent=label;tip.hidden=false;tip.style.left=(e.clientX+12)+"px";tip.style.top=(e.clientY-34)+"px"});
+    node.addEventListener("pointerleave",()=>{tip.hidden=true});
+  }
+  const css=getComputedStyle(document.documentElement);
+
+  // Monthly
+  (function(){
+    const svg=document.getElementById("c-month");
+    const m=["Sep 25","Okt 25","Nov 25","Des 25","Jan 26","Feb 26","Mar 26","Apr 26","Mei 26","Jun 26","Jul 26","Agu 26","Sep 26","Okt 26","Nov 26","Des 26"];
+    const v=[2,15,19,13,13,8,1,7,7,5,13,10,7,5,6,2];
+    const W=760,H=230,L=10,R=10,T=18,B=40,max=20;
+    const bw=(W-L-R)/v.length;
+    [0,5,10,15,20].forEach(g=>{const y=T+(H-T-B)*(1-g/max);el("line",{x1:L,x2:W-R,y1:y,y2:y,stroke:"var(--chart-grid)","stroke-width":1},svg)});
+    v.forEach((d,i)=>{
+      const h=(H-T-B)*d/max, x=L+i*bw+bw*0.18, w=bw*0.64, y=T+(H-T-B)-h;
+      const pipe=i>=13;
+      const r=el("path",{d:`M${x},${y+Math.min(4,h)} a4,4 0 0 1 4,-4 h${w-8} a4,4 0 0 1 4,4 V${T+(H-T-B)} H${x} Z`,fill:pipe?"var(--warm)":"var(--accent)"},svg);
+      hover(r,`${m[i]}: ${d} kegiatan inti${pipe?" (pipeline)":""}`);
+      txt(svg,x+w/2,y-5,String(d),"v");
+      const [mo,yr]=m[i].split(" ");
+      txt(svg,x+w/2,H-B+16,mo);
+      if(mo==="Jan"||i===0) txt(svg,x+w/2,H-B+30,"20"+yr);
+    });
+    el("line",{x1:L,x2:W-R,y1:T+(H-T-B),y2:T+(H-T-B),stroke:"var(--line)","stroke-width":1},svg);
+  })();
+
+  // Horizontal bars
+  function hbars(id,rows,max,fmt,color){
+    const svg=document.getElementById(id);
+    const W=360,top=4,rh=38,LW=150;
+    svg.setAttribute("viewBox",`0 0 ${W} ${top+rows.length*rh}`);
+    rows.forEach((r,i)=>{
+      const y=top+i*rh;
+      txt(svg,0,y+14,r[0],null,"start");
+      const w=Math.max(2,(W-LW-58)*r[1]/max);
+      const b=el("rect",{x:0,y:y+20,width:w,height:10,rx:3,fill:color},svg);
+      hover(b,`${r[0]}: ${fmt(r)}`);
+      txt(svg,w+6,y+29,fmt(r),"v","start");
+    });
+  }
+  hbars("c-sector",[["Kemenkeu (internal)",45],["K/L, BUMN & lembaga",30],["Komunitas, pendidikan & seni",29],["Komersial & kreatif",20],["Lainnya",9]],45,r=>`${r[1]} (${Math.round(r[1]/133*100)}%)`,"var(--accent)");
+  hbars("c-floor",[["Gd C Lt 1 · kap. 950",4],["Gd A Lt 2 · kap. 350",12],["Gd C Lt 2 · kap. 990",44],["Gd A Lt 3 · kap. 380",1],["Gd C Lt 3 · kap. 1.240",0]],44,r=>`${r[1]} kegiatan`,"var(--accent)");
+
+  // Gantt
+  (function(){
+    const g=document.getElementById("gantt");
+    const months=["O","N","D","J","F","M","A","M","J","J","A","S","O","N","D"];
+    const add=(c,t)=>{const d=document.createElement("div");d.className=c;if(t)d.textContent=t;g.appendChild(d);return d};
+    add("h","Aktivitas").style.textAlign="left";
+    months.forEach((m,i)=>{const d=add("h"+(i===3?" yr":""),m);d.title=(i<3?"2026":"2027")});
+    const rows=[
+      ["Fase 1 · Penyelarasan & fondasi"],
+      ["Keputusan merek & nomenklatur",[0,1]],
+      ["Brand book & kit signage (konsultasi TACB)",[0,1,2,3]],
+      ["Kanal owned dasar (GBP, WA, handle, situs v1)",[0,1,2]],
+      ["Baseline riset & standardisasi data",[0,1,14]],
+      ["Dokumen tata kelola & holding statements",[0,1,2]],
+      ["Pilot Maramis Jelajah",[1,2,3]],
+      ["Fase 2 · Peluncuran ulang merek"],
+      ["Situs penuh, tur 360°, film profil",[2,3,4]],
+      ["Soft relaunch & media visit",[],[4]],
+      ["Paket Lantai 3 & izin foto/film",[3,4,5,6,7,8,9,10,11,12,13,14]],
+      ["Program Ramadan / musim sepi",[4,5]],
+      ["Kampanye Jakarta 500",[6,7],[8]],
+      ["Fase 3 · Pengelolaan berkelanjutan"],
+      ["Maramis Jelajah reguler & Hari Terbuka",[4,5,6,7,8,9,10,11,12,13,14]],
+      ["Laporan Warisan yang Bekerja",[],[9]],
+      ["HUT RI & Hari Oeang",[],[10,12]],
+      ["Musim festival & narasi Tiba dengan MRT",[11,12,13,14]],
+      ["Forum Sahabat Maramis",[5,11]],
+      ["Evaluasi & pelaporan triwulanan",[2,5,8,11,14]]
+    ];
+    const lab=["Okt","Nov","Des","Jan","Feb","Mar","Apr","Mei","Jun","Jul","Agu","Sep","Okt","Nov","Des"];
+    rows.forEach(r=>{
+      if(r.length===1){add("phase",r[0]);return}
+      add("t",r[0]);
+      for(let i=0;i<15;i++){
+        const pk=(r[2]||[]).includes(i), on=r[1].includes(i);
+        const d=add("c"+(pk?" pk":on?" on":""));
+        if(pk||on) d.title=`${r[0]} · ${lab[i]} ${i<3?"2026":"2027"}`;
+      }
+    });
+  })();
+
+  // TOC highlight
+  const links=[...document.querySelectorAll("nav.toc a")];
+  const map=new Map(links.map(a=>[a.getAttribute("href").slice(1),a]));
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove("on"));const a=map.get(e.target.id);if(a)a.classList.add("on")}})},{rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.ch").forEach(s=>io.observe(s));
+  }
+})();
+</script>

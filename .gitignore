@@ -1,0 +1,8 @@
+# Raw source documents (>100MB PDFs)
+0 - source/
+
+# OS and temporary files
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
