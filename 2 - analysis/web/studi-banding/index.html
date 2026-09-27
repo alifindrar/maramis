@@ -1,0 +1,858 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>Gedung Setara Maramis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  color-scheme:light;
+  --ungu:#473538; --bata:#9c3738; --kayu:#8a400f; --bambu:#d8aa68; --kapur:#e2d6be;
+  --bg:#faf7f1; --surface:#ffffff; --surface-2:#f3ede2; --ink:#2e2426; --ink-2:#5e5153; --muted:#7d7072;
+  --line:#e4dccf; --accent:var(--bata); --accent-ink:#ffffff; --accent-soft:#f3e3df;
+  --warm:var(--bambu); --warm-soft:#f5ead7; --chart-grid:#ebe4d8;
+  --id:#c08a3e; --intl:#6f5a5d;
+  --good:#3f6b4a; --warn:#9a6a12; --crit:#9c3738;
+  --serif:"Libre Baskerville",Georgia,"Times New Roman",serif;
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;padding-inline:clamp(16px,4vw,40px);padding-block:0 64px}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;text-wrap:balance;margin:0;line-height:1.25}
+p{margin:0}
+.wrap{max-width:1180px;margin-inline:auto}
+.num{font-variant-numeric:tabular-nums}
+.label{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(24px,5vw,64px);align-items:end;padding-block:clamp(32px,6vw,72px) clamp(28px,4vw,48px);border-bottom:1px solid var(--line)}
+.hero .meta{display:flex;flex-wrap:wrap;gap:8px 18px;margin-bottom:28px}
+.hero h1{font-size:clamp(34px,5.4vw,60px);letter-spacing:.06em;text-transform:uppercase;line-height:1.1}
+.hero h1 span{display:block;font-size:.42em;letter-spacing:.32em;color:var(--muted);margin-bottom:.5em}
+.hero .thesis{font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--accent);margin-top:18px}
+.hero .lede{margin-top:18px;max-width:58ch;color:var(--ink-2);font-size:17px}
+.arch{margin:0;border-radius:999px 999px 6px 6px;overflow:hidden;aspect-ratio:4/4.6;max-width:100%;background:var(--surface-2);border:1px solid var(--line)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block}
+.hero figcaption{font-size:12px;color:var(--muted);margin-top:10px;text-align:center}
+
+.facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;border-bottom:1px solid var(--line)}
+.fact{padding:22px 20px 22px 0}
+.fact+.fact{padding-left:20px;border-left:1px solid var(--line)}
+.fact b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(26px,3.2vw,36px);color:var(--ink);font-variant-numeric:tabular-nums;line-height:1.1}
+.fact span{font-size:13.5px;color:var(--ink-2);display:block;margin-top:6px}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:220px minmax(0,1fr);gap:clamp(24px,4vw,56px);margin-top:40px}
+nav.toc{position:sticky;top:calc(env(safe-area-inset-top,0px) + 20px);align-self:start;font-size:14px}
+nav.toc ol{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:2px}
+nav.toc a{display:grid;grid-template-columns:26px 1fr;padding:5px 8px;border-radius:4px;text-decoration:none;color:var(--ink-2)}
+nav.toc a span{font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:2px}
+nav.toc a:hover,nav.toc a.on{background:var(--surface-2);color:var(--ink)}
+nav.toc a.on span{color:var(--accent)}
+main{min-width:0}
+section.ch{padding-block:8px 48px;border-bottom:1px solid var(--line);margin-bottom:40px;scroll-margin-top:20px}
+section.ch:last-child{border-bottom:0}
+.chhead{display:flex;gap:16px;align-items:baseline;margin-bottom:22px}
+.chhead .n{font-family:var(--mono);font-size:13px;color:var(--accent);flex:none;padding-top:6px}
+.chhead h2{font-size:clamp(24px,2.8vw,32px)}
+h3{font-size:19px;margin:34px 0 12px}
+h3:first-of-type{margin-top:8px}
+.prose{max-width:68ch;display:grid;gap:14px;color:var(--ink)}
+ul.clean{margin:0;padding-left:1.1em;display:grid;gap:8px;max-width:72ch}
+ul.clean li::marker{color:var(--accent)}
+.note{font-size:13.5px;color:var(--muted);max-width:72ch;margin-top:12px}
+.flag{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:2px 8px;border-radius:999px;background:var(--warm-soft);color:var(--warn);vertical-align:middle}
+
+/* Tables */
+.tbl{overflow-x:auto;margin-top:6px;border:1px solid var(--line);border-radius:6px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:14.5px}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+td.c,th.c{text-align:center}
+td strong{font-weight:600}
+tr.me td{background:var(--accent-soft)}
+.dot{display:inline-block;width:12px;height:12px;border-radius:50%;border:1.5px solid var(--accent);vertical-align:-1px}
+.dot.f{background:var(--accent)}
+.dot.h{background:linear-gradient(90deg,var(--accent) 50%,transparent 50%)}
+.dot.n{border-color:var(--line)}
+
+/* Grids & panels */
+.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 20px;display:grid;gap:10px;align-content:start}
+.panel h4{font-size:16px}
+.panel .label{margin-bottom:-4px}
+.panel ul{margin:0;padding-left:1.1em;display:grid;gap:6px;font-size:14.5px}
+.panel .big{font-family:var(--serif);font-size:30px;color:var(--accent);line-height:1.1;font-variant-numeric:tabular-nums}
+.panel .big small{font-family:var(--sans);font-size:13px;color:var(--muted);display:block;margin-top:4px}
+
+/* Case cards */
+.cases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.case{background:var(--surface);border:1px solid var(--line);border-radius:999px 999px 6px 6px;padding:44px 22px 20px;display:grid;gap:12px;align-content:start}
+.case .top{text-align:center;display:grid;gap:6px}
+.case .top .label{color:var(--accent)}
+.case h4{font-size:19px}
+.case .sub{font-size:14px;color:var(--ink-2);font-style:italic;font-family:var(--serif)}
+.case .score{justify-self:center;font-family:var(--mono);font-size:12px;color:var(--ink-2);background:var(--surface-2);border-radius:999px;padding:2px 10px}
+.kv{display:grid;grid-template-columns:118px minmax(0,1fr);border-top:1px solid var(--line);font-size:14px}
+.kv dt,.kv dd{margin:0;padding:7px 0;border-bottom:1px solid var(--line)}
+.kv dt{color:var(--muted);font-size:12.5px;font-weight:600;padding-right:10px}
+.kv dd{color:var(--ink)}
+.case ul{margin:0;padding-left:1.1em;display:grid;gap:5px;font-size:14px;color:var(--ink-2)}
+.case ul li::marker{color:var(--accent)}
+.region{display:flex;align-items:baseline;gap:12px;margin:34px 0 14px}
+.region h3{margin:0}
+.region span{font-size:13px;color:var(--muted)}
+
+/* Charts */
+.chart{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:18px 18px 12px;margin-top:6px}
+.chart h4{font-family:var(--sans);font-size:15px;font-weight:600}
+.chart .sub{font-size:13px;color:var(--muted);margin-top:2px}
+.chart svg{display:block;width:100%;height:auto;margin-top:10px;overflow:visible}
+.chart svg text{fill:var(--ink-2);font-family:var(--sans);font-size:11px}
+.chart svg text.v{fill:var(--ink);font-size:11px;font-weight:600}
+.chart svg text.me{fill:var(--accent);font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--ink-2);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.tip{position:fixed;pointer-events:none;background:var(--ink);color:var(--bg);font-size:12.5px;padding:6px 10px;border-radius:4px;z-index:10;white-space:nowrap}
+.bar{cursor:default}
+.bar:hover{opacity:.82}
+
+.sources{columns:2;column-gap:32px;font-size:13.5px;color:var(--ink-2);padding-left:1.1em;margin:0}
+.sources li{break-inside:avoid;margin-bottom:6px}
+.src-h{font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);list-style:none;margin:10px 0 4px -1.1em}
+footer{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+
+@media (max-width:980px){
+  .layout{grid-template-columns:1fr}
+  nav.toc{position:static}
+  nav.toc ol{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .hero{grid-template-columns:1fr}
+  .arch{max-width:360px;margin-inline:auto;width:100%}
+  .facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fact:nth-child(3){padding-left:0;border-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line)}
+  .grid2,.grid3,.cases{grid-template-columns:1fr}
+  .sources{columns:1}
+}
+@media (max-width:480px){
+  nav.toc ol{grid-template-columns:1fr}
+  .kv{grid-template-columns:96px minmax(0,1fr)}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<header class="hero">
+  <div>
+    <div class="meta">
+      <span class="label">Studi Banding Gedung Bersejarah</span>
+      <span class="label">Draf v1.0 · 26 September 2026</span>
+      <span class="label">Senior Analyst, LMAN</span>
+    </div>
+    <h1><span>Gedung setara</span>A.A. Maramis</h1>
+    <p class="thesis">Di Indonesia dan dunia</p>
+    <p class="lede">Lima belas gedung bersejarah milik negara atau bekas kantor pemerintahan, yang kini dipakai untuk acara, kunjungan, dan kegiatan publik. Halaman ini mengumpulkan angkanya: kapan dibangun, siapa pengelolanya, berapa pengunjungnya, bagaimana jadwal bukanya, dan dari mana biayanya.</p>
+  </div>
+  <figure style="margin:0">
+    <div class="arch"><img src="../img/fasad.png" alt="Fasad barat Gedung A.A. Maramis yang putih dan simetris menghadap halaman rumput Lapangan Banteng, dengan bendera Merah Putih di tengah"></div>
+    <figcaption>Gedung A.A. Maramis, selesai dibangun 1828</figcaption>
+  </figure>
+</header>
+
+<div class="facts" aria-label="Angka kunci">
+  <div class="fact"><b>15</b><span>gedung pembanding: 5 di Indonesia, 10 di luar negeri</span></div>
+  <div class="fact"><b>9</b><span>negara dan wilayah: Indonesia, Prancis, Irlandia, Inggris, Hong Kong, Korea Selatan, Singapura, Malaysia, Australia</span></div>
+  <div class="fact"><b>1757–1925</b><span>rentang tahun pembangunan gedung luar negeri; Maramis 1809–1828</span></div>
+  <div class="fact"><b>±5 juta</b><span>kunjungan per tahun di Tai Kwun, Hong Kong, angka tertinggi di daftar</span></div>
+</div>
+
+<div class="layout">
+<nav class="toc" aria-label="Daftar isi">
+  <span class="label">Daftar isi</span>
+  <ol>
+    <li><a href="#acuan"><span>01</span>Gedung A.A. Maramis</a></li>
+    <li><a href="#pilih"><span>02</span>Cara memilih</a></li>
+    <li><a href="#sekilas"><span>03</span>Sekilas dalam angka</a></li>
+    <li><a href="#indonesia"><span>04</span>Di Indonesia</a></li>
+    <li><a href="#luar"><span>05</span>Di luar negeri</a></li>
+    <li><a href="#ruang"><span>06</span>Nama ruang</a></li>
+    <li><a href="#jadwal"><span>07</span>Jadwal buka</a></li>
+    <li><a href="#biaya"><span>08</span>Biaya &amp; pengelola</a></li>
+    <li><a href="#catatan"><span>09</span>Catatan data</a></li>
+    <li><a href="#sumber"><span>10</span>Sumber</a></li>
+  </ol>
+</nav>
+
+<main>
+
+<!-- 1 -->
+<section class="ch" id="acuan">
+  <div class="chhead"><span class="n">01</span><h2>Gedung A.A. Maramis sebagai acuan</h2></div>
+  <div class="tbl"><table><tbody>
+    <tr><td style="width:190px"><strong>Luas kawasan</strong></td><td>±12.000 m²</td></tr>
+    <tr><td><strong>Susunan</strong></td><td>5 blok (A–E), 3 lantai</td></tr>
+    <tr><td><strong>Luas ruang sewa</strong></td><td>±6.050 m² dari 49 unit</td></tr>
+    <tr><td><strong>Kapasitas</strong></td><td>±3.840 orang (jumlah kapasitas 49 unit, tidak serentak)</td></tr>
+    <tr><td><strong>Ruang terbesar</strong></td><td>C3.8: 496 m², 340 orang</td></tr>
+    <tr><td><strong>Dibangun</strong></td><td>1809–1828</td></tr>
+    <tr><td><strong>Fungsi asli</strong></td><td>Istana gubernur jenderal (tidak pernah dihuni), lalu kantor keuangan masa kolonial, lalu kantor pertama Kementerian Keuangan RI</td></tr>
+    <tr><td><strong>Pemilik / pengelola</strong></td><td>Barang Milik Negara, Kementerian Keuangan; dikelola LMAN sejak 31 Juli 2023</td></tr>
+    <tr><td><strong>Pemakaian</strong></td><td>Acara kenegaraan, sewa untuk acara, dan kunjungan publik</td></tr>
+    <tr><td><strong>Harga sewa</strong></td><td>Rp3,44–30,30 juta/hari per ruang; paket 15 ruang Lantai 1 Gedung C Rp125 juta/hari</td></tr>
+    <tr><td><strong>Ruang bernama</strong></td><td>6 dari 49 unit; 43 unit hanya memakai kode</td></tr>
+  </tbody></table></div>
+  <p class="note">Sumber: Booklet Gedung AA Maramis (Sept 2026), daftar ruangan, Buku Kemenkeu (2022).</p>
+</section>
+
+<!-- 2 -->
+<section class="ch" id="pilih">
+  <div class="chhead"><span class="n">02</span><h2>Cara memilih gedung pembanding</h2></div>
+  <div class="prose">
+    <p>Setiap gedung luar negeri dinilai dengan enam ukuran. Gedung masuk daftar bila memenuhi minimal empat. Nilai penuh = 1, sebagian = 0,5, tidak = 0.</p>
+  </div>
+  <div class="tbl" style="margin-top:16px"><table>
+    <thead><tr><th>Kode</th><th>Ukuran</th><th>Batas</th></tr></thead>
+    <tbody>
+      <tr><td><strong>S</strong></td><td>Skala</td><td>±5.000–30.000 m² kawasan atau lantai</td></tr>
+      <tr><td><strong>E</strong></td><td>Era</td><td>Dibangun abad ke-18 sampai awal abad ke-20</td></tr>
+      <tr><td><strong>N</strong></td><td>Milik negara</td><td>Dimiliki negara atau pemerintah</td></tr>
+      <tr><td><strong>F</strong></td><td>Fungsi asli</td><td>Kantor pemerintahan, pajak, atau keuangan</td></tr>
+      <tr><td><strong>M</strong></td><td>Pemakaian campuran</td><td>Dipakai negara, disewakan, dan dibuka untuk publik</td></tr>
+      <tr><td><strong>K</strong></td><td>Kolonial</td><td>Dibangun pada masa penjajahan</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Hasil penilaian</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Gedung</th><th>Kota</th><th class="c">S</th><th class="c">E</th><th class="c">N</th><th class="c">F</th><th class="c">M</th><th class="c">K</th><th class="r">Nilai</th></tr></thead>
+    <tbody id="score"></tbody>
+  </table></div>
+  <div class="legend"><span><i class="dot f" style="border-radius:50%"></i>penuh</span><span><i class="dot h" style="border-radius:50%"></i>sebagian</span><span><i class="dot n" style="border-radius:50%"></i>tidak</span></div>
+  <p class="note">Tai Kwun (27.000 m²) dan Somerset House lebih besar dari Maramis. Palais Brongniart (±3.000–4.000 m² ruang acara) dan 11 Conti lebih kecil. Keduanya tetap dimasukkan karena datanya tidak ada pada gedung lain.</p>
+</section>
+
+<!-- 3 -->
+<section class="ch" id="sekilas">
+  <div class="chhead"><span class="n">03</span><h2>Sekilas dalam angka</h2></div>
+  <div class="chart">
+    <h4>Tahun pembangunan</h4>
+    <p class="sub">Gedung luar negeri dibandingkan dengan Gedung A.A. Maramis</p>
+    <svg id="c-year" viewBox="0 0 760 300" role="img" aria-label="Garis waktu tahun pembangunan sebelas gedung dari 1757 sampai 1925"></svg>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Gedung A.A. Maramis</span><span><i style="background:var(--intl)"></i>Luar negeri</span></div>
+  </div>
+  <ul class="clean" style="margin-top:18px">
+    <li>Palais Brongniart, Paris (1808–1826) dibangun pada tahun yang hampir sama dengan Maramis (1809–1828).</li>
+    <li>The Arts House, Singapura selesai 1827, setahun sebelum Maramis.</li>
+    <li>Maramis 69 tahun lebih tua dari Bangunan Sultan Abdul Samad, Kuala Lumpur (1897).</li>
+  </ul>
+
+  <h3>Jumlah pengunjung per tahun</h3>
+  <div class="chart">
+    <h4>Pengunjung atau kunjungan per tahun</h4>
+    <p class="sub">Gedung yang mempublikasikan angka · tahun dan cara hitung berbeda</p>
+    <svg id="c-visit" viewBox="0 0 760 260" role="img" aria-label="Grafik batang jumlah pengunjung per tahun tujuh gedung"></svg>
+    <div class="legend"><span><i style="background:var(--id)"></i>Indonesia</span><span><i style="background:var(--intl)"></i>Luar negeri</span></div>
+  </div>
+  <p class="note">Tai Kwun menghitung kunjungan (bukan orang); 55% di antaranya wisatawan. Somerset House termasuk halaman terbuka dan acara musiman. Hôtel de la Marine berbayar.</p>
+</section>
+
+<!-- 4 -->
+<section class="ch" id="indonesia">
+  <div class="chhead"><span class="n">04</span><h2>Pembanding di Indonesia</h2></div>
+
+  <div class="cases">
+    <article class="case">
+      <div class="top"><span class="label">Jakarta</span><h4>Pos Bloc / M Bloc</h4><p class="sub">Aset BUMN yang dipakai ulang sebagai ruang kreatif</p></div>
+      <dl class="kv">
+        <dt>Pemilik</dt><dd>BUMN: Pos Indonesia (Pos Bloc), Peruri (M Bloc)</dd>
+        <dt>Pengelola</dt><dd>Operator swasta, bagi hasil dengan penyewa</dd>
+        <dt>Pengunjung</dt><dd>±2 juta kunjungan/tahun (M Bloc)</dd>
+      </dl>
+      <ul><li>Diisi toko, kafe, dan ruang acara yang disewa pihak lain.</li><li>Pos Bloc menerima kritik soal cerita gedung yang tidak lagi terasa asli.</li></ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Jakarta</span><h4>Kota Tua / Museum Fatahillah</h4><p class="sub">Kawasan kota lama menuju Jakarta 500 tahun</p></div>
+      <dl class="kv">
+        <dt>Pengelola</dt><dd>Berganti-ganti: konsorsium, usaha patungan, dan satuan tugas</dd>
+        <dt>Pengunjung</dt><dd>2,41 juta (2025)</dd>
+      </dl>
+      <ul><li>Diarahkan menjadi ruang publik kota untuk momen Jakarta 500 tahun (2027).</li></ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Semarang</span><h4>Lawang Sewu</h4><p class="sub">Bekas kantor perusahaan kereta api</p></div>
+      <dl class="kv">
+        <dt>Pengelola</dt><dd>KAI Wisata (anak usaha BUMN)</dd>
+        <dt>Pengunjung</dt><dd>620.550 (2025)</dd>
+        <dt>Tur</dt><dd>4 jenis: siang, malam, tengah malam, privat</dd>
+      </dl>
+      <ul><li>Dulu dikenal sebagai gedung angker; kini dipromosikan sebagai tempat sejarah kereta api.</li><li>Punya akun TikTok yang aktif.</li></ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Jakarta</span><h4>Museum Bank Indonesia</h4><p class="sub">Museum milik lembaga keuangan</p></div>
+      <dl class="kv">
+        <dt>Pengelola</dt><dd>Bank Indonesia</dd>
+        <dt>Pengunjung</dt><dd>±100 ribu/tahun</dd>
+      </dl>
+      <ul><li>Fokus pada sejarah dan pendidikan ekonomi.</li><li>Berada dekat Museum Mandiri di kawasan Kota Tua.</li></ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Jakarta</span><h4>Gedung Arsip Nasional</h4><p class="sub">Gedung bersejarah milik pemerintah yang disewakan untuk acara</p></div>
+      <dl class="kv">
+        <dt>Pemilik</dt><dd>Pemerintah</dd>
+        <dt>Harga sewa</dt><dd>±Rp30 juta per 6 jam</dd>
+      </dl>
+      <ul><li>Gedung bersejarah untuk acara yang paling mirip dengan Maramis di Jakarta.</li></ul>
+    </article>
+  </div>
+
+  <h3>Harga sewa tempat acara di Jakarta</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Tempat</th><th>Jenis</th><th>Harga</th><th>Kapasitas</th></tr></thead>
+    <tbody>
+      <tr class="me"><td><strong>Gedung A.A. Maramis</strong></td><td>Gedung bersejarah</td><td class="num">Rp3,44–30,30 juta/hari per ruang; paket Rp125 juta/hari</td><td class="num">37–496 m² per ruang</td></tr>
+      <tr><td>Gedung Arsip Nasional</td><td>Gedung bersejarah</td><td class="num">±Rp30 juta per 6 jam</td><td>–</td></tr>
+      <tr><td>Museum Nasional, Auditorium VIP A</td><td>Gedung budaya</td><td class="num">Rp30 juta/hari</td><td>–</td></tr>
+      <tr><td>Gedung Kesenian Jakarta</td><td>Gedung budaya</td><td class="num">Rp15–20 juta/hari</td><td>–</td></tr>
+      <tr><td>The Tribrata, Rumah Imam Bonjol, Balai Sarwono</td><td>Gedung acara</td><td class="num">Rp325.000–850.000/orang, termasuk katering</td><td class="num">200–3.000 orang</td></tr>
+      <tr><td>Ballroom hotel</td><td>Hotel</td><td class="num">±Rp600–900 ribu/orang (paket rapat)</td><td>–</td></tr>
+      <tr><td>JCC, JIExpo Kemayoran, SMESCO</td><td>Pusat konvensi</td><td class="num">Rp31.000–98.000/m²</td><td>Ribuan orang</td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">Sumber: Kajian Strategi Komunikasi &amp; Branding Gedung A.A. Maramis, Bab 3.3.</p>
+</section>
+
+<!-- 5 -->
+<section class="ch" id="luar">
+  <div class="chhead"><span class="n">05</span><h2>Pembanding di luar negeri</h2></div>
+
+  <div class="region"><h3>Asia Tenggara</h3><span>3 gedung dengan nilai tertinggi</span></div>
+  <div class="cases">
+    <article class="case">
+      <div class="top"><span class="label">Kuala Lumpur, Malaysia</span><h4>Bangunan Sultan Abdul Samad</h4><p class="sub">Kantor pemerintahan kolonial, dibuka ulang Februari 2026</p><span class="score">Nilai 6 / 6</span></div>
+      <dl class="kv">
+        <dt>Dibangun</dt><dd>1897</dd>
+        <dt>Fungsi lama</dt><dd>Kantor pemerintahan kolonial Inggris, lalu pengadilan</dd>
+        <dt>Status</dt><dd>Situs Warisan Nasional Kategori 1</dd>
+        <dt>Pemugaran</dt><dd>Ditutup 2024; ±11 bulan, oleh Khazanah Nasional (dana kekayaan negara) lewat program Warisan KL</dd>
+        <dt>Dibuka ulang</dt><dd>2 Februari 2026 (Blok 1), bersamaan dengan Visit Malaysia Year 2026</dd>
+        <dt>Jam buka</dt><dd>Setiap hari, 09.00–18.00</dd>
+      </dl>
+      <ul>
+        <li>Isi: galeri kota (gratis di bulan pertama), ruang pameran dengan maket kota, 5 gerai makanan lokal, ruang acara, toko suvenir.</li>
+        <li>Ruang acara bernama: Federal Hall I, Balai Persekutuan II, Heritage Room.</li>
+        <li>Gedung sekitarnya akan dipugar bertahap: Pejabat Pos Lama, bekas Mahkamah Tinggi, Panggung Bandaraya, bekas FMS Survey Office, Muzium Tekstil Negara.</li>
+        <li>Judul Malay Mail (23 Feb 2026): <i>"heritage works best when it is used"</i>.</li>
+      </ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Singapura</span><h4>The Arts House at the Old Parliament</h4><p class="sub">Gedung parlemen lama yang menjadi pusat seni</p><span class="score">Nilai 5,5 / 6</span></div>
+      <dl class="kv">
+        <dt>Dibangun</dt><dd>1827, arsitek G.D. Coleman; gedung pemerintahan tertua yang masih berdiri di Singapura</dd>
+        <dt>Fungsi lama</dt><dd>Rumah kediaman, lalu pengadilan, lalu Parlemen Singapura hingga 1999</dd>
+        <dt>Status</dt><dd>Monumen nasional</dd>
+        <dt>Ganti nama</dt><dd>17 Oktober 2003, dari Old Parliament House; dibuka 2004</dd>
+        <dt>Pengelola</dt><dd>Arts House Group (bernama Arts House Limited sejak 19 Maret 2014)</dd>
+      </dl>
+      <ul>
+        <li>Dipakai untuk sastra, film, seni pertunjukan, seni rupa, dan disewakan untuk acara.</li>
+        <li>Tahun 1827 dipakai dalam kalimat resmi gedung.</li>
+        <li>Setiap ruang sewa punya halaman cerita sejarahnya.</li>
+      </ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Hong Kong</span><h4>Tai Kwun</h4><p class="sub">Kompleks kantor polisi, pengadilan, dan penjara</p><span class="score">Nilai 5 / 6</span></div>
+      <dl class="kv">
+        <dt>Kompleks</dt><dd>16 gedung bersejarah + 2 gedung baru; ±27.000 m² (±2× Maramis); dipakai sejak 1841</dd>
+        <dt>Pengelola</dt><dd>Pemerintah Hong Kong bersama Hong Kong Jockey Club (sejak 2008)</dd>
+        <dt>Biaya</dt><dd>HK$3,8 miliar (±US$480 juta), 8 tahun pengerjaan</dd>
+        <dt>Dibuka</dt><dd>29 Mei 2018</dd>
+        <dt>Pengunjung</dt><dd>±5 juta kunjungan setahun terakhir; ±20 juta sejak dibuka (Juni 2026); 55% wisatawan</dd>
+        <dt>Penghargaan</dt><dd>UNESCO Asia-Pacific Award of Excellence (2019); <i>Time</i> World's Greatest Places (2018)</dd>
+      </dl>
+      <ul>
+        <li>Nama "Tai Kwun" (大館, "stasiun besar") adalah sebutan warga sehari-hari yang dijadikan nama resmi.</li>
+        <li>Gedung di dalamnya tetap memakai nama lama: Barrack Block, Headquarters Block, F Hall.</li>
+        <li>2016: dinding dan atap runtuh saat pembangunan; subkontraktor dituntut.</li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="region"><h3>Asia Timur &amp; Australia</h3></div>
+  <div class="cases">
+    <article class="case">
+      <div class="top"><span class="label">Seoul, Korea Selatan</span><h4>Culture Station Seoul 284</h4><p class="sub">Stasiun kereta masa kolonial Jepang</p><span class="score">Nilai 5 / 6</span></div>
+      <dl class="kv">
+        <dt>Dibangun</dt><dd>1925 <span class="flag">Perlu verifikasi</span></dd>
+        <dt>Status</dt><dd>Situs Bersejarah No. 284 (sejak 1981)</dd>
+        <dt>Berhenti jadi stasiun</dt><dd>2004, setelah stasiun kereta cepat baru dibuka</dd>
+        <dt>Pemugaran</dt><dd>2009–2011</dd>
+        <dt>Dibuka</dt><dd>9 Agustus 2011; resmi sebagai ruang budaya 2 April 2012</dd>
+        <dt>Pengelola</dt><dd>Korea Craft &amp; Design Foundation, di bawah Kementerian Kebudayaan</dd>
+        <dt>Tiket</dt><dd>Masuk gratis; sebagian pameran berbayar</dd>
+      </dl>
+      <ul>
+        <li>Nama dipilih lewat sayembara yang diadakan kementerian.</li>
+        <li>Nama = fungsi baru + kota + nomor register cagar budaya (284).</li>
+      </ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Perth, Australia</span><h4>State Buildings (bekas Treasury)</h4><p class="sub">Gedung keuangan negara bagian yang kini hotel dan restoran</p><span class="score">Nilai 4,5 / 6</span></div>
+      <dl class="kv">
+        <dt>Dibangun</dt><dd>1874–1905; 3 gedung: Treasury, kantor pos lama, kantor pemerintah</dd>
+        <dt>Sebelumnya</dt><dd>Kosong hampir 20 tahun</dd>
+        <dt>Pengembang</dt><dd>FJM Property (swasta), bagian dari proyek Cathedral Square (A$580 juta)</dd>
+        <dt>Pemugaran</dt><dd>A$105 juta; selesai 15 Oktober 2015; 95% bangunan asli dipertahankan</dd>
+        <dt>Isi</dt><dd>Toko, restoran, bar, hotel COMO The Treasury (48 suite)</dd>
+        <dt>Penghargaan</dt><dd>Best Heritage Development, Property Council of Australia (2017)</dd>
+      </dl>
+      <ul>
+        <li>Wisatawan lebih mengenal nama hotelnya, "COMO The Treasury", daripada nama gedungnya. <span class="flag">Perlu verifikasi</span></li>
+      </ul>
+    </article>
+  </div>
+
+  <div class="region"><h3>Eropa</h3></div>
+  <div class="cases">
+    <article class="case">
+      <div class="top"><span class="label">Dublin, Irlandia</span><h4>The Custom House</h4><p class="sub">Kantor bea cukai yang masih dipakai kementerian</p><span class="score">Nilai 5,5 / 6</span></div>
+      <dl class="kv">
+        <dt>Dibangun</dt><dd>1781–1791, arsitek James Gandon</dd>
+        <dt>Fungsi asli</dt><dd>Bea cukai dan pemungutan pajak masa pemerintahan Inggris</dd>
+        <dt>1921</dt><dd>Dibakar untuk memusnahkan arsip pajak Inggris; kubah runtuh</dd>
+        <dt>Dibangun ulang</dt><dd>Oleh negara Irlandia; kubah baru memakai batu kapur lokal Ardbraccan</dd>
+        <dt>Fungsi kini</dt><dd>Kantor pusat Department of Housing, Local Government and Heritage</dd>
+        <dt>Pusat pengunjung</dt><dd>Dibuka November 2021, oleh OPW, kementerian, dan badan pariwisata Fáilte Ireland</dd>
+      </dl>
+      <ul>
+        <li>Tur 4 kali sehari: 10.30, 12.30, 14.30, 16.30; ±45 menit.</li>
+        <li>Gratis setiap Rabu pertama tiap bulan, tanpa reservasi.</li>
+        <li>Lift ke semua lantai dan toilet untuk difabel.</li>
+      </ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Paris, Prancis</span><h4>Hôtel de la Marine</h4><p class="sub">Markas angkatan laut yang dibuka setelah 200 tahun</p><span class="score">Nilai 5 / 6</span></div>
+      <dl class="kv">
+        <dt>Dibangun</dt><dd>1757–1774, arsitek Ange-Jacques Gabriel, Place de la Concorde</dd>
+        <dt>Fungsi lama</dt><dd>Markas Angkatan Laut Prancis, 1789–2015</dd>
+        <dt>Pengelola</dt><dd>Centre des monuments nationaux (lembaga publik, ±100 monumen negara)</dd>
+        <dt>Pemugaran</dt><dd>2017–2021, ±€132–135 juta</dd>
+        <dt>Dibuka</dt><dd>12 Juni 2021</dd>
+        <dt>Pengunjung</dt><dd>348.299 (2025), peringkat 7 dari seluruh monumen yang dikelola CMN</dd>
+      </dl>
+      <ul>
+        <li>Dua rute tur berbayar: Grand Tour (semua ruang) dan Salons &amp; Loggia (ruang upacara).</li>
+        <li>Acara privat dan pemotretan hanya di luar jam buka, mulai 19.30.</li>
+        <li>Tarif syuting dan foto diterbitkan dalam PDF, dengan satu email khusus.</li>
+        <li>Isi lain: galeri koleksi Al Thani (400 m²), restoran, kafe, toko buku, kantor bersama.</li>
+        <li>Sejak 2019 menjadi kantor Yayasan Memori Perbudakan.</li>
+      </ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">London, Inggris</span><h4>Somerset House</h4><p class="sub">Bekas kantor pajak yang menjadi pusat budaya</p><span class="score">Nilai 4,5 / 6</span></div>
+      <dl class="kv">
+        <dt>Dibangun</dt><dd>1770-an, arsitek William Chambers</dd>
+        <dt>Fungsi lama</dt><dd>Kantor pemerintah; abad ke-20 kantor pusat Inland Revenue (otoritas pajak)</dd>
+        <dt>Peralihan</dt><dd>Halaman dibuka untuk publik 2000; kantor pajak keluar penuh 2009–2013</dd>
+        <dt>Pengelola</dt><dd>Somerset House Trust (lembaga amal); menanggung pemeliharaan</dd>
+        <dt>Pendapatan</dt><dd>£25,5 juta (2023–24), tanpa dana pemerintah</dd>
+        <dt>Pengunjung</dt><dd>&gt;3 juta/tahun</dd>
+        <dt>Ruang acara</dt><dd>12 ruang, kapasitas 10–1.500 orang</dd>
+      </dl>
+      <ul>
+        <li>Sumber pendapatan: sewa studio dan kantor untuk pekerja kreatif, pameran, sewa acara, makanan dan minuman.</li>
+        <li>Dua museum awal (Hermitage Rooms, Gilbert Collection) tutup: Hermitage setelah 7 tahun, Gilbert pindah ke V&amp;A tahun 2008.</li>
+        <li>Halaman sewa menyebut bahwa pendapatan sewa acara membiayai program publik, pendidikan, dan pemeliharaan gedung.</li>
+      </ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Paris, Prancis</span><h4>Monnaie de Paris / 11 Conti</h4><p class="sub">Percetakan uang negara yang masih bekerja</p><span class="score">Nilai 4,5 / 6</span></div>
+      <dl class="kv">
+        <dt>Dibangun</dt><dd>1775, tepi Sungai Seine</dd>
+        <dt>Fungsi</dt><dd>Masih mencetak medali, koin koleksi, dan perhiasan</dd>
+        <dt>Renovasi</dt><dd>±5–6 tahun</dd>
+        <dt>Dibuka ulang</dt><dd>30 September 2017 dengan nama "11 Conti" (dari alamat Quai de Conti No. 11)</dd>
+        <dt>Museum</dt><dd>±1.200 m², ±1.800 objek</dd>
+      </dl>
+      <ul>
+        <li>Pengunjung dapat melihat bengkel pencetakan secara langsung.</li>
+        <li>Ada galeri seni (sejak 2014), restoran Guy Savoy (tiga bintang Michelin), kafe, toko, dan taman.</li>
+        <li>Nama baru sempat membingungkan sebagian publik. <span class="flag">Perlu verifikasi</span></li>
+      </ul>
+    </article>
+
+    <article class="case">
+      <div class="top"><span class="label">Paris, Prancis</span><h4>Palais Brongniart</h4><p class="sub">Bekas bursa efek yang menjadi pusat konvensi</p><span class="score">Nilai 4,5 / 6</span></div>
+      <dl class="kv">
+        <dt>Dibangun</dt><dd>1808–1826, sezaman dengan Maramis</dd>
+        <dt>Fungsi asli</dt><dd>Bursa Efek Paris, hingga 1987</dd>
+        <dt>Pemilik</dt><dd>Kota Paris</dd>
+        <dt>Pengelola</dt><dd>GL events (operator tempat acara internasional)</dd>
+        <dt>Ruang acara</dt><dd>±3.000–4.000 m²; auditorium 594 dan 99 kursi</dd>
+        <dt>Sertifikat</dt><dd>ISO 20121 (acara berkelanjutan)</dd>
+      </dl>
+      <ul>
+        <li>Hanya dipakai untuk konvensi dan acara; tidak ada program kunjungan publik.</li>
+      </ul>
+    </article>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="ch" id="ruang">
+  <div class="chhead"><span class="n">06</span><h2>Nama ruang sewa</h2></div>
+  <div class="grid3">
+    <div class="panel"><span class="label">Maramis</span><p class="big">43 dari 49<small>unit hanya memakai kode</small></p></div>
+    <div class="panel"><span class="label">Pembanding</span><p class="big">4<small>gedung terverifikasi memakai nama sejarah untuk ruangnya</small></p></div>
+    <div class="panel"><span class="label">Pembanding</span><p class="big">0<small>gedung ditemukan yang menjual ruang utama hanya dengan kode</small></p></div>
+  </div>
+
+  <h3>Contoh nama ruang</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Gedung</th><th>Nama ruang</th></tr></thead>
+    <tbody>
+      <tr><td>Culture Station Seoul 284</td><td>Central Hall, 1st &amp; 2nd Class Waiting Room, Ladies' Waiting Room, VIP Lounge, 3rd Class Waiting Room, Stationmaster's Office, The Grill</td></tr>
+      <tr><td>Hôtel de la Marine</td><td>Cour de l'Intendant, Salons d'honneur, Salons rue Royale, Cour d'honneur</td></tr>
+      <tr><td>Bangunan Sultan Abdul Samad</td><td>Federal Hall I, Balai Persekutuan II, Heritage Room, Confluence Hall, Visionary Hall</td></tr>
+      <tr><td>Tai Kwun</td><td>Barrack Block, Headquarters Block, F Hall</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Ukuran ruang: Seoul 284 dan Maramis</h3>
+  <div class="chart">
+    <h4>Luas ruang sewa (m²)</h4>
+    <p class="sub">Ruang Seoul 284 berukuran 45–572 m²; ruang Maramis 37–496 m²</p>
+    <svg id="c-room" viewBox="0 0 760 300" role="img" aria-label="Grafik batang luas ruang sewa Culture Station Seoul 284 dibandingkan ruang terbesar dan terkecil Gedung A.A. Maramis"></svg>
+    <div class="legend"><span><i style="background:var(--intl)"></i>Culture Station Seoul 284</span><span><i style="background:var(--accent)"></i>Gedung A.A. Maramis</span></div>
+  </div>
+</section>
+
+<!-- 7 -->
+<section class="ch" id="jadwal">
+  <div class="chhead"><span class="n">07</span><h2>Jadwal buka untuk publik</h2></div>
+  <div class="tbl"><table>
+    <thead><tr><th>Gedung</th><th>Jadwal &amp; tiket</th></tr></thead>
+    <tbody>
+      <tr><td><strong>The Custom House</strong>, Dublin</td><td>Tur 4 kali sehari (10.30, 12.30, 14.30, 16.30), ±45 menit; gratis setiap Rabu pertama tiap bulan; tur tematik musiman</td></tr>
+      <tr><td><strong>Hôtel de la Marine</strong>, Paris</td><td>Berbayar pada jam buka, dua rute tur; acara privat mulai 19.30</td></tr>
+      <tr><td><strong>Bangunan Sultan Abdul Samad</strong>, Kuala Lumpur</td><td>Setiap hari 09.00–18.00; galeri kota gratis di bulan pertama pembukaan</td></tr>
+      <tr><td><strong>Culture Station Seoul 284</strong>, Seoul</td><td>Masuk gratis; sebagian pameran dan pertunjukan berbayar</td></tr>
+      <tr><td><strong>Tai Kwun</strong>, Hong Kong</td><td>Masuk gratis; sebagian program berbayar</td></tr>
+      <tr><td><strong>Lawang Sewu</strong>, Semarang</td><td>Tur siang, malam, tengah malam, dan privat</td></tr>
+      <tr><td><strong>Palais Brongniart</strong>, Paris</td><td>Tidak ada kunjungan publik; hanya acara</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid2" style="margin-top:16px">
+    <div class="panel"><span class="label">Custom House, Dublin</span><p class="big">4 tur/hari<small>gedung tetap dipakai sebagai kantor kementerian</small></p></div>
+    <div class="panel"><span class="label">Maramis, target 2027</span><p class="big">≥48 tur/tahun<small>jumlah yang dicapai Custom House dalam ±2 minggu</small></p></div>
+  </div>
+</section>
+
+<!-- 8 -->
+<section class="ch" id="biaya">
+  <div class="chhead"><span class="n">08</span><h2>Biaya, pendapatan, dan pengelola</h2></div>
+
+  <div class="chart">
+    <h4>Sumber dana pemugaran Hôtel de la Marine</h4>
+    <p class="sub">Total ±€132–135 juta · 2017–2021</p>
+    <svg id="c-fund" viewBox="0 0 760 96" role="img" aria-label="Batang bertumpuk sumber dana pemugaran Hôtel de la Marine: pemerintah 10 juta euro, donatur 6,7 juta euro, iklan 20 juta euro, sisanya pinjaman CMN"></svg>
+    <div class="legend" id="fund-legend"></div>
+  </div>
+
+  <h3>Biaya pemugaran dan pendapatan</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Gedung</th><th>Angka</th><th>Keterangan</th></tr></thead>
+    <tbody>
+      <tr><td>Tai Kwun</td><td class="num">HK$3,8 miliar (±US$480 juta)</td><td>Pemugaran 8 tahun, dibiayai Hong Kong Jockey Club</td></tr>
+      <tr><td>Hôtel de la Marine</td><td class="num">±€132–135 juta</td><td>Pemugaran 2017–2021</td></tr>
+      <tr><td>State Buildings, Perth</td><td class="num">A$105 juta</td><td>Pemugaran; bagian proyek A$580 juta</td></tr>
+      <tr><td>Somerset House</td><td class="num">£25,5 juta per tahun</td><td>Pendapatan 2023–24, tanpa dana pemerintah</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Siapa pengelolanya</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>Bentuk pengelola</th><th>Gedung</th></tr></thead>
+    <tbody>
+      <tr class="me"><td><strong>Lembaga negara</strong></td><td>Gedung A.A. Maramis (LMAN), Hôtel de la Marine (CMN), The Custom House (OPW dan kementerian), Culture Station Seoul 284 (yayasan di bawah kementerian)</td></tr>
+      <tr><td>Lembaga amal</td><td>Somerset House</td></tr>
+      <tr><td>Pemerintah bersama yayasan atau dana negara</td><td>Tai Kwun (Hong Kong Jockey Club), Bangunan Sultan Abdul Samad (Khazanah Nasional)</td></tr>
+      <tr><td>Perusahaan pengelola seni milik pemerintah</td><td>The Arts House (Arts House Group)</td></tr>
+      <tr><td>Lembaga yang masih beroperasi</td><td>Monnaie de Paris, Museum Bank Indonesia</td></tr>
+      <tr><td>Pemilik publik, operator swasta</td><td>Palais Brongniart (GL events), Pos Bloc / M Bloc</td></tr>
+      <tr><td>Anak usaha BUMN</td><td>Lawang Sewu (KAI Wisata)</td></tr>
+      <tr><td>Swasta penuh</td><td>State Buildings, Perth (FJM Property)</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 9 -->
+<section class="ch" id="catatan">
+  <div class="chhead"><span class="n">09</span><h2>Catatan data</h2></div>
+  <ul class="clean">
+    <li>Luas lantai total tidak tersedia seragam. Perbandingan ukuran memakai luas kawasan, luas ruang acara, dan jumlah gedung.</li>
+    <li>Angka pengunjung berasal dari tahun dan cara hitung yang berbeda: kunjungan atau orang, berbayar atau gratis.</li>
+    <li>Data media sosial tidak dikumpulkan.</li>
+    <li>Gedung di Amerika dan Afrika tidak masuk karena tidak memenuhi minimal empat ukuran dengan data yang dapat diperiksa.</li>
+    <li>Data gedung Indonesia berasal dari Kajian Strategi Komunikasi &amp; Branding Gedung A.A. Maramis (Bab 3.3) dan belum dinilai dengan enam ukuran.</li>
+  </ul>
+  <h3>Belum terverifikasi</h3>
+  <div class="tbl"><table>
+    <thead><tr><th>#</th><th>Data</th><th>Gedung</th></tr></thead>
+    <tbody>
+      <tr><td>V1</td><td>Tahun pembangunan Stasiun Seoul lama (1925)</td><td>Seoul 284</td></tr>
+      <tr><td>V2</td><td>Daftar lengkap gedung yang dikelola Arts House Group</td><td>The Arts House</td></tr>
+      <tr><td>V3</td><td>Kebingungan publik atas nama "11 Conti"</td><td>Monnaie de Paris</td></tr>
+      <tr><td>V4</td><td>Nama "COMO The Treasury" lebih dikenal daripada nama gedung</td><td>State Buildings</td></tr>
+      <tr><td>V5</td><td>Luas lantai dan kawasan</td><td>Custom House, Hôtel de la Marine, Sultan Abdul Samad</td></tr>
+      <tr><td>V6</td><td>Luas lantai total Gedung A.A. Maramis dari dokumen pemugaran</td><td>Maramis</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<!-- 10 -->
+<section class="ch" id="sumber">
+  <div class="chhead"><span class="n">10</span><h2>Sumber</h2></div>
+  <p class="note" style="margin:0 0 14px">Data per September 2026.</p>
+  <ul class="sources">
+    <li class="src-h">Hôtel de la Marine</li>
+    <li><a href="https://www.theartnewspaper.com/2021/06/14/pariss-landmark-hotel-de-la-marine-opens-to-visitorsand-co-working-officesafter-four-years-of-restoration">The Art Newspaper (2021)</a></li>
+    <li><a href="https://www.monuments-nationaux.fr/content/download/9922583/file_fr/CP%20fr%C3%A9quentation%202025.pdf">CMN (2025): jumlah pengunjung</a></li>
+    <li><a href="https://www.hotel-de-la-marine.paris/en/privatisation">Hôtel de la Marine: sewa</a> · <a href="https://www.hotel-de-la-marine.paris/en/shooting-and-filming">syuting</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/H%C3%B4tel_de_la_Marine">Wikipedia</a></li>
+    <li class="src-h">The Custom House</li>
+    <li><a href="https://heritageireland.ie/places-to-visit/custom-house-visitor-centre/">Heritage Ireland (OPW)</a></li>
+    <li><a href="https://www.gov.ie/en/office-of-public-works/press-releases/new-custom-house-visitor-centre-to-tell-230-years-of-irish-history-architecture-and-trade/">Gov.ie (OPW): siaran pers</a></li>
+    <li><a href="https://dublinpeople.com/news/dublin/articles/2025/09/29/custom-house-opens-for-tours-this-october/">Dublin People (2025)</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/The_Custom_House">Wikipedia</a></li>
+    <li class="src-h">Somerset House</li>
+    <li><a href="https://www.theartnewspaper.com/2025/03/11/how-somerset-house-became-a-centre-for-contemporary-art">The Art Newspaper (2025)</a></li>
+    <li><a href="https://www.somersethouse.org.uk/venue-hire">Somerset House: sewa</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Somerset_House">Wikipedia</a></li>
+    <li class="src-h">Monnaie de Paris / 11 Conti</li>
+    <li><a href="https://www.club-innovation-culture.fr/monnaie-paris-11-conti-nouveau-musee/">CLIC France</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Mus%C3%A9e_du_11_Conti">Wikipedia</a></li>
+    <li class="src-h">Palais Brongniart</li>
+    <li><a href="https://www.gl-events.com/en/palais-brongniart">GL events</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Palais_Brongniart">Wikipedia</a></li>
+    <li class="src-h">Tai Kwun</li>
+    <li><a href="https://www.chinadailyhk.com/hk/article/635733">China Daily HK (2026)</a></li>
+    <li><a href="https://www.dezeen.com/2018/12/05/tai-kwun-art-centre-hong-kong-herzog-de-meuron/">Dezeen (2018)</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Tai_Kwun">Wikipedia</a></li>
+    <li class="src-h">Culture Station Seoul 284</li>
+    <li><a href="https://www.korean-culture.org/eng/webzine/202201/sub01.html">Korean Culture and Information Service (2022)</a></li>
+    <li><a href="https://www.kcdf.or.kr/cms/content/view/454">KCDF: fasilitas</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Seoul_Station">Wikipedia</a></li>
+    <li class="src-h">The Arts House</li>
+    <li><a href="https://www.artshousegroup.sg/media-centre/press-releases/the-old-parliament-house-renamed-the-arts-house-at-the-old-parliament-tah">Arts House Group: siaran pers ganti nama</a></li>
+    <li><a href="https://artshousegroup.sg/about-us/arts-house-group/our-story">Arts House Group: sejarah</a></li>
+    <li><a href="https://www.roots.gov.sg/places/places-landing/Places/national-monuments/former-parliament-house-and-annex-building-now-the-arts-house">Roots.gov.sg</a></li>
+    <li class="src-h">Bangunan Sultan Abdul Samad</li>
+    <li><a href="https://www.malaymail.com/news/malaysia/2026/02/23/for-ordinary-malaysians-restored-sultan-abdul-samad-building-shows-heritage-works-best-when-it-is-used/208596">Malay Mail (23 Feb 2026)</a></li>
+    <li><a href="https://www.thestar.com.my/lifestyle/culture/2026/02/01/kls-iconic-bangunan-sultan-abdul-samad-reopens-welcoming-visitors-into-history">The Star (1 Feb 2026)</a></li>
+    <li><a href="https://www.therakyatpost.com/news/malaysia/2026/02/03/kuala-lumpurs-historic-bangunan-sultan-abdul-samad-reopens-after-year-long-makeover/">The Rakyat Post (3 Feb 2026)</a></li>
+    <li class="src-h">State Buildings, Perth</li>
+    <li><a href="https://www.propertycouncil.com.au/news/state-buildings-perth-brought-back-to-life">Property Council of Australia</a></li>
+    <li><a href="https://www.seesawmag.com.au/2025/10/state-buildings-ten">Seesaw Magazine (2025)</a></li>
+    <li><a href="https://en.wikipedia.org/wiki/Treasury_Buildings,_Perth">Wikipedia</a></li>
+    <li class="src-h">Indonesia &amp; data internal</li>
+    <li>Kajian Strategi Komunikasi &amp; Branding Gedung A.A. Maramis, Bab 3.3</li>
+    <li>Booklet Gedung AA Maramis, Sept 2026</li>
+    <li>Daftar ruangan Gedung A.A. Maramis</li>
+  </ul>
+</section>
+
+</main>
+</div>
+
+<footer>
+  <span>Studi Banding Gedung Bersejarah Setara Gedung A.A. Maramis · Draf v1.0</span>
+  <span>Disusun oleh Senior Analyst, Lembaga Manajemen Aset Negara · 26 September 2026</span>
+</footer>
+</div>
+
+<div class="tip" id="tip" hidden></div>
+
+<script>
+(function(){
+  const NS="http://www.w3.org/2000/svg";
+  const tip=document.getElementById("tip");
+  function el(n,a,p){const e=document.createElementNS(NS,n);for(const k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
+  function txt(p,x,y,s,cls,anchor){const t=el("text",{x,y,"text-anchor":anchor||"middle"},p);if(cls)t.setAttribute("class",cls);t.textContent=s;return t}
+  function hover(node,label){
+    node.classList.add("bar");
+    node.addEventListener("pointermove",e=>{tip.textContent=label;tip.hidden=false;tip.style.left=(e.clientX+12)+"px";tip.style.top=(e.clientY-34)+"px"});
+    node.addEventListener("pointerleave",()=>{tip.hidden=true});
+  }
+  const fmt=n=>n.toLocaleString("id-ID");
+
+  // Score matrix
+  (function(){
+    const rows=[
+      ["Bangunan Sultan Abdul Samad","Kuala Lumpur","ffffff","6"],
+      ["The Custom House","Dublin","ffffhf","5,5"],
+      ["The Arts House at the Old Parliament","Singapura","hfffff","5,5"],
+      ["Hôtel de la Marine","Paris","fffhfh","5"],
+      ["Tai Kwun","Hong Kong","hffhff","5"],
+      ["Culture Station Seoul 284","Seoul","fffnff","5"],
+      ["Somerset House","London","hffffn","4,5"],
+      ["Monnaie de Paris / 11 Conti","Paris","hffffn","4,5"],
+      ["Palais Brongniart","Paris","ffffhn","4,5"],
+      ["State Buildings (bekas Treasury)","Perth","ffnffh","4,5"]
+    ];
+    const name={f:"penuh",h:"sebagian",n:"tidak"};
+    const tb=document.getElementById("score");
+    rows.forEach(r=>{
+      const tr=document.createElement("tr");
+      tr.innerHTML=`<td><strong>${r[0]}</strong></td><td>${r[1]}</td>`+[...r[2]].map(c=>`<td class="c"><span class="dot ${c}" role="img" aria-label="${name[c]}"></span></td>`).join("")+`<td class="r"><strong>${r[3]}</strong></td>`;
+      tb.appendChild(tr);
+    });
+  })();
+
+  // Timeline of construction years
+  (function(){
+    const svg=document.getElementById("c-year");
+    const rows=[
+      ["Hôtel de la Marine",1757,1774,"1757–1774"],
+      ["Monnaie de Paris",1775,1775,"1775"],
+      ["Somerset House",1776,1795,"1776–1790-an"],
+      ["The Custom House",1781,1791,"1781–1791"],
+      ["Palais Brongniart",1808,1826,"1808–1826"],
+      ["Gedung A.A. Maramis",1809,1828,"1809–1828",1],
+      ["The Arts House",1827,1827,"1827"],
+      ["Tai Kwun",1841,1915,"1841–1910-an"],
+      ["State Buildings, Perth",1874,1905,"1874–1905"],
+      ["Sultan Abdul Samad",1897,1897,"1897"],
+      ["Seoul 284",1925,1925,"1925*"]
+    ];
+    const W=760,LW=160,R=20,T=8,rh=24,x0=1750,x1=1950;
+    const H=T+rows.length*rh+26;
+    svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+    const X=y=>LW+(W-LW-R)*(y-x0)/(x1-x0);
+    for(let y=1750;y<=1930;y+=20){
+      el("line",{x1:X(y),x2:X(y),y1:T,y2:T+rows.length*rh,stroke:"var(--chart-grid)","stroke-width":1},svg);
+      txt(svg,X(y),H-8,String(y));
+    }
+    rows.forEach((r,i)=>{
+      const y=T+i*rh+rh/2, me=!!r[4], c=me?"var(--accent)":"var(--intl)";
+      txt(svg,0,y+4,r[0],me?"me":null,"start");
+      const a=X(r[1]), b=X(r[2]);
+      const g=el("g",{},svg);
+      if(b-a<2){el("circle",{cx:a,cy:y,r:5,fill:c},g)}
+      else{el("rect",{x:a,y:y-5,width:b-a,height:10,rx:5,fill:c},g)}
+      el("rect",{x:Math.min(a,b)-6,y:y-10,width:Math.max(b-a,0)+12,height:20,fill:"transparent"},g);
+      hover(g,`${r[0]}: ${r[3]}`);
+      txt(svg,Math.max(a,b)+9,y+4,r[3],me?"me":"v","start");
+    });
+  })();
+
+  // Visitors
+  (function(){
+    const svg=document.getElementById("c-visit");
+    const rows=[
+      ["Tai Kwun",5000000,"±5 juta","intl"],
+      ["Somerset House",3000000,">3 juta","intl"],
+      ["Kota Tua / Museum Fatahillah",2410000,"2,41 juta (2025)","id"],
+      ["M Bloc",2000000,"±2 juta","id"],
+      ["Lawang Sewu",620550,"620.550 (2025)","id"],
+      ["Hôtel de la Marine",348299,"348.299 (2025)","intl"],
+      ["Museum Bank Indonesia",100000,"±100 ribu","id"]
+    ];
+    const W=760,LW=200,R=110,top=4,rh=34,max=5000000;
+    svg.setAttribute("viewBox",`0 0 ${W} ${top+rows.length*rh+20}`);
+    [0,1,2,3,4,5].forEach(m=>{
+      const x=LW+(W-LW-R)*m/5;
+      el("line",{x1:x,x2:x,y1:top,y2:top+rows.length*rh,stroke:"var(--chart-grid)","stroke-width":1},svg);
+      txt(svg,x,top+rows.length*rh+14,m===0?"0":m+" jt");
+    });
+    rows.forEach((r,i)=>{
+      const y=top+i*rh;
+      txt(svg,0,y+rh/2+4,r[0],null,"start");
+      const w=Math.max(2,(W-LW-R)*r[1]/max);
+      const b=el("rect",{x:LW,y:y+rh/2-7,width:w,height:14,rx:3,fill:r[3]==="id"?"var(--id)":"var(--intl)"},svg);
+      hover(b,`${r[0]}: ${r[2]}`);
+      txt(svg,LW+w+6,y+rh/2+4,r[2],"v","start");
+    });
+  })();
+
+  // Room sizes
+  (function(){
+    const svg=document.getElementById("c-room");
+    const rows=[
+      ["Central Hall",572],["3rd Class Waiting Room",369],["The Grill",254],
+      ["1st & 2nd Class Waiting Room",172],["VIP Lounge",93],["Ladies' Waiting Room",63],["Stationmaster's Office",45],
+      ["Maramis C3.8 (terbesar)",496,1],["Maramis, ruang terkecil",37,1]
+    ];
+    const W=760,LW=200,R=60,top=4,rh=30,max=600;
+    svg.setAttribute("viewBox",`0 0 ${W} ${top+rows.length*rh+20}`);
+    [0,100,200,300,400,500,600].forEach(m=>{
+      const x=LW+(W-LW-R)*m/max;
+      el("line",{x1:x,x2:x,y1:top,y2:top+rows.length*rh,stroke:"var(--chart-grid)","stroke-width":1},svg);
+      txt(svg,x,top+rows.length*rh+14,String(m));
+    });
+    rows.forEach((r,i)=>{
+      const y=top+i*rh, me=!!r[2];
+      txt(svg,0,y+rh/2+4,r[0],me?"me":null,"start");
+      const w=(W-LW-R)*r[1]/max;
+      const b=el("rect",{x:LW,y:y+rh/2-6,width:w,height:12,rx:3,fill:me?"var(--accent)":"var(--intl)"},svg);
+      hover(b,`${r[0]}: ${fmt(r[1])} m²`);
+      txt(svg,LW+w+6,y+rh/2+4,fmt(r[1])+" m²","v","start");
+    });
+  })();
+
+  // Funding stacked bar (midpoint total €133,5 juta)
+  (function(){
+    const svg=document.getElementById("c-fund");
+    const parts=[
+      ["Pemerintah",10,"€10 juta","var(--accent)"],
+      ["Donatur",6.7,"€6,7 juta","var(--kayu)"],
+      ["Iklan",20,"€20 juta","var(--id)"],
+      ["Pinjaman CMN (sisa)",96.8,"±€95–98 juta","var(--intl)"]
+    ];
+    const W=760,total=133.5;let x=0;
+    parts.forEach((p,i)=>{
+      const w=W*p[1]/total;
+      const r=el("rect",{x:x+(i?1:0),y:10,width:w-(i?1:0),height:34,fill:p[3]},svg);
+      hover(r,`${p[0]}: ${p[2]}`);
+      if(w>60) {const t=txt(svg,x+w/2,31,p[2]);t.setAttribute("style","fill:#fff;font-weight:600")}
+      x+=w;
+    });
+    txt(svg,0,66,"€0",null,"start");txt(svg,W,66,"±€133 juta",null,"end");
+    document.getElementById("fund-legend").innerHTML=parts.map(p=>`<span><i style="background:${p[3]}"></i>${p[0]}: ${p[2]}</span>`).join("");
+  })();
+
+  // TOC highlight
+  const links=[...document.querySelectorAll("nav.toc a")];
+  const map=new Map(links.map(a=>[a.getAttribute("href").slice(1),a]));
+  if("IntersectionObserver" in window){
+    const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.remove("on"));const a=map.get(e.target.id);if(a)a.classList.add("on")}})},{rootMargin:"-30% 0px -60% 0px"});
+    document.querySelectorAll("section.ch").forEach(s=>io.observe(s));
+  }
+})();
+</script>
+</body>
+</html>
