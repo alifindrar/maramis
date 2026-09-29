@@ -7,8 +7,8 @@
 ### INFORMASI DOKUMEN
 * **Penyusun:** Senior Analyst, Lembaga Manajemen Aset Negara (LMAN)
 * **Unit/Departemen:** LMAN – Pengelola Gedung A.A. Maramis (BLU di bawah Kementerian Keuangan RI)
-* **Tanggal Penyusunan:** 26 September 2026
-* **Versi Dokumen:** 2.1
+* **Tanggal Penyusunan:** 26 September 2026 (pembaruan 29 September 2026)
+* **Versi Dokumen:** 2.2
 * **Status Dokumen:** Draf untuk Review Pimpinan
 
 **Perubahan dari versi 1.0 (v2.0)**
@@ -25,12 +25,20 @@
 6. **Akses publik bersifat terbatas.** Gedung berada di kompleks perkantoran terpadu Kemenkeu, Kemenko Perekonomian, dan OJK; masuk hanya bagi pihak yang memiliki izin sah (peserta acara, survei calon klien, kontraktor). Produk *Maramis Jelajah* dan pesan akses dirancang ulang sebagai **kunjungan berizin melalui pendaftaran**.
 7. **Reklame tidak diizinkan** di gedung; segmen pernikahan dijajaki sebagai opsi dengan catatan kendala parkir dan kompleks perkantoran.
 
-**Basis bukti.** Kajian ini disusun dari lima kelompok sumber:
+**Perubahan v2.2 (sumber baru: rancangan *signage* & *wayfinding*)**
+1. Mengintegrasikan dua paparan **Penataan *Signage*, *Wayfinding*, dan *Environmental Design* Gedung AA. Maramis** (konsultan LABO., 2026): Paparan 02 (analisis pendahuluan dan konsep skematik) dan Paparan 03 (pengembangan dan gambar teknis, 10 Juni 2026).
+2. **Keputusan logotype menjadi mendesak.** Rancangan *signage* memakai "GEDUNG MARAMIS" pada monumen nama gedung (baja tahan karat di atas beton) dan seluruh totem. Keputusan nama harus diambil sebelum fabrikasi (6.1A, 8.1, 12.6).
+3. Nomenklatur ruang (6.1B) diselaraskan dengan modul identifikasi *signage*, yang saat ini memakai nama generik ("Ruang Serbaguna 01", "Ruang Pamer 01–05").
+4. Identitas visual (6.5) dilengkapi sistem *signage*: tipografi Public Sans, zona warna per lantai, bentuk lengkung, sistem modular, dan hierarki informasi. Kekosongan KV diperbarui.
+5. Temuan kondisi eksisting (penanda *drop-off*, parkir, dan akses dari Lapangan Banteng belum ada) masuk ke SWOT (3.1.2), *issue register* (8.1), rencana aksi (9), dan daftar verifikasi (12.6).
+
+**Basis bukti.** Kajian ini disusun dari enam kelompok sumber:
 1. **Dokumen internal:** Booklet Gedung A.A. Maramis (Sept 2026), daftar ruang & tarif, buku *Gedung A.A. Maramis: Istana Putih di Weltevreden* (Kemenkeu, 2022), dan *Panduan Grafis Kunci* (KV) Gedung AA Maramis.
 2. **Kajian HBU (Colliers, Des 2023):** analisis regulasi, signifikansi, lokasi, pasar properti, kompetitor (MICE, *fine dining*, ritel tematik, *co-working*, museum), konsep pengembangan, skema kerja sama, kelayakan finansial, dan risiko (lihat [laporan_hbu.md](<../1 - ingested/laporan_hbu.md>)).
 3. **Data operasional:** 172 entri kalender Teamup, Sep 2025 – Des 2026 (lihat [data_analysis.md](<../1 - ingested/data_analysis.md>)).
 4. **Riset daring:** pemantauan media, akun Instagram @gedung_maramis, regulasi, dan konteks pasar.
 5. **Benchmarking:** tujuh kasus *adaptive reuse* ditambah dua kasus dari kajian HBU (Tai Kwun, National Gallery Singapore).
+6. **Rancangan *signage* & *wayfinding* (LABO., Mei–Jun 2026):** analisis kondisi eksisting, zonasi ruang per lantai, sistem modular, tipografi, zona warna, dan gambar teknis (lihat 6.5 dan 12.3).
 
 Seluruh angka pada dokumen ini dapat ditelusuri ke sumbernya. **Asumsi** ditandai secara eksplisit.
 
@@ -73,7 +81,7 @@ Gedung ini sudah memiliki momentum yang jarang dimiliki aset heritage:
 
 **Namun momentum ini belum terakumulasi menjadi merek.** Tiga bukti utama:
 1. **Kanal resmi ada, tetapi masih kecil dan belum menjadi sumber kebenaran.** Akun Instagram **@gedung_maramis** baru memiliki **±150 pengikut**, jauh di bawah jangkauan liputan media dan kreator tentang gedung ini. Belum ada akun TikTok, situs, sistem pemesanan daring, atau listing Google yang dikelola. Komunikasi masih tersebar di @blu.lman, @kemenkeuri, DJKN, penyelenggara acara, dan pemandu tur. Liputan media jarang menautkan akun resmi.
-2. **Identitas belum konsisten.** Di materi resmi terdapat enam varian nama: "Gedung A.A. Maramis" (Booklet), "Gedung A.A Maramis" (nama tampilan Instagram), "A.A Maramis Heritage" (Booklet), "GEDUNG AA MARAMIS" (sampul KV), "GEDUNG MARAMIS" (logotype KV), dan "Istana Daendels" (media dan komunitas). Ruang juga disebut tanpa standar: "Gedung Utama (Historical Halls)", "R. Majapahit", "C.2.12", "Ruang VIP".
+2. **Identitas belum konsisten.** Di materi resmi terdapat enam varian nama: "Gedung A.A. Maramis" (Booklet), "Gedung A.A Maramis" (nama tampilan Instagram), "A.A Maramis Heritage" (Booklet), "GEDUNG AA MARAMIS" (sampul KV), "GEDUNG MARAMIS" (logotype KV), dan "Istana Daendels" (media dan komunitas). Ruang juga disebut tanpa standar: "Gedung Utama (Historical Halls)", "R. Majapahit", "C.2.12", "Ruang VIP". Rancangan *signage* (Jun 2026) memakai "GEDUNG MARAMIS" dan nama ruang generik ("Ruang Serbaguna 01"). Setelah difabrikasi, varian ini menjadi permanen di lokasi, sehingga keputusan nama harus diambil lebih dulu.
 3. **Informasi akses bertentangan dan tidak lengkap.** Media dan kreator menulis gedung ini "tidak dibuka untuk umum", sementara portal lain menulis "gratis, Senin–Jumat 09.00–15.00". Yang kedua keliru: gedung tidak menerima kunjungan bebas karena berada di kompleks perkantoran terbatas. Yang pertama benar, tetapi tidak lengkap, karena tidak menjelaskan cara masuk yang sah (acara, survei lokasi, atau program kunjungan berizin). Tidak ada sumber resmi yang meluruskannya.
 
 ### 1.2. Tantangan Kunci: Konservasi vs. Komersialisasi (dan Negara vs. Publik)
@@ -181,6 +189,7 @@ Dari sisi utilisasi, tantangan terbesar justru bersifat *produk-komunikasi*:
 **Reklame**
 - **Reklame tidak diizinkan** pada Gedung A.A. Maramis.
 - Implikasi: tidak ada papan iklan, *billboard*, atau materi promosi komersial permanen di gedung dan halamannya. Identitas sponsor dan *branding* mitra acara hanya boleh tampil secara terbatas, sementara, dan di dalam area acara, sesuai Piagam Etiket Acara. Penanda yang diizinkan adalah penunjuk arah (*wayfinding*), papan interpretasi, dan identitas gedung.
+- Catatan: kajian *signage* (LABO., 2026) mencatat belum adanya *signage* temporer promosi untuk fasad depan yang menghadap Lapangan Banteng. Materi tersebut harus dibatasi pada identitas gedung dan informasi publik nonkomersial (misalnya jadwal Hari Terbuka dan cara mendaftar), tanpa logo sponsor, sampai ada kepastian tafsir larangan reklame (lihat 12.6).
 
 **Rezim BMN dan LMAN**
 - PP 27/2014 jo. PP 28/2020 dan PMK 115/2020 mengatur pemanfaatan BMN.
@@ -283,7 +292,7 @@ Kajian ini merumuskan konsep pemanfaatan sebagai **"tiga lantai fungsi"**, yang 
 - **Bukti prestise:** FIABCI 2025, kunjungan Queen Máxima, jamuan HUT RI, dan film internasional *Rose Pandanwangi*.
 - **Produk ruang bernama yang terbukti laku.** Majapahit, Sriwijaya, Bone, dan Kutai paling sering disebut dalam pemesanan.
 - **Aset visual kuat:** fasad putih simetris, lengkungan, koridor, serta karakter khas Lantai 1 (bekas istal kuda: dinding lengkung putih, ubin gelap, balok kayu). Kosakata publik yang terekam: *"megah"*, *"estetik"*, *"instagramable"*, *"expensive vibes"*, *"labirin yang megah"*.
-- **Identitas visual (KV) dan akun Instagram resmi sudah tersedia.**
+- **Identitas visual (KV) dan akun Instagram resmi sudah tersedia.** Rancangan *signage* dan *wayfinding* lengkap dengan gambar teknis juga sudah ada (LABO., Jun 2026) dan menurunkan KV ke lokasi fisik (palet, lengkung, logomark fasad).
 - **Kelayakan finansial terdokumentasi** (HBU: IRR 14,24%), sehingga argumen "pemanfaatan membiayai pelestarian" punya dasar angka.
 - **Lokasi dan konektivitas:** terintegrasi dengan Lapangan Banteng (2026), dekat Istiqlal, Katedral, GKJ, dan Pasar Baru, serta akan dilayani MRT Fase 2A (Stasiun Monas, Harmoni, Sawah Besar).
 
@@ -291,6 +300,12 @@ Kajian ini merumuskan konsep pemanfaatan sebagai **"tiga lantai fungsi"**, yang 
 - **Ekosistem kanal belum lengkap dan audiens sangat kecil.** Akun @gedung_maramis baru memiliki ±150 pengikut; belum ada akun TikTok, situs, katalog, sistem pemesanan daring, atau listing Google yang dikelola. Kontak penjualan hanya dua nomor WhatsApp di Booklet dan listing AESIA. Nama tampilan akun ("Gedung A.A Maramis") belum sesuai nama baku.
 - **Akses publik terbatas secara struktural.** Gedung berada di kompleks perkantoran terpadu Kemenkeu, Kemenko Perekonomian, dan OJK. Hanya peserta acara, calon klien yang melakukan survei lokasi, kontraktor, dan pihak berizin lain yang dapat masuk. Kunjungan bebas (*walk-in*) tidak dimungkinkan.
 - **Nama dan nomenklatur tidak konsisten.** 43 dari 49 unit hanya berkode. Pencatatan kalender tidak baku: 62% kegiatan tanpa keterangan lantai/ruang.
+- **Penanda di lokasi belum menjadi satu sistem** (analisis eksisting LABO., 2026):
+  - Belum ada penanda area *drop-off*, pintu utama, area servis, arah parkir, dan jalan keluar kawasan.
+  - Belum ada informasi dan alur menuju gedung dari pintu akses umum. Integrasi *wayfinding* dengan Lapangan Banteng dan Pemprov DKI belum dibicarakan secara rinci.
+  - Penanda lama, baru, dan regulasi (APAR, jalur evakuasi, area servis) berbeda-beda dan belum selaras dengan arsitektur; sebagian tidak terlihat, sebagian terlalu mencolok.
+  - Ruang multifungsi belum memiliki nama dan kode yang terbaca pengunjung. Plafon tinggi membuat penanda di atas kurang efektif.
+  - Blok gedung bercermin (*mirroring*), sehingga tanpa kode angka/warna pengunjung mudah tertukar antarzona.
 - **Batasan fisik cagar budaya:** selubung bangunan kritikal, batas kapasitas 70% di beberapa ruang, tidak boleh memaku/menempel, larangan makanan-minuman tanpa izin, larangan alat berat, tangga curam dan sempit. Akses difabel belum terkomunikasikan.
 - **Reklame tidak diizinkan**, sehingga eksposur sponsor bagi mitra acara lebih terbatas dibanding venue komersial.
 - **Parkir sangat terbatas.** Kajian HBU menghitung kebutuhan ±519 SRP untuk skenario jangka pendek, sementara kondisi eksisting hanya memungkinkan parkir VIP. Sisanya bergantung pada parkir bersama dan transportasi umum.
@@ -624,7 +639,7 @@ Kajian HBU menargetkan kelas menengah hingga menengah-atas (pengeluaran rumah ta
 | Aspek | Standar yang diusulkan | Catatan |
 | :--- | :--- | :--- |
 | Nama dalam teks | **Gedung A.A. Maramis** (dengan dua titik, sesuai nama tokoh Mr. A.A. Maramis) | "A.A Maramis Heritage" dihentikan sebagai nama. "Istana Daendels" hanya dipakai sebagai konteks sejarah ("dahulu dikenal sebagai…"), tidak sebagai nama pemasaran. |
-| Logotype | Mengikuti KV: huruf kapital serif berspasi lebar. **Perlu keputusan:** "GEDUNG MARAMIS" (versi logotype KV) atau "GEDUNG A.A. MARAMIS" (versi sampul KV dan kajian HBU) | **Rekomendasi: "GEDUNG A.A. MARAMIS".** Menghapus "A.A." memutus penghormatan kepada tokohnya dan membuka kerancuan dengan nama lain. |
+| Logotype | Mengikuti KV: huruf kapital serif berspasi lebar. **Perlu keputusan:** "GEDUNG MARAMIS" (versi logotype KV dan rancangan *signage*) atau "GEDUNG A.A. MARAMIS" (versi sampul KV dan kajian HBU) | **Rekomendasi: "GEDUNG A.A. MARAMIS".** Menghapus "A.A." memutus penghormatan kepada tokohnya dan membuka kerancuan dengan nama lain. **Mendesak:** rancangan *signage* sudah memakai "GEDUNG MARAMIS" pada monumen nama gedung (cor beton, huruf CNC baja tahan karat 5 mm) dan kepala setiap totem. Putuskan sebelum RAB difinalkan dan fabrikasi dimulai; mengganti huruf setelah terpasang jauh lebih mahal. |
 | Media sosial resmi | **Hanya Instagram dan TikTok**, keduanya **@gedung_maramis** | *Handle* Instagram sudah berjalan; klaim *handle* yang sama di TikTok. *Handle* adalah alamat, bukan nama merek. Platform lain tidak dipakai. |
 | Nama tampilan akun | Ubah dari "Gedung A.A Maramis" menjadi **"Gedung A.A. Maramis"** | Perubahan cepat, tanpa biaya, dan langsung memperbaiki konsistensi |
 | Bio akun | Nama baku · endorsement LMAN · satu kalimat positioning · "Kunjungan melalui pendaftaran" · tautan tunggal ke situs | Lihat 7.1.1 |
@@ -647,6 +662,12 @@ Temuan data menunjukkan **ruang bernama lebih laku**. Lantai 2 Gedung C (Mataram
 | Gedung C Lt 1 (paket) | Galeri/museum & toko suvenir, area event temporer | **Aula** | "Aula Weltevreden" sebagai nama paket; C1.4 sebagai "Serambi Utama" |
 
 Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedung/Lantai"**, misalnya *"Majapahit (C2.12) – Gedung C Lt 2"*. Label ad hoc seperti "Gedung Utama (Historical Halls)" dan "Ruang VIP" dihapus.
+
+**Penyelarasan dengan rancangan *signage* (LABO., Jun 2026).** Modul identifikasi *signage* saat ini memakai nama fungsi generik: "Ruang Serbaguna 01", "Ruang Pamer 01–05", "Prefunction Hall", "Holding Room VIP", dan "Ruang Pendukung Pimpinan". Nama generik ini mengulang masalah Lantai 3: ruang tanpa nama sulit dijual dan sulit diingat. Usulan penyelarasan:
+- **Isi modul mengikuti nomenklatur ini.** Baris utama (Public Sans Bold) memuat nama dan kode, misalnya **"Majapahit · C2.12"**. Baris kedua (Italic) memuat fungsi dalam bahasa Inggris, misalnya *"Multifunction Room"*. Fungsi dalam bahasa Indonesia tetap dicantumkan di peta direktori.
+- **Kode di *signage* sama dengan kode di katalog, Booklet, situs, dan Teamup.** Sistem *signage* membagi ruang dengan nomor zona per lantai, sedangkan katalog memakai kode unit (C2.12, C3.8). Satu kode saja yang dipakai; nomor zona cukup untuk gambar kerja.
+- **Fungsi HBU yang belum diputuskan tidak dicetak permanen.** Zonasi Lantai 1 dan pustaka piktogram memuat "Galeri", "Perpustakaan", "Kafe", dan "Restoran". Selama fungsi tersebut belum diputuskan dan diizinkan, gunakan modul yang dapat diganti (*interchangeable*), sesuai prinsip "jangan menjanjikan fungsi HBU" (2.2.2, isu #10).
+- **Nama ruang disahkan sebelum pesanan fabrikasi modul identifikasi.** Karena sistemnya modular (modul akrilik/pelat logam pada rangka), modul nama dapat dipesan terakhir tanpa menunda totem dan penunjuk arah.
 
 ### 6.2. Pillar Narrative (Pilar Cerita Utama)
 
@@ -724,16 +745,46 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 | Logomark | Gambar garis fasad simetris | Dipakai di semua titik sentuh, termasuk foto profil @gedung_maramis; ukuran minimum dan ruang kosong perlu ditetapkan dalam *brand book* lengkap |
 | Logotype | Serif kapital, *tracking* lebar | Lihat keputusan nama di 6.1A |
 | Aksen grafis | **Lengkungan**, elemen dominan arsitektur | Bingkai foto, *wayfinding*, kartu nama ruang, sampul *highlight* Instagram |
-| Palet | Ungu Tanah #473538 · Merah Bata #9c3738 · Cokelat Kayu #8a400f · Kuning Bambu #d8aa68 · Putih Kapur #e2d6be | Merah Bata sebagai warna utama; Putih Kapur sebagai latar; Ungu Tanah untuk teks. Usulan pembeda lini: **Merah Bata untuk *Maramis Ruang***, **Kuning Bambu untuk *Maramis Jelajah*** |
+| Palet | Ungu Tanah #473538 · Merah Bata #9c3738 · Cokelat Kayu #8a400f · Kuning Bambu #d8aa68 · Putih Kapur #e2d6be | Merah Bata sebagai warna utama; Putih Kapur sebagai latar; Ungu Tanah untuk teks. Usulan pembeda lini: **Merah Bata untuk *Maramis Ruang***, **Kuning Bambu untuk *Maramis Jelajah*** (digital dan cetak saja; di lokasi, warna menandai lantai, lihat 6.5.1) |
 | Endorsement | "Dikelola oleh Lembaga Manajemen Aset Negara" | Tambahkan logo Kemenkeu/LMAN di area endorsement sesuai pedoman identitas Kemenkeu |
 
-**Kekosongan yang perlu dilengkapi** (KV baru mencakup 9 halaman):
-- Tipografi teks
+#### 6.5.1. Sistem *Signage* & *Wayfinding* (rancangan LABO., Jun 2026)
+Rancangan *signage* menurunkan KV ke lokasi fisik. Acuan desainnya adalah *A Complete Guide to Creating Environmental Graphic Design Systems* (2015), *NMT Vision and Guidelines* (ITDP, 2020/2021), dan *Legible London System Architecture* (2010). Tahapan pekerjaan berlangsung enam minggu: survei, analisis, konsep, skematik (laporan 15/05), pengembangan, pra-perancangan teknis, RAB & BoQ, dan RKS (laporan 08/06).
+
+| Elemen | Rancangan | Implikasi bagi merek |
+| :--- | :--- | :--- |
+| Tipografi | **Public Sans Bold** untuk teks bahasa Indonesia (utama); **Public Sans Italic** untuk bahasa Inggris (pendamping), sesuai UU 24/2009 | Mengisi kekosongan "tipografi teks" KV. **Usulan:** tetapkan Public Sans sebagai huruf teks resmi di semua titik sentuh (situs, templat Instagram/TikTok, katalog), berpasangan dengan logotype serif KV. Aturan dwibahasa yang sama dipakai di materi digital. |
+| Zona warna per lantai | Lantai 1 **Merah Bata**, Lantai 2 **Cokelat Kayu**, Lantai 3 **Ungu Tanah**, di atas latar Putih Kapur | Seluruhnya dari palet KV. Karena warna di lokasi sudah bermakna "lantai", **pembeda lini (Merah Bata untuk *Maramis Ruang*, Kuning Bambu untuk *Maramis Jelajah*) hanya dipakai di materi digital dan cetak**, tidak di *signage*. |
+| Bentuk | Kepala totem melengkung, diambil dari lengkung gerbang di setiap lorong; ornamen roset dari *bovenlicht* pintu sebagai elemen grafis | Konsisten dengan aksen lengkung KV. Roset dapat masuk *brand book* sebagai motif sekunder (juga untuk merchandise, Pasal 93). |
+| Piktogram | 34 piktogram dwibahasa (toilet, lift, APAR, titik kumpul, mushala, parkir, dan lain-lain) | Pakai set yang sama di situs dan peta digital agar informasi akses seragam. |
+| Sistem modular | Modul orientasi (peta "Posisi Anda"), arah, identifikasi (vertikal, horizontal, nama, zona), dan modul yang dapat diganti (nama acara, jenis kegiatan) | Modul acara ("Gala Dinner – Jamuan Nusantara") menjadi **tempat resmi identitas acara mitra**, menggantikan *banner* ad hoc. Masukkan ke Piagam Etiket Acara: nama acara boleh tampil di modul; logo sponsor tidak. |
+| Hierarki informasi | Monumen nama gedung → totem kawasan (300 cm) → *bollard drop-off* (150 cm) → totem orientasi beroda (210 cm) → totem dinding (170 cm) → penunjuk arah plafon (220 × 15 cm) → direktori dinding (60 × 40 cm) → penanda ruang gantung/dinding → penutup regulasi (APAR 60 × 30 cm) | Penanda ruang ditempatkan pada ketinggian pandang 100–200 cm karena plafon tinggi. |
+| Material | Pelat logam berlubang, cetak UV, rangka besi *hollow*, alas beton atau roda; monumen nama dari cor beton dengan huruf CNC baja tahan karat | Totem beroda dan berdiri bebas sesuai prinsip non-invasif. Penanda yang menempel atau menggantung pada dinding/plafon bersejarah perlu metode pemasangan yang disetujui TACB/TSP (Pasal 83). |
+
+![Hierarki informasi signage](images/signage/p03_84_hierarki_informasi.png)
+*Sumber: Paparan 03 LABO. (2026), hlm. 84.*
+
+![Zona warna per lantai](images/signage/p03_81_color_zone.png)
+*Sumber: Paparan 03 LABO. (2026), hlm. 81.*
+
+**Butir yang perlu diselaraskan sebelum fabrikasi:**
+1. **Logotype:** monumen nama dan kepala totem memakai "GEDUNG MARAMIS" (lihat 6.1A).
+2. **Nama ruang:** modul identifikasi memakai nama generik (lihat 6.1B).
+3. **Pesan akses:** totem kawasan dan titik masuk dari Lapangan Banteng perlu memuat informasi "kunjungan melalui pendaftaran" dan QR ke situs/@gedung_maramis, agar pengunjung tanpa izin tidak berjalan sampai gerbang lalu ditolak (isu #3).
+4. **Lapisan interpretasi:** rancangan LABO. mencakup penunjuk arah dan identifikasi, **bukan interpretasi sejarah**. Papan cerita dan QR interpretasi (7.1.1) perlu dirancang terpisah dengan bahasa visual yang sama.
+5. **Fasad yang menghadap Lapangan Banteng:** kajian mencatat belum ada *signage* temporer untuk fasad ini. Batasi pada identitas gedung dan informasi publik nonkomersial (lihat 2.1.1).
+
+![Monumen nama gedung](images/signage/p03_109_building_name.png)
+*Monumen nama gedung dalam rancangan (Paparan 03, hlm. 109). Teks masih "GEDUNG MARAMIS".*
+
+**Kekosongan yang perlu dilengkapi** (KV baru mencakup 9 halaman; sebagian kini terisi oleh rancangan *signage*):
+- ~~Tipografi teks~~ → diisi Public Sans (rancangan *signage*); perlu ditetapkan resmi di *brand book* beserta aturan hierarki untuk digital
 - Fotografi (arahan dan bank foto resmi)
 - Templat media sosial Instagram dan TikTok (*feed*, *story*, *reels*/video *cover*, *highlight*)
-- Penanda dua lini produk
-- *Signage* dan *wayfinding* non-invasif (berdiri bebas, *reversible*, sesuai Pasal 83 dan status "kritikal" selubung bangunan), **tanpa unsur reklame**
-- Templat co-branding mitra acara (dan tenant, bila HBU dijalankan), termasuk batas tampilan sponsor
+- Penanda dua lini produk (khusus digital dan cetak; lihat 6.5.1)
+- *Signage* dan *wayfinding* → rancangan sudah ada; sisa pekerjaan adalah penyelarasan lima butir di atas dan persetujuan TACB/TSP untuk metode pemasangan, **tanpa unsur reklame**
+- Papan interpretasi sejarah (di luar lingkup rancangan *signage*)
+- Templat co-branding mitra acara (dan tenant, bila HBU dijalankan), termasuk batas tampilan sponsor; manfaatkan modul acara yang dapat diganti
 - Kartu identitas pengunjung/peserta tur berizin
 - Seragam petugas
 - Merchandise berbasis motif (Pasal 93)
@@ -757,7 +808,7 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 | **Situs resmi** (mikrosite) | Satu sumber kebenaran; katalog; pemesanan; pendaftaran kunjungan | Sejarah; katalog 49 ruang (foto, denah, kapasitas aman, tarif); kalender tur dan Hari Terbuka dengan formulir pendaftaran; formulir prospek dan jadwal survei lokasi; FAQ; ruang pers; aturan; akses & parkir; **film profil dan tur virtual 360°** (di-*host* di situs, bukan di platform video) | ★★★ Fase 1 |
 | **Google Business Profile & Maps** | Mengoreksi informasi akses | Keterangan "kunjungan melalui pendaftaran" (bukan jam buka bebas), foto resmi, tautan pendaftaran tur, respons ulasan | ★★★ Fase 1 (biaya nol) |
 | **WhatsApp Business** | Kanal penjualan dan layanan | Katalog per lini, balasan otomatis, label prospek, konfirmasi pendaftaran kunjungan | ★★★ |
-| **Interpretasi di lokasi** | Pengalaman fisik peserta acara dan tur | Papan interpretasi berdiri bebas (QR ke cerita dan ke @gedung_maramis), "Ruang Sejarah Keuangan Negara" kecil (model Fullerton Heritage Gallery), kartu nama ruang. Tanpa unsur reklame | ★★ |
+| ***Signage*, *wayfinding*, dan interpretasi di lokasi** | Pengalaman fisik peserta acara dan tur | *Wayfinding* dan penanda ruang mengikuti rancangan LABO. (6.5.1) setelah diselaraskan dengan nama baku dan nomenklatur ruang. Ditambah lapisan interpretasi: papan berdiri bebas (QR ke cerita dan ke @gedung_maramis) dan "Ruang Sejarah Keuangan Negara" kecil (model Fullerton Heritage Gallery). Modul acara yang dapat diganti menjadi satu-satunya tempat identitas acara mitra. Tanpa unsur reklame | ★★ |
 | **Materi penjualan** | B2B | E-brosur (pembaruan Booklet), *technical rider*, *deck* paket, *case book*; prospektus mitra hanya bila HBU dijalankan | ★★★ |
 | **Kanal internal Kemenkeu** | ASN | Konten advokasi, intranet, *newsletter* | ★★ |
 
@@ -854,7 +905,9 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 | 10 | **Janji mendahului keputusan** | Mengumumkan kafe, museum, atau restoran dari kajian HBU yang belum diputuskan dan belum berizin | Sedang | Sedang | Jangan mengomunikasikan fungsi HBU ke publik sampai ada keputusan pimpinan dan izin adaptasi |
 | 11 | **Keluhan akses & parkir** | Tamu acara kesulitan parkir; antrean pemeriksaan di gerbang kompleks; kemacetan Jl. Gunung Sahari | Tinggi | Rendah–Sedang | Panduan akses dan prosedur daftar tamu di setiap undangan; promosi MRT/Transjakarta; *valet* dan parkir bersama; narasi "Tiba dengan MRT" |
 | 12 | **Gangguan terhadap penghuni kompleks** | Arus tamu acara, tur, atau pernikahan mengganggu kegiatan Kemenkeu, Kemenko Perekonomian, atau OJK | Sedang | Sedang | SOP akses bersama; jadwal di luar jam kerja; batas jumlah peserta; kalender kegiatan yang dibagikan |
-| 13 | **Pelanggaran larangan reklame** | Mitra memasang *banner* sponsor, *billboard*, atau materi promosi di fasad dan halaman | Sedang | Sedang | Klausul larangan reklame di kontrak dan Piagam Etiket; pemeriksaan pra-acara; kewenangan menurunkan materi |
+| 13 | **Pelanggaran larangan reklame** | Mitra memasang *banner* sponsor, *billboard*, atau materi promosi di fasad dan halaman; *signage* temporer fasad (Lapangan Banteng) dipakai untuk promosi komersial | Sedang | Sedang | Klausul larangan reklame di kontrak dan Piagam Etiket; identitas acara hanya pada modul acara resmi (6.5.1); pemeriksaan pra-acara; kewenangan menurunkan materi |
+| 14 | **Nama tidak baku terpasang permanen** | *Signage* difabrikasi dengan "GEDUNG MARAMIS" dan nama ruang generik sebelum keputusan merek | Tinggi | Sedang | Keputusan logotype dan nomenklatur sebelum RAB final dan pesanan fabrikasi; pesan modul nama ruang paling akhir (6.1A, 6.1B) |
+| 15 | **Penanda merusak atau mengganggu selubung bangunan** | Penanda dinding/gantung dipasang dengan cara invasif; monumen beton di halaman tanpa kajian | Rendah–Sedang | Tinggi | Pra-konsultasi TACB/TSP atas metode pemasangan; utamakan totem berdiri bebas dan beroda; dokumentasi kondisi sebelum pemasangan |
 
 ### 8.2. Protokol Komunikasi Krisis (Crisis Escalation Protocol)
 
@@ -932,8 +985,9 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
   - Susun *highlight* per lini (Ruang, Jelajah, Cara Berkunjung, FAQ, Pers).
   - Tarik data Instagram Insights sebagai baseline (titik awal: ±150 pengikut).
   - Buat akun **TikTok @gedung_maramis** dan klaim *location tag* resmi.
-- **Keputusan merek:** nama baku, logotype (6.1A), arsitektur dua lini, dan nomenklatur ruang (6.1B). Mintakan persetujuan pimpinan LMAN dan DJKN, serta konsultasi Biro KLI. Selaraskan dengan visi HBU (6.1).
-- **Brand book lengkap** berdasarkan KV (tipografi, fotografi, templat Instagram dan TikTok, penanda lini, *signage* non-invasif tanpa reklame, co-branding mitra acara). Pra-konsultasi kit *signage* dengan TACB/TSP dan Disbud.
+- **Keputusan merek:** nama baku, logotype (6.1A), arsitektur dua lini, dan nomenklatur ruang (6.1B). Mintakan persetujuan pimpinan LMAN dan DJKN, serta konsultasi Biro KLI. Selaraskan dengan visi HBU (6.1). **Keputusan logotype dan nama ruang harus mendahului finalisasi RAB dan fabrikasi *signage*.**
+- **Penyelarasan rancangan *signage* LABO.** (6.5.1): perbarui logotype, isi modul identifikasi, pesan akses di totem kawasan, dan batas *signage* fasad. Pra-konsultasi metode pemasangan dengan TACB/TSP dan Disbud. Bahas titik masuk dan penunjuk arah dari Lapangan Banteng bersama Pemprov DKI.
+- **Brand book lengkap** berdasarkan KV dan rancangan *signage* (tipografi Public Sans, fotografi, templat Instagram dan TikTok, penanda lini, co-branding mitra acara, papan interpretasi).
 - **SOP kunjungan berizin** bersama Biro Umum Kemenkeu, Kemenko Perekonomian, dan OJK: pendaftaran identitas, penyerahan daftar peserta, jalur masuk-keluar, jam, kuota, dan parkir. **Ini prasyarat sebelum tur apa pun dipromosikan.**
 - **Fondasi *owned* lainnya:** Google Business Profile, WhatsApp Business, mikrosite versi 1 (katalog ruang, FAQ, formulir).
 - **Baseline:**
@@ -976,7 +1030,9 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 | Penataan Instagram & pembuatan TikTok @gedung_maramis | ■ | | | | | | | | | | | | | | |
 | SOP kunjungan berizin bersama penghuni kompleks | ■ | ■ | | | | | | | | | | | | | |
 | Keputusan merek, dua lini & nomenklatur | ■ | ■ | | | | | | | | | | | | | |
-| Brand book & kit *signage* (termasuk konsultasi TACB/TSP) | ■ | ■ | ■ | ■ | | | | | | | | | | | |
+| Penyelarasan rancangan *signage* LABO. & konsultasi TACB/TSP | ■ | ■ | | | | | | | | | | | | | |
+| Brand book (termasuk papan interpretasi) | ■ | ■ | ■ | ■ | | | | | | | | | | | |
+| Fabrikasi & pemasangan *signage* (asumsi: setelah keputusan nama dan pengadaan) | | | ■ | ■ | ■ | | | | | | | | | | |
 | Kanal *owned* dasar (GBP, WA, situs v1) | ■ | ■ | ■ | | | | | | | | | | | | |
 | Baseline riset & standardisasi data | ■ | ■ | | | | | | | | | | | | | ■ |
 | Dokumen tata kelola & *holding statements* | ■ | ■ | ■ | | | | | | | | | | | | |
@@ -1003,8 +1059,8 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 
 | Pos | Rincian | Estimasi (Rp juta) |
 | :--- | :--- | ---: |
-| **A. Identitas & brand book** | Penyempurnaan KV menjadi brand book lengkap, penanda dua lini, templat, kit *signage* non-invasif (desain), pedoman co-branding mitra acara | 250 – 400 |
-| **B. Produksi *signage* & interpretasi** | Papan berdiri bebas, kartu nama ruang, QR interpretasi, banner gantung (model KV) | 350 – 600 |
+| **A. Identitas & brand book** | Penyempurnaan KV menjadi brand book lengkap, penanda dua lini, templat, desain papan interpretasi, pedoman co-branding mitra acara. Desain *wayfinding* sudah dikerjakan LABO. (2026); pos ini hanya mencakup penyelarasannya | 250 – 400 |
+| **B. Produksi *signage* & interpretasi** | *Wayfinding* sesuai rancangan LABO., papan interpretasi berdiri bebas, QR interpretasi, banner gantung (model KV). **Angka ini diganti dengan RAB & BoQ LABO.** (tidak termasuk dalam sumber kajian ini) setelah tersedia | 350 – 600 |
 | **C. Kanal digital** | Mikrosite dan katalog, sistem pendaftaran kunjungan, tur virtual 360°, pemeliharaan setahun | 300 – 500 |
 | **D. Produksi konten** | Film profil (di-*host* di situs), bank foto resmi, konten rutin 15 bulan untuk Instagram dan TikTok @gedung_maramis (foto/video) | 400 – 700 |
 | **E. Media & PR** | *Media visit*, *press kit*, *monitoring*/*social listening*, *media training* | 200 – 350 |
@@ -1034,7 +1090,7 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 | Analis data | Internal LMAN (paruh waktu) | Dasbor KPI, kualitas data Teamup, pembandingan realisasi vs. proyeksi HBU |
 
 ### 10.3. Efisiensi Sumber Daya & Kolaborasi Mitra
-- **Gunakan aset yang ada:** akun Instagram @gedung_maramis, KV, buku sejarah 2022 (materi narasi dan visual berhak cipta Kemenkeu), Booklet Sept 2026, kajian HBU (data pasar kompetitor dan visual kawasan), serta dokumentasi pemugaran.
+- **Gunakan aset yang ada:** akun Instagram @gedung_maramis, KV, rancangan *signage* dan *wayfinding* LABO. (tipografi, piktogram, dan denah zonasi per lantai juga dapat dipakai untuk situs dan katalog), buku sejarah 2022 (materi narasi dan visual berhak cipta Kemenkeu), Booklet Sept 2026, kajian HBU (data pasar kompetitor dan visual kawasan), serta dokumentasi pemugaran.
 - **Sinergi Kemenkeu:** Biro KLI (produksi, Employee Advocacy, program *Fiscal Heritage Explorer*), DJKN (lelang dan pameran sebagai konten), dan PKN STAN (pemandu mahasiswa).
 - **Kolaborasi non-anggaran:**
   - Pemprov DKI: kalender Jakarta 500, Lapangan Banteng, Jakarta Tourism
@@ -1158,6 +1214,15 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 - Sumber: `0 - source/LAMP 1 - konsep kv aa maramis.pdf` (Panduan Grafis Kunci, 9 halaman), dengan render halaman di `images/kv/`.
 - Isi: sampul (GEDUNG AA MARAMIS – Dikelola oleh LMAN), foto fasad, logotype dan logomark (GEDUNG MARAMIS), aksen grafis lengkung, palet lima warna, serta *mockup* penerapan (banner gantung).
 - Rujukan tambahan: visual kawasan dan program ruang dalam kajian HBU (`1 - ingested/images/laporan_hbu_pages/`), khususnya slide 9 (aksis monumental), 157 (visi), dan 161–164 (program ruang).
+- Rancangan *signage* dan *wayfinding*:
+  - `0 - source/PAPARAN 02 - PENATAAN SIGNANGE, WAYFINDING AA MARAMIS_SUBMISSION 1.pdf` (LABO., 28 halaman, hlm. 49–74 dari laporan): lini masa pekerjaan, keterangan ruang per lantai, analisis kondisi eksisting, rencana integrasi dengan Lapangan Banteng (sumber LMAN), acuan desain, regulasi, konsep bentuk, dan tipografi.
+  - `0 - source/PAPARAN O3 - PENATAAN SIGNANGE, WAYFINDING AA MARAMIS_100626.pdf` (LABO., 10 Jun 2026, 35 halaman, hlm. 77–110): piktogram, zonasi dan penempatan per lantai, zona warna, *grid*, sistem modular, hierarki informasi, spesifikasi setiap tipe penanda, gambar teknis, dan perspektif.
+  - Render halaman terpilih di `images/signage/`.
+- Rencana integrasi Lapangan Banteng (Paparan 02, hlm. 61) menamai zona di sisi gedung, antara lain **"Teras Maramis"**, "Plaza Integrasi", dan "Akses ke Gedung AA. Maramis dan Kemenkeu". Nama-nama ini perlu dipakai konsisten di peta situs dan materi "Cara Berkunjung".
+
+![Integrasi gedung dengan Lapangan Banteng](images/signage/p02_61_integrasi_lapangan_banteng.png)
+*Sumber: Paparan 02 LABO. (2026), hlm. 61 (sumber asli: LMAN).*
+
 - Kekosongan yang perlu dilengkapi dirinci di Bab 6.5.
 
 ### 12.4. Data Pendukung
@@ -1174,6 +1239,8 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 - Booklet Gedung A.A. Maramis – Updated Sept 2026 (LMAN).
 - *Gedung A.A. Maramis: Istana Putih di Weltevreden* (Kemenkeu, 2022; ISBN 978-623-88224-0-9).
 - Panduan Grafis Kunci Gedung AA Maramis (LAMP 1).
+- LABO. (2026). *Penataan Signage, Wayfinding, dan Environmental Design Gedung AA. Maramis: Analisa Pendahuluan dan Konsep Skematik* (Paparan 02, Submission 1).
+- LABO. (2026). *Penataan Signage, Wayfinding, dan Environmental Design Gedung AA. Maramis: Pengembangan dan Gambar Teknis* (Paparan 03, 10 Jun 2026).
 - Laporan Final Analisis Penggunaan Tertinggi dan Terbaik Aset Bangunan Cagar Budaya AA Maramis (Colliers International Indonesia untuk LMAN, 15 Des 2023; *Private & Confidential*). Status: rekomendasi belum dijalankan per Sep 2026.
 - Data pengelola (Sep 2026): jumlah pengikut Instagram, ketentuan akses kompleks, larangan reklame.
 - Ekspor Teamup Calendar "A.A. Maramis Events" (diakses 26 Sep 2026).
@@ -1215,7 +1282,7 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 **Benchmarking**
 - Pos Bloc/M Bloc (Tempo, Peruri, Antara), Kota Tua (Invest Jakarta, CNBC), Lawang Sewu (Liputan6, KAI Wisata), Museum BI (bi.go.id, Suara), National Gallery Singapore (nationalgallery.sg, Redhot; kajian HBU), Tai Kwun (kajian HBU), The Fullerton Heritage (fullertonhotels.com), Paleis op de Dam (paleisamsterdam.nl, Rijksvastgoedbedrijf).
 
-### 12.6. Daftar Verifikasi (status per 26 Sep 2026)
+### 12.6. Daftar Verifikasi (status per 29 Sep 2026)
 
 **Sudah ditetapkan**
 
@@ -1239,3 +1306,9 @@ Kalender Teamup dan seluruh materi wajib memakai format **"Nama (Kode) – Gedun
 | Kunjungan wisman ke DKI Jakarta 2025 | Data sekunder: Satu Data Jakarta melaporkan kunjungan wisman ke DKI Jakarta "melampaui 2,5 juta"; tahun rujukan belum terkonfirmasi karena tabel BPS DKI tidak dapat diakses otomatis | Konfirmasi angka dan tahun dari tabel BPS DKI sebelum dikutip sebagai angka pasti |
 | Prosedur akses rinci (jalur masuk, jam, kuota, parkir) | Belum ada SOP tertulis | Susun SOP kunjungan berizin bersama Biro Umum, Kemenko Perekonomian, dan OJK (Fase 1) |
 | Ketersediaan *handle* @gedung_maramis di TikTok dan domain situs | Belum dicek | Klaim pada Oktober 2026 |
+| Logotype pada *signage* ("GEDUNG MARAMIS" vs "GEDUNG A.A. MARAMIS") | Rancangan LABO. memakai "GEDUNG MARAMIS"; kajian ini merekomendasikan "GEDUNG A.A. MARAMIS" | **Mendesak.** Putuskan sebelum RAB final dan fabrikasi (Oktober 2026) |
+| Status pengadaan dan fabrikasi *signage* | Rancangan, RAB & BoQ, dan RKS dijadwalkan selesai Juni 2026; status pengadaan tidak tercatat dalam sumber | Konfirmasi status dan jadwal ke unit pengelola; RAB & BoQ dipakai untuk kalibrasi pos B (10.1) |
+| Nama ruang pada modul identifikasi | Rancangan memakai nama generik; nomenklatur 6.1B belum disahkan | Sahkan nomenklatur, lalu kirim daftar isi modul ke konsultan |
+| *Signage* temporer fasad (sisi Lapangan Banteng) dan larangan reklame | Kajian *signage* mencatat kebutuhannya; batas yang diizinkan belum ditetapkan | Konfirmasi tafsir Pergub 148/2017 untuk materi identitas dan informasi publik nonkomersial |
+| Metode pemasangan penanda dinding, gantung, dan monumen nama | Belum dikonsultasikan dengan TACB/TSP | Pra-konsultasi pada Fase 1 (Pasal 83) |
+| Integrasi *wayfinding* dengan Lapangan Banteng | "Belum ada pembicaraan detail" dengan Pemprov DKI (Paparan 02) | Agendakan dalam rapat penyelarasan dengan Pemprov DKI (9.1) |
